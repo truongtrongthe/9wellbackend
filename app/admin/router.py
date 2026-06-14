@@ -3,6 +3,7 @@ from __future__ import annotations
 from fastapi import APIRouter, Depends, HTTPException, Query
 from supabase import Client
 
+from app.admin.content.router import router as content_router
 from app.admin.deps import AdminContext, require_admin
 from app.admin.models import (
     AdminActivateSubscriptionRequest,
@@ -15,6 +16,7 @@ from app.membership.subscription_actions import activate_or_extend_subscription
 from app.payments.repository import get_package_by_code
 
 router = APIRouter()
+router.include_router(content_router)
 
 
 @router.get("/users", response_model=list[AdminUserResponse])
