@@ -72,18 +72,35 @@ def _lesson_resp(row: dict) -> m.LessonResponse:
 
 
 def _blog_resp(row: dict) -> m.BlogPostResponse:
+    action_raw = row.get("action_box") or {}
+    if not isinstance(action_raw, dict):
+        action_raw = {}
     return m.BlogPostResponse(
         id=str(row["id"]),
         slug=row["slug"],
         title=row["title"],
         category=row.get("category") or "",
         emoji=row.get("emoji") or "",
+        thumbnail_url=row.get("thumbnail_url"),
+        hero_image_url=row.get("hero_image_url"),
         excerpt=row.get("excerpt") or "",
         read_time=row.get("read_time") or "",
         author=row.get("author") or "",
+        author_bio=row.get("author_bio") or "",
+        author_initials=row.get("author_initials") or "",
         body_html=row.get("body_html") or "",
         seo_description=row.get("seo_description") or "",
         og_title=row.get("og_title"),
+        toc_items=row.get("toc_items") or [],
+        summary_quick=row.get("summary_quick") or "",
+        action_box=m.BlogActionBox(
+            title=action_raw.get("title") or "",
+            body=action_raw.get("body") or "",
+        ),
+        key_takeaways=row.get("key_takeaways") or [],
+        faq_items=row.get("faq_items") or [],
+        related_slugs=row.get("related_slugs") or [],
+        show_sticky_cta=bool(row.get("show_sticky_cta", True)),
         published=bool(row.get("published", True)),
         published_at=str(row["published_at"]) if row.get("published_at") else None,
         sort_order=int(row.get("sort_order") or 0),

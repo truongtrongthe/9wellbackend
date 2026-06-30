@@ -22,6 +22,7 @@ from app.content.models import (
     TYPE_META,
     PublicBlogListItem,
     PublicBlogPost,
+    PublicActionBox,
     PublicCourseResponse,
     PublicFaq,
     PublicLessonFull,
@@ -161,6 +162,7 @@ def public_blog_list(
             title=p["title"],
             category=p.get("category") or "",
             emoji=p.get("emoji") or "",
+            thumbnail_url=p.get("thumbnail_url"),
             excerpt=p.get("excerpt") or "",
             read_time=p.get("read_time") or "",
             sort_order=int(p.get("sort_order") or 0),
@@ -179,17 +181,36 @@ def public_blog_detail(
     row = _get_blog_by_slug(client, slug)
     if not row:
         raise HTTPException(status_code=404, detail="Post not found")
+    action_raw = row.get("action_box") or {}
+    if not isinstance(action_raw, dict):
+        action_raw = {}
     return PublicBlogPost(
         slug=row["slug"],
         title=row["title"],
         category=row.get("category") or "",
         emoji=row.get("emoji") or "",
+        thumbnail_url=row.get("thumbnail_url"),
+        hero_image_url=row.get("hero_image_url"),
         excerpt=row.get("excerpt") or "",
         read_time=row.get("read_time") or "",
         author=row.get("author") or "",
+        author_bio=row.get("author_bio") or "",
+        author_initials=row.get("author_initials") or "",
         body_html=row.get("body_html") or "",
         seo_description=row.get("seo_description") or "",
         og_title=row.get("og_title"),
+        toc_items=row.get("toc_items") or [],
+        summary_quick=row.get("summary_quick") or "",
+        action_box=PublicActionBox(
+            title=action_raw.get("title") or "",
+            body=action_raw.get("body") or "",
+        ),
+        key_takeaways=row.get("key_takeaways") or [],
+        faq_items=row.get("faq_items") or [],
+        related_slugs=row.get("related_slugs") or [],
+        show_sticky_cta=bool(row.get("show_sticky_cta", True)),
+        published_at=str(row["published_at"]) if row.get("published_at") else None,
+        updated_at=str(row["updated_at"]) if row.get("updated_at") else None,
     )
 
 

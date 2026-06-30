@@ -81,17 +81,43 @@ class LessonResponse(BaseModel):
     updated_at: str | None = None
 
 
+class BlogFaqItem(BaseModel):
+    question: str
+    answer: str
+
+
+class BlogTocItem(BaseModel):
+    id: str
+    label: str
+
+
+class BlogActionBox(BaseModel):
+    title: str = ""
+    body: str = ""
+
+
 class BlogPostCreate(BaseModel):
     slug: str
     title: str
     category: str = ""
     emoji: str = ""
+    thumbnail_url: str | None = None
+    hero_image_url: str | None = None
     excerpt: str = ""
     read_time: str = ""
     author: str = ""
+    author_bio: str = ""
+    author_initials: str = ""
     body_html: str = ""
     seo_description: str = ""
     og_title: str | None = None
+    toc_items: list[BlogTocItem] = Field(default_factory=list)
+    summary_quick: str = ""
+    action_box: BlogActionBox = Field(default_factory=BlogActionBox)
+    key_takeaways: list[str] = Field(default_factory=list)
+    faq_items: list[BlogFaqItem] = Field(default_factory=list)
+    related_slugs: list[str] = Field(default_factory=list)
+    show_sticky_cta: bool = True
     published: bool = True
     published_at: datetime | None = None
     sort_order: int = 0
@@ -102,12 +128,23 @@ class BlogPostUpdate(BaseModel):
     title: str | None = None
     category: str | None = None
     emoji: str | None = None
+    thumbnail_url: str | None = None
+    hero_image_url: str | None = None
     excerpt: str | None = None
     read_time: str | None = None
     author: str | None = None
+    author_bio: str | None = None
+    author_initials: str | None = None
     body_html: str | None = None
     seo_description: str | None = None
     og_title: str | None = None
+    toc_items: list[BlogTocItem] | None = None
+    summary_quick: str | None = None
+    action_box: BlogActionBox | None = None
+    key_takeaways: list[str] | None = None
+    faq_items: list[BlogFaqItem] | None = None
+    related_slugs: list[str] | None = None
+    show_sticky_cta: bool | None = None
     published: bool | None = None
     published_at: datetime | None = None
     sort_order: int | None = None
@@ -119,12 +156,23 @@ class BlogPostResponse(BaseModel):
     title: str
     category: str
     emoji: str
+    thumbnail_url: str | None = None
+    hero_image_url: str | None = None
     excerpt: str
     read_time: str
     author: str
+    author_bio: str
+    author_initials: str
     body_html: str
     seo_description: str
     og_title: str | None = None
+    toc_items: list[BlogTocItem] = Field(default_factory=list)
+    summary_quick: str = ""
+    action_box: BlogActionBox = Field(default_factory=BlogActionBox)
+    key_takeaways: list[str] = Field(default_factory=list)
+    faq_items: list[BlogFaqItem] = Field(default_factory=list)
+    related_slugs: list[str] = Field(default_factory=list)
+    show_sticky_cta: bool = True
     published: bool
     published_at: str | None = None
     sort_order: int

@@ -63,9 +63,25 @@ class PublicBlogListItem(BaseModel):
     title: str
     category: str
     emoji: str
+    thumbnail_url: str | None = None
     excerpt: str
     read_time: str
     sort_order: int
+
+
+class PublicFaqItem(BaseModel):
+    question: str
+    answer: str
+
+
+class PublicTocItem(BaseModel):
+    id: str
+    label: str
+
+
+class PublicActionBox(BaseModel):
+    title: str = ""
+    body: str = ""
 
 
 class PublicBlogPost(BaseModel):
@@ -73,12 +89,25 @@ class PublicBlogPost(BaseModel):
     title: str
     category: str
     emoji: str
+    thumbnail_url: str | None = None
+    hero_image_url: str | None = None
     excerpt: str
     read_time: str
     author: str
+    author_bio: str = ""
+    author_initials: str = ""
     body_html: str
     seo_description: str
     og_title: str | None = None
+    toc_items: list[PublicTocItem] = []
+    summary_quick: str = ""
+    action_box: PublicActionBox = PublicActionBox()
+    key_takeaways: list[str] = []
+    faq_items: list[PublicFaqItem] = []
+    related_slugs: list[str] = []
+    show_sticky_cta: bool = True
+    published_at: str | None = None
+    updated_at: str | None = None
 
 
 class PublicPricingPlan(BaseModel):
