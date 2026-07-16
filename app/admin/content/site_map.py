@@ -17,7 +17,7 @@ MODULES: list[dict[str, Any]] = [
         "live": "/learn",
         "bundle": "learn_curriculum",
         "publish_files": ["9well-learn/curriculum.js"],
-        "description": "Curriculum 8 tuần: lessons, forms, check-ins, SUMMARY, journal write[]",
+        "description": "Curriculum 8 tuần — live qua API sau Lưu; /publish chỉ sync curriculum.js",
     },
     {
         "id": "blog",
@@ -26,7 +26,7 @@ MODULES: list[dict[str, Any]] = [
         "live": "/blog",
         "bundle": None,
         "publish_files": ["9well-hub/articles.js"],
-        "description": "Bài viết trong blog_posts; video/danh mục trong hub_videos, hub_categories",
+        "description": "Bài viết blog_posts — live qua API sau «Lưu & đưa lên web»; /publish chỉ sync articles.js",
     },
     {
         "id": "shop",
@@ -94,16 +94,33 @@ MODULES: list[dict[str, Any]] = [
 ]
 
 WORKFLOW = [
-    {"step": 1, "action": "Lưu", "detail": "Trên từng trang menu, bấm Lưu sau khi sửa (ghi DB)."},
-    {"step": 2, "action": "Seed (lần đầu)", "detail": "Trang Xuất bản → Seed từ offline v3 nếu DB trống."},
-    {"step": 3, "action": "Xuất bản", "detail": "Trang Xuất bản → ghi file public/v2/*.js lên web."},
+    {
+        "step": 1,
+        "action": "Lưu",
+        "detail": "Blog: «Lưu & đưa lên web». Learn/Pricing/Landing/Legal: Lưu. Ghi DB → live qua API.",
+    },
+    {
+        "step": 2,
+        "action": "Seed (lần đầu)",
+        "detail": "Trang Xuất bản → Seed từ offline v3 nếu DB trống.",
+    },
+    {
+        "step": 3,
+        "action": "Preview",
+        "detail": "Mở URL live. Blog/Learn không cần /publish mỗi lần.",
+    },
+    {
+        "step": 4,
+        "action": "Xuất bản (chỉ khi cần)",
+        "detail": "Shop/Portal/Trainer/Game: /publish ghi file tĩnh. Blog/Learn: chỉ khi sync articles.js / curriculum.js.",
+    },
 ]
 
 CHECKLIST = [
-    "Đã Lưu từng module vừa sửa",
+    "Đã Lưu (blog: Lưu & đưa lên web)",
+    "Badge / preview live OK",
     "Seed (chỉ lần đầu hoặc reset)",
-    "Xuất bản ra public/v2",
-    "Mở link live preview kiểm tra",
+    "/publish chỉ nếu module cần file tĩnh hoặc được yêu cầu sync",
 ]
 
 GLOSSARY = [
@@ -115,11 +132,11 @@ GLOSSARY = [
     {"term": "bundle", "meaning": "JSON trong cms_content_bundles (key → payload)"},
     {
         "term": "đưa lên web",
-        "meaning": "Cờ published của bài blog — nút «Lưu & đưa lên web» (khác /publish)",
+        "meaning": "Nút «Lưu & đưa lên web» — set published + lưu; bài blog live ngay qua API",
     },
     {
         "term": "publish",
-        "meaning": "/publish → «Xuất bản ra public/v2» — serialize DB → file tĩnh",
+        "meaning": "/publish → ghi public/v2/*.js — bắt buộc Shop/Portal/Trainer/Game; KHÔNG bắt buộc mỗi bài blog",
     },
 ]
 
@@ -130,8 +147,8 @@ RECIPES = [
             "Mở /learn → tab Tuần & bài",
             "Chọn Tuần 7 → chip bài 7.2",
             "Sửa Title, Body → Lưu",
-            "Mở /publish → Xuất bản ra public/v2",
             "Preview https://9well.com/learn",
+            "/publish chỉ khi được yêu cầu sync curriculum.js",
         ],
     },
     {
@@ -139,10 +156,10 @@ RECIPES = [
         "steps": [
             "Mở /blog → tab Bài viết → + Thêm bài viết",
             "Điền slug, title, body, cat_key",
-            "Bấm «Tạo & đưa lên web» (hoặc «Lưu & đưa lên web» nếu sửa bài cũ)",
-            "Xác nhận badge list = «Đã xuất bản» (không còn Nháp)",
-            "Mở /publish → «Xuất bản ra public/v2»",
+            "Bấm «Tạo & đưa lên web» (bài cũ: «Lưu & đưa lên web») — một nút đủ",
+            "Xác nhận badge = «Đã xuất bản»",
             "Preview https://9well.com/blog/{slug}",
+            "Không vào /publish trừ khi nhiệm vụ yêu cầu sync articles.js",
         ],
     },
     {
@@ -155,9 +172,9 @@ RECIPES = [
 ]
 
 RULES = [
-    "Không sửa trực tiếp apps/web/public/v2/ — luôn Lưu + Xuất bản",
-    "Luôn Lưu trước khi Xuất bản",
-    "Blog: muốn hiện trên web phải bấm «Lưu & đưa lên web» (hoặc tick «Đưa lên web») — khác nút /publish",
+    "Không sửa trực tiếp apps/web/public/v2/",
+    "Blog/Learn/Pricing: Lưu (blog: đưa lên web) → preview — không bắt buộc /publish mỗi lần",
+    "Shop/Portal/Trainer/Game: Lưu rồi /publish mới chắc trên web",
     "Tab JSON nâng cao chỉ khi cần sửa hàng loạt",
 ]
 
