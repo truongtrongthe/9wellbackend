@@ -1,0 +1,139 @@
+{
+  "hero": {
+    "headline": "Lấy lại sự kiểm soát — kín đáo, khoa học, bền vững",
+    "sub": "Chương trình 8 tuần cho nam giới: hiểu cơ thể, luyện kỹ năng, đồng hành chuyên gia.",
+    "ctaPrimary": "Làm quiz chẩn đoán 5 phút →",
+    "ctaSecondary": "Xem khóa học"
+  },
+  "introYtid": "aqz-KE-bpKQ",
+  "quiz": [
+    {
+      "q": "Thời gian trung bình đến khi kết thúc?",
+      "a": [
+        [
+          "Trên 7 phút",
+          0
+        ],
+        [
+          "3–7 phút",
+          1
+        ],
+        [
+          "1–3 phút",
+          2
+        ],
+        [
+          "Dưới 1 phút",
+          3
+        ]
+      ]
+    },
+    {
+      "q": "Bạn có kiểm soát được thời điểm kết thúc không?",
+      "a": [
+        [
+          "Gần như luôn",
+          0
+        ],
+        [
+          "Khá thường",
+          1
+        ],
+        [
+          "Thỉnh thoảng",
+          2
+        ],
+        [
+          "Hầu như không",
+          3
+        ]
+      ]
+    },
+    {
+      "q": "Tần suất & tốc độ khi \"tự giải tỏa\" (thủ dâm)?",
+      "a": [
+        [
+          "Ít / thong thả",
+          0
+        ],
+        [
+          "Thỉnh thoảng",
+          1
+        ],
+        [
+          "Khá thường, hơi vội",
+          2
+        ],
+        [
+          "Nhiều & rất vội",
+          3
+        ]
+      ]
+    },
+    {
+      "q": "Mức lo lắng, mất tự tin về chuyện này?",
+      "a": [
+        [
+          "Không đáng kể",
+          0
+        ],
+        [
+          "Một chút",
+          1
+        ],
+        [
+          "Khá nhiều",
+          2
+        ],
+        [
+          "Rất nhiều",
+          3
+        ]
+      ]
+    },
+    {
+      "q": "Bạn hiểu rõ NGUYÊN NHÂN vấn đề của mình đến đâu?",
+      "a": [
+        [
+          "Hiểu rõ",
+          0
+        ],
+        [
+          "Khá hiểu",
+          1
+        ],
+        [
+          "Mơ hồ",
+          2
+        ],
+        [
+          "Gần như không",
+          3
+        ]
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "q": "Có thật sự kín đáo không? Mình ngại lắm.",
+      "a": "Hoàn toàn. Quiz ẩn danh, bạn không cần dùng tên thật. Mọi trao đổi riêng tư 1-1, dữ liệu được bảo mật. Nếu hoàn tiền, hồ sơ của bạn được xóa sạch. Không ai — kể cả người thân — biết bạn đang dùng 9well him."
+    },
+    {
+      "q": "Mình thử nhiều thứ rồi không ăn thua. Sao cái này khác?",
+      "a": "Vì 9well him không phải sản phẩm dùng tạm. Các cách \"che triệu chứng\" hết tác dụng là quay lại như cũ. Ở đây bạn luyện tập để thay đổi từ gốc — hiểu cơ thể mình và xây thói quen mới, có chuyên gia đồng hành. Đó là lý do kết quả bền vững."
+    },
+    {
+      "q": "Mình bận, có tốn nhiều thời gian không?",
+      "a": "Khoảng 10 phút mỗi ngày, làm tại nhà. App sẽ nhắc bạn. Không cần đến đâu cả, không cần ai biết."
+    },
+    {
+      "q": "Lỡ không hợp với mình thì sao?",
+      "a": "Bạn được bảo vệ bởi cam kết hoàn tiền 14 ngày. Làm theo mà chưa thấy thay đổi → hoàn 100%, hồ sơ xóa hoàn toàn. Bạn không mất gì để thử."
+    },
+    {
+      "q": "Chuyên gia ở đây là người thật chứ?",
+      "a": "Đúng vậy. 9well him đồng hành bằng chuyên gia thật, chính danh, có chuyên môn — kết hợp AI để theo dõi và nhắc nhở lộ trình. Bạn luôn có người thật để hỏi, không phải nói chuyện với máy."
+    }
+  ],
+  "sections": {}
+}

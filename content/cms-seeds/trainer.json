@@ -1,0 +1,311 @@
+{
+  "exercises": {
+    "kegel_basic": {
+      "icon": "⚡",
+      "cls": "k",
+      "lvl": 1,
+      "type": "kegel",
+      "name": {
+        "vi": "Kegel cơ bản",
+        "en": "Basic Kegel"
+      },
+      "desc": {
+        "vi": "Siết 3s · thả 3s · 10 lần",
+        "en": "Squeeze 3s · release 3s · 10 reps"
+      },
+      "reps": 10,
+      "pattern": [
+        {
+          "p": "contract",
+          "d": 3
+        },
+        {
+          "p": "relax",
+          "d": 3
+        }
+      ]
+    },
+    "kegel_hold": {
+      "icon": "🔒",
+      "cls": "k",
+      "lvl": 2,
+      "type": "kegel",
+      "name": {
+        "vi": "Kegel giữ lâu",
+        "en": "Endurance Kegel"
+      },
+      "desc": {
+        "vi": "Siết 5s · giữ 2s · thả 5s · 12 lần",
+        "en": "Squeeze 5s · hold 2s · release 5s · 12 reps"
+      },
+      "reps": 12,
+      "pattern": [
+        {
+          "p": "contract",
+          "d": 5
+        },
+        {
+          "p": "hold",
+          "d": 2
+        },
+        {
+          "p": "relax",
+          "d": 5
+        }
+      ]
+    },
+    "kegel_power": {
+      "icon": "🔥",
+      "cls": "k",
+      "lvl": 3,
+      "type": "kegel",
+      "name": {
+        "vi": "Kegel sức mạnh",
+        "en": "Power Kegel"
+      },
+      "desc": {
+        "vi": "Siết 7s · giữ 3s · thả 7s · 15 lần",
+        "en": "Squeeze 7s · hold 3s · release 7s · 15 reps"
+      },
+      "reps": 15,
+      "pattern": [
+        {
+          "p": "contract",
+          "d": 7
+        },
+        {
+          "p": "hold",
+          "d": 3
+        },
+        {
+          "p": "relax",
+          "d": 7
+        }
+      ]
+    },
+    "kegel_flick": {
+      "icon": "⚡",
+      "cls": "k",
+      "lvl": 2,
+      "type": "kegel",
+      "name": {
+        "vi": "Co thắt nhanh",
+        "en": "Quick Flicks"
+      },
+      "desc": {
+        "vi": "Siết nhanh 1s · thả 1s · 20 lần",
+        "en": "Fast squeeze 1s · release 1s · 20 reps"
+      },
+      "reps": 20,
+      "pattern": [
+        {
+          "p": "contract",
+          "d": 1
+        },
+        {
+          "p": "relax",
+          "d": 1
+        }
+      ]
+    },
+    "reverse_kegel": {
+      "icon": "🌬️",
+      "cls": "r",
+      "lvl": 2,
+      "type": "relax",
+      "name": {
+        "vi": "Kegel ngược (thư giãn)",
+        "en": "Reverse Kegel"
+      },
+      "desc": {
+        "vi": "Thả lỏng sâu · 8 lần — giúp kiểm soát",
+        "en": "Deep release · 8 reps — builds control"
+      },
+      "reps": 8,
+      "pattern": [
+        {
+          "p": "contractSoft",
+          "d": 2
+        },
+        {
+          "p": "reverse",
+          "d": 5
+        },
+        {
+          "p": "rest",
+          "d": 2
+        }
+      ]
+    },
+    "breath_box": {
+      "icon": "🫁",
+      "cls": "b",
+      "lvl": 1,
+      "type": "breath",
+      "name": {
+        "vi": "Thở hộp 4-4-4-4",
+        "en": "Box breathing 4-4-4-4"
+      },
+      "desc": {
+        "vi": "Hít 4 · giữ 4 · thở 4 · giữ 4 · 8 lần",
+        "en": "In 4 · hold 4 · out 4 · hold 4 · 8 reps"
+      },
+      "reps": 8,
+      "pattern": [
+        {
+          "p": "inhale",
+          "d": 4
+        },
+        {
+          "p": "holdBreath",
+          "d": 4
+        },
+        {
+          "p": "exhale",
+          "d": 4
+        },
+        {
+          "p": "holdBreath",
+          "d": 4
+        }
+      ]
+    },
+    "breath_478": {
+      "icon": "😌",
+      "cls": "b",
+      "lvl": 1,
+      "type": "breath",
+      "name": {
+        "vi": "Thở 4-7-8 thư giãn",
+        "en": "4-7-8 calming breath"
+      },
+      "desc": {
+        "vi": "Hít 4 · giữ 7 · thở 8 · 6 lần",
+        "en": "In 4 · hold 7 · out 8 · 6 reps"
+      },
+      "reps": 6,
+      "pattern": [
+        {
+          "p": "inhale",
+          "d": 4
+        },
+        {
+          "p": "holdBreath",
+          "d": 7
+        },
+        {
+          "p": "exhale",
+          "d": 8
+        }
+      ]
+    }
+  },
+  "programs": {
+    "beginner": {
+      "id": "beginner",
+      "lvl": "beginner",
+      "weeks": [
+        {
+          "kegel": "kegel_basic",
+          "support": "breath_box"
+        },
+        {
+          "kegel": "kegel_basic",
+          "support": "breath_478"
+        },
+        {
+          "kegel": "kegel_hold",
+          "support": "breath_box"
+        },
+        {
+          "kegel": "kegel_hold",
+          "support": "reverse_kegel"
+        }
+      ]
+    },
+    "intermediate": {
+      "id": "intermediate",
+      "lvl": "inter",
+      "weeks": [
+        {
+          "kegel": "kegel_hold",
+          "support": "breath_box"
+        },
+        {
+          "kegel": "kegel_hold",
+          "support": "reverse_kegel"
+        },
+        {
+          "kegel": "kegel_power",
+          "support": "breath_478"
+        },
+        {
+          "kegel": "kegel_power",
+          "support": "kegel_flick"
+        }
+      ]
+    },
+    "advanced": {
+      "id": "advanced",
+      "lvl": "adv",
+      "weeks": [
+        {
+          "kegel": "kegel_power",
+          "support": "kegel_flick"
+        },
+        {
+          "kegel": "kegel_power",
+          "support": "reverse_kegel"
+        },
+        {
+          "kegel": "kegel_power",
+          "support": "breath_478"
+        },
+        {
+          "kegel": "kegel_power",
+          "support": "kegel_flick"
+        }
+      ]
+    }
+  },
+  "programMeta": {
+    "beginner": {
+      "cls": "beginner",
+      "lvl": 1,
+      "name": {
+        "vi": "Người mới bắt đầu",
+        "en": "Beginner"
+      },
+      "desc": {
+        "vi": "4 tuần · làm quen & xây nền tảng",
+        "en": "4 weeks · learn the basics & build a base"
+      }
+    },
+    "intermediate": {
+      "cls": "inter",
+      "lvl": 2,
+      "name": {
+        "vi": "Tăng cường",
+        "en": "Intermediate"
+      },
+      "desc": {
+        "vi": "4 tuần · tăng sức bền & kiểm soát",
+        "en": "4 weeks · build endurance & control"
+      }
+    },
+    "advanced": {
+      "cls": "adv",
+      "lvl": 3,
+      "name": {
+        "vi": "Nâng cao",
+        "en": "Advanced"
+      },
+      "desc": {
+        "vi": "4 tuần · sức mạnh & làm chủ",
+        "en": "4 weeks · strength & mastery"
+      }
+    }
+  },
+  "achievements": [],
+  "i18n": {}
+}

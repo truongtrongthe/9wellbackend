@@ -1,0 +1,227 @@
+{
+  "plans": [
+    {
+      "id": "start",
+      "name": "Khởi đầu",
+      "price": 390000,
+      "weeks": 4,
+      "oneToone": false,
+      "desc": "Chẩn đoán + lộ trình tự tập tuần 1–4"
+    },
+    {
+      "id": "core",
+      "name": "Đồng hành ★",
+      "price": 1990000,
+      "weeks": 8,
+      "oneToone": false,
+      "desc": "Full 8 tuần + check-in 1-1 nhẹ",
+      "star": true
+    },
+    {
+      "id": "deep",
+      "name": "Chuyên sâu",
+      "price": 3990000,
+      "weeks": 8,
+      "oneToone": true,
+      "desc": "Coaching 1-1 sát + module bạn đời"
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Thời gian trung bình từ khi bắt đầu đến khi kết thúc?",
+      "a": [
+        {
+          "t": "Dưới 1 phút",
+          "s": 3
+        },
+        {
+          "t": "1–3 phút",
+          "s": 2
+        },
+        {
+          "t": "3–7 phút",
+          "s": 1
+        },
+        {
+          "t": "Trên 7 phút",
+          "s": 0
+        }
+      ]
+    },
+    {
+      "q": "Bạn có cảm giác kiểm soát được thời điểm kết thúc không?",
+      "a": [
+        {
+          "t": "Hầu như không",
+          "s": 3
+        },
+        {
+          "t": "Thỉnh thoảng",
+          "s": 2
+        },
+        {
+          "t": "Khá thường xuyên",
+          "s": 1
+        },
+        {
+          "t": "Gần như luôn",
+          "s": 0
+        }
+      ]
+    },
+    {
+      "q": "Điều này ảnh hưởng thế nào tới sự tự tin của bạn?",
+      "a": [
+        {
+          "t": "Rất nhiều, né tránh",
+          "s": 3
+        },
+        {
+          "t": "Khá nhiều",
+          "s": 2
+        },
+        {
+          "t": "Một chút",
+          "s": 1
+        },
+        {
+          "t": "Không đáng kể",
+          "s": 0
+        }
+      ]
+    },
+    {
+      "q": "Mức độ căng thẳng/lo lắng trước và trong khi gần gũi?",
+      "a": [
+        {
+          "t": "Rất căng thẳng",
+          "s": 3
+        },
+        {
+          "t": "Thường lo lắng",
+          "s": 2
+        },
+        {
+          "t": "Đôi khi",
+          "s": 1
+        },
+        {
+          "t": "Thoải mái",
+          "s": 0
+        }
+      ]
+    },
+    {
+      "q": "Bạn đã từng luyện tập cơ sàn chậu / bài thở chưa?",
+      "a": [
+        {
+          "t": "Chưa bao giờ",
+          "s": 2
+        },
+        {
+          "t": "Nghe qua chưa làm",
+          "s": 1
+        },
+        {
+          "t": "Thỉnh thoảng",
+          "s": 1
+        },
+        {
+          "t": "Đều đặn",
+          "s": 0
+        }
+      ]
+    },
+    {
+      "q": "Bạn mong muốn điều gì nhất?",
+      "a": [
+        {
+          "t": "Tự chủ thời gian",
+          "s": 1
+        },
+        {
+          "t": "Bớt lo lắng, tự tin hơn",
+          "s": 1
+        },
+        {
+          "t": "Kết nối cảm xúc với bạn đời",
+          "s": 1
+        },
+        {
+          "t": "Hiểu cơ thể mình",
+          "s": 1
+        }
+      ]
+    }
+  ],
+  "weeks": [
+    {
+      "t": "Nền tảng & nhận thức",
+      "f": "Hiểu cơ chế, tập nhận biết cơ sàn chậu.",
+      "act": [
+        "trainer"
+      ]
+    },
+    {
+      "t": "Kegel cơ bản",
+      "f": "Xây sức mạnh cơ sàn chậu, thở kết hợp.",
+      "act": [
+        "trainer"
+      ]
+    },
+    {
+      "t": "Kiểm soát nhịp thở",
+      "f": "Box breathing & 4-7-8 để giảm hưng phấn quá mức.",
+      "act": [
+        "trainer",
+        "game"
+      ]
+    },
+    {
+      "t": "Reverse-Kegel & thư giãn",
+      "f": "Học buông lỏng đúng lúc — chìa khóa tự chủ.",
+      "act": [
+        "trainer"
+      ]
+    },
+    {
+      "t": "Kỹ thuật dừng-nghỉ",
+      "f": "Áp dụng khi gần gũi, nhận biết 'điểm không quay lại'.",
+      "act": [
+        "trainer",
+        "game"
+      ]
+    },
+    {
+      "t": "Sức bền & phối hợp",
+      "f": "Kết hợp cơ + thở + tâm trí thành phản xạ.",
+      "act": [
+        "trainer"
+      ]
+    },
+    {
+      "t": "Kết nối cảm xúc",
+      "f": "Giao tiếp với bạn đời, giảm áp lực thành tích.",
+      "act": [
+        "game"
+      ]
+    },
+    {
+      "t": "Duy trì & phòng tái",
+      "f": "Biến luyện tập thành thói quen dài hạn.",
+      "act": [
+        "trainer",
+        "game"
+      ]
+    }
+  ],
+  "accessCodes": [
+    "9WELLDEMO",
+    "9WELLHIM"
+  ],
+  "introYtid": "",
+  "courseUrl": "/learn",
+  "trainerUrl": "/trainer",
+  "gameUrl": "/game",
+  "hubUrl": "/blog"
+}

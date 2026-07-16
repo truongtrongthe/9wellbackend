@@ -1,0 +1,847 @@
+{
+  "questions": [
+    {
+      "s": "end",
+      "q": {
+        "vi": "Cơ sàn chậu (pelvic floor) có vai trò gì với sinh lý nam?",
+        "en": "What role does the pelvic floor play in men's function?"
+      },
+      "o": [
+        {
+          "vi": "Hỗ trợ cương cứng & kiểm soát xuất tinh",
+          "en": "Supports erection & ejaculation control"
+        },
+        {
+          "vi": "Không liên quan gì",
+          "en": "No connection at all"
+        },
+        {
+          "vi": "Chỉ giúp tiêu hoá",
+          "en": "Only helps digestion"
+        }
+      ],
+      "c": 0,
+      "e": {
+        "vi": "Cơ sàn chậu giúp giữ máu trong dương vật khi cương và kiểm soát thời điểm xuất tinh. Tập <b>Kegel</b> giúp tăng sức bền và khả năng kiểm soát.",
+        "en": "The pelvic floor keeps blood in the penis during erection and helps control ejaculation timing. <b>Kegel</b> training builds endurance and control."
+      }
+    },
+    {
+      "s": "end",
+      "q": {
+        "vi": "Cách xác định ĐÚNG cơ sàn chậu cần tập?",
+        "en": "How do you correctly identify the pelvic floor muscle?"
+      },
+      "o": [
+        {
+          "vi": "Cơ dùng để nín tiểu giữa dòng",
+          "en": "The muscle that stops urine mid-flow"
+        },
+        {
+          "vi": "Cơ bụng 6 múi",
+          "en": "The six-pack abs"
+        },
+        {
+          "vi": "Cơ đùi",
+          "en": "The thigh muscle"
+        }
+      ],
+      "c": 0,
+      "e": {
+        "vi": "Hãy thử dừng dòng tiểu giữa chừng một lần để <b>nhận biết</b> đúng cơ — nhưng đừng tập Kegel khi đang đi tiểu, chỉ để xác định vị trí.",
+        "en": "Briefly stopping urine flow helps you <b>locate</b> the right muscle — but don't do Kegels while urinating, only to identify it."
+      }
+    },
+    {
+      "s": "end",
+      "q": {
+        "vi": "Lỗi phổ biến khi tập Kegel là gì?",
+        "en": "What's a common mistake when doing Kegels?"
+      },
+      "o": [
+        {
+          "vi": "Nín thở và gồng cơ bụng/mông thay vì đúng cơ",
+          "en": "Holding breath, squeezing abs/glutes instead"
+        },
+        {
+          "vi": "Thở đều",
+          "en": "Breathing steadily"
+        },
+        {
+          "vi": "Thả lỏng giữa các lần",
+          "en": "Relaxing between reps"
+        }
+      ],
+      "c": 0,
+      "e": {
+        "vi": "Nhiều người gồng nhầm cơ bụng, mông hoặc nín thở. Hãy <b>thở đều</b> và chỉ siết đúng cơ sàn chậu, thả lỏng hoàn toàn giữa các lần.",
+        "en": "Many people tense abs/glutes or hold their breath. <b>Breathe steadily</b> and isolate the pelvic floor, fully relaxing between reps."
+      }
+    },
+    {
+      "s": "end",
+      "q": {
+        "vi": "Tập Kegel đều đặn bao lâu thường bắt đầu thấy cải thiện?",
+        "en": "How long of regular Kegels before improvement usually shows?"
+      },
+      "o": [
+        {
+          "vi": "Vài tuần đến vài tháng",
+          "en": "A few weeks to a few months"
+        },
+        {
+          "vi": "Ngay sau 1 lần",
+          "en": "After a single session"
+        },
+        {
+          "vi": "Không bao giờ",
+          "en": "Never"
+        }
+      ],
+      "c": 0,
+      "e": {
+        "vi": "Như mọi cơ bắp, cơ sàn chậu cần <b>thời gian và sự đều đặn</b>. Tập mỗi ngày, kiên trì vài tuần đến vài tháng để thấy kết quả rõ.",
+        "en": "Like any muscle, the pelvic floor needs <b>time and consistency</b>. Train daily; clear results come over weeks to months."
+      }
+    },
+    {
+      "s": "end",
+      "q": {
+        "vi": "Lầm tưởng: \"Kegel chỉ dành cho phụ nữ\". Đúng hay sai?",
+        "en": "Myth: \"Kegels are only for women.\" True or false?"
+      },
+      "o": [
+        {
+          "vi": "Sai — nam giới hưởng lợi rất nhiều",
+          "en": "False — men benefit greatly"
+        },
+        {
+          "vi": "Đúng",
+          "en": "True"
+        }
+      ],
+      "c": 0,
+      "e": {
+        "vi": "<b>Sai.</b> Nam giới tập Kegel để cải thiện kiểm soát xuất tinh, độ cương và sức khỏe tiết niệu. Đây là bài tập cho cả hai giới.",
+        "en": "<b>False.</b> Men do Kegels to improve ejaculation control, erection firmness, and urinary health. It's for everyone."
+      }
+    },
+    {
+      "s": "end",
+      "q": {
+        "vi": "Tập tạ và cardio đều đặn ảnh hưởng thế nào tới sinh lý?",
+        "en": "How does regular strength + cardio training affect sexual function?"
+      },
+      "o": [
+        {
+          "vi": "Cải thiện tuần hoàn & nội tiết tố",
+          "en": "Improves circulation & hormones"
+        },
+        {
+          "vi": "Gây hại",
+          "en": "Harms it"
+        },
+        {
+          "vi": "Không ảnh hưởng",
+          "en": "No effect"
+        }
+      ],
+      "c": 0,
+      "e": {
+        "vi": "Vận động cải thiện <b>tuần hoàn máu</b>, hỗ trợ testosterone và giảm stress — tất cả đều tốt cho chức năng cương.",
+        "en": "Exercise boosts <b>blood flow</b>, supports testosterone, and lowers stress — all good for erectile function."
+      }
+    },
+    {
+      "s": "end",
+      "q": {
+        "vi": "Ngồi liên tục cả ngày (ít vận động) có thể ảnh hưởng gì?",
+        "en": "How can sitting all day with little movement affect you?"
+      },
+      "o": [
+        {
+          "vi": "Giảm tuần hoàn vùng chậu",
+          "en": "Reduces pelvic circulation"
+        },
+        {
+          "vi": "Tăng sức bền",
+          "en": "Increases stamina"
+        },
+        {
+          "vi": "Không sao cả",
+          "en": "No problem"
+        }
+      ],
+      "c": 0,
+      "e": {
+        "vi": "Ngồi lâu làm <b>giảm lưu thông máu</b> vùng chậu. Hãy đứng dậy, đi lại vài phút mỗi giờ.",
+        "en": "Prolonged sitting <b>reduces blood flow</b> to the pelvic area. Stand and move a few minutes every hour."
+      }
+    },
+    {
+      "s": "hea",
+      "q": {
+        "vi": "Hút thuốc lá ảnh hưởng tới khả năng cương cứng như thế nào?",
+        "en": "How does smoking affect erections?"
+      },
+      "o": [
+        {
+          "vi": "Làm hẹp & tổn thương mạch máu → giảm cương",
+          "en": "Narrows & damages vessels → weaker erections"
+        },
+        {
+          "vi": "Tăng cường",
+          "en": "Strengthens them"
+        },
+        {
+          "vi": "Không liên quan",
+          "en": "Unrelated"
+        }
+      ],
+      "c": 0,
+      "e": {
+        "vi": "Nicotine làm <b>co và tổn thương mạch máu</b>, giảm lưu lượng máu tới dương vật. Bỏ thuốc cải thiện rõ rệt theo thời gian.",
+        "en": "Nicotine <b>constricts and damages blood vessels</b>, cutting blood flow to the penis. Quitting improves things over time."
+      }
+    },
+    {
+      "s": "hea",
+      "q": {
+        "vi": "Rối loạn cương dương đôi khi là dấu hiệu sớm của bệnh gì?",
+        "en": "Erectile difficulty can be an early warning sign of what?"
+      },
+      "o": [
+        {
+          "vi": "Bệnh tim mạch",
+          "en": "Cardiovascular disease"
+        },
+        {
+          "vi": "Cận thị",
+          "en": "Short-sightedness"
+        },
+        {
+          "vi": "Dị ứng",
+          "en": "Allergies"
+        }
+      ],
+      "c": 0,
+      "e": {
+        "vi": "Mạch máu dương vật nhỏ nên thường \"báo động\" sớm. Khó cương kéo dài có thể là dấu hiệu <b>tim mạch</b> — nên đi khám.",
+        "en": "Penile vessels are small, so they often signal trouble first. Persistent issues can hint at <b>heart disease</b> — get checked."
+      }
+    },
+    {
+      "s": "hea",
+      "q": {
+        "vi": "Thiếu ngủ kéo dài ảnh hưởng testosterone ra sao?",
+        "en": "How does chronic lack of sleep affect testosterone?"
+      },
+      "o": [
+        {
+          "vi": "Làm giảm testosterone",
+          "en": "Lowers testosterone"
+        },
+        {
+          "vi": "Tăng mạnh",
+          "en": "Raises it sharply"
+        },
+        {
+          "vi": "Không đổi",
+          "en": "No change"
+        }
+      ],
+      "c": 0,
+      "e": {
+        "vi": "Phần lớn testosterone tiết ra <b>khi ngủ</b>. Ngủ <7 tiếng thường xuyên có thể kéo nội tiết tố này xuống đáng kể.",
+        "en": "Most testosterone is released <b>during sleep</b>. Regularly sleeping under 7 hours can drop it significantly."
+      }
+    },
+    {
+      "s": "hea",
+      "q": {
+        "vi": "Nhóm thực phẩm nào hỗ trợ tuần hoàn tốt cho sinh lý?",
+        "en": "Which foods support circulation that helps function?"
+      },
+      "o": [
+        {
+          "vi": "Rau lá xanh, cá béo, hạt & quả mọng",
+          "en": "Leafy greens, oily fish, nuts & berries"
+        },
+        {
+          "vi": "Đồ chiên & nước ngọt",
+          "en": "Fried food & soda"
+        },
+        {
+          "vi": "Kẹo ngọt",
+          "en": "Candy"
+        }
+      ],
+      "c": 0,
+      "e": {
+        "vi": "Rau xanh giàu <b>nitrate</b>, cá béo giàu omega-3 giúp mạch máu khỏe và lưu thông tốt. Hạn chế đồ chiên, đường.",
+        "en": "Greens are rich in <b>nitrates</b>; oily fish provide omega-3 for healthy vessels and flow. Limit fried food and sugar."
+      }
+    },
+    {
+      "s": "hea",
+      "q": {
+        "vi": "Uống nhiều rượu thường xuyên tác động thế nào?",
+        "en": "What's the effect of frequent heavy drinking?"
+      },
+      "o": [
+        {
+          "vi": "Giảm ham muốn & khả năng cương",
+          "en": "Lowers desire & erection ability"
+        },
+        {
+          "vi": "Tăng bản lĩnh",
+          "en": "Boosts performance"
+        },
+        {
+          "vi": "Vô hại",
+          "en": "Harmless"
+        }
+      ],
+      "c": 0,
+      "e": {
+        "vi": "Rượu là chất <b>ức chế thần kinh</b>; lạm dụng làm giảm testosterone, ham muốn và khả năng cương. Uống điều độ hoặc tránh.",
+        "en": "Alcohol is a <b>depressant</b>; overuse lowers testosterone, desire, and erections. Drink moderately or avoid."
+      }
+    },
+    {
+      "s": "hea",
+      "q": {
+        "vi": "Mỡ bụng nhiều có liên quan tới testosterone không?",
+        "en": "Is excess belly fat linked to testosterone?"
+      },
+      "o": [
+        {
+          "vi": "Có — mỡ bụng liên quan testosterone thấp",
+          "en": "Yes — belly fat links to lower testosterone"
+        },
+        {
+          "vi": "Không liên quan",
+          "en": "No link"
+        },
+        {
+          "vi": "Làm tăng testosterone",
+          "en": "It raises testosterone"
+        }
+      ],
+      "c": 0,
+      "e": {
+        "vi": "Mô mỡ chuyển một phần testosterone thành estrogen. <b>Giảm mỡ bụng</b> thường giúp cải thiện nội tiết tố nam.",
+        "en": "Fat tissue converts some testosterone to estrogen. <b>Losing belly fat</b> often improves male hormones."
+      }
+    },
+    {
+      "s": "hea",
+      "q": {
+        "vi": "Tiểu đường / đường huyết cao kéo dài ảnh hưởng gì?",
+        "en": "What does long-term high blood sugar / diabetes affect?"
+      },
+      "o": [
+        {
+          "vi": "Tổn thương mạch máu & dây thần kinh → ảnh hưởng cương",
+          "en": "Damages vessels & nerves → affects erections"
+        },
+        {
+          "vi": "Không ảnh hưởng",
+          "en": "No effect"
+        },
+        {
+          "vi": "Chỉ ảnh hưởng thị lực",
+          "en": "Only affects eyesight"
+        }
+      ],
+      "c": 0,
+      "e": {
+        "vi": "Đường huyết cao lâu ngày <b>tổn thương mạch máu và thần kinh</b> điều khiển cương cứng. Kiểm soát đường huyết rất quan trọng.",
+        "en": "Chronic high sugar <b>damages the vessels and nerves</b> behind erections. Blood-sugar control matters a lot."
+      }
+    },
+    {
+      "s": "hea",
+      "q": {
+        "vi": "Thiếu vitamin D có liên quan gì tới nam giới?",
+        "en": "What is low vitamin D associated with in men?"
+      },
+      "o": [
+        {
+          "vi": "Có thể liên quan testosterone thấp",
+          "en": "Possible link to low testosterone"
+        },
+        {
+          "vi": "Làm cao hơn",
+          "en": "Makes you taller"
+        },
+        {
+          "vi": "Không gì cả",
+          "en": "Nothing"
+        }
+      ],
+      "c": 0,
+      "e": {
+        "vi": "Một số nghiên cứu cho thấy vitamin D thấp liên quan testosterone thấp. <b>Nắng sớm</b> và chế độ ăn hợp lý giúp cải thiện.",
+        "en": "Studies link low vitamin D with lower testosterone. <b>Morning sun</b> and good diet can help."
+      }
+    },
+    {
+      "s": "min",
+      "q": {
+        "vi": "Lầm tưởng: \"Kích thước quyết định tất cả\".",
+        "en": "Myth: \"Size is everything.\""
+      },
+      "o": [
+        {
+          "vi": "Sai — sự hoà hợp & kỹ năng quan trọng hơn",
+          "en": "False — connection & skill matter more"
+        },
+        {
+          "vi": "Đúng hoàn toàn",
+          "en": "Completely true"
+        }
+      ],
+      "c": 0,
+      "e": {
+        "vi": "<b>Sai.</b> Sự thoả mãn phụ thuộc nhiều vào giao tiếp, sự tự tin và kết nối cảm xúc hơn là kích thước.",
+        "en": "<b>False.</b> Satisfaction depends far more on communication, confidence, and emotional connection than size."
+      }
+    },
+    {
+      "s": "min",
+      "q": {
+        "vi": "Lầm tưởng: \"Thủ dâm điều độ gây yếu sinh lý/hại sức khỏe\".",
+        "en": "Myth: \"Moderate masturbation harms health/causes weakness.\""
+      },
+      "o": [
+        {
+          "vi": "Sai — điều độ là bình thường và vô hại",
+          "en": "False — moderate is normal and harmless"
+        },
+        {
+          "vi": "Đúng",
+          "en": "True"
+        }
+      ],
+      "c": 0,
+      "e": {
+        "vi": "<b>Sai.</b> Khoa học cho thấy điều độ là một phần bình thường của sức khỏe tình dục. Chỉ khi <b>quá mức</b>, ảnh hưởng cuộc sống mới đáng lưu ý.",
+        "en": "<b>False.</b> Science shows moderate frequency is a normal part of sexual health. Only <b>compulsive</b> patterns that disrupt life are a concern."
+      }
+    },
+    {
+      "s": "min",
+      "q": {
+        "vi": "Lo lắng về \"thể hiện\" (performance anxiety) gây ra điều gì?",
+        "en": "What can performance anxiety cause?"
+      },
+      "o": [
+        {
+          "vi": "Khó cương do tâm lý — vòng lặp lo âu",
+          "en": "Psychological erection issues — an anxiety loop"
+        },
+        {
+          "vi": "Tăng khả năng",
+          "en": "Better performance"
+        },
+        {
+          "vi": "Không gì cả",
+          "en": "Nothing"
+        }
+      ],
+      "c": 0,
+      "e": {
+        "vi": "Lo âu kích hoạt phản ứng \"chiến-hay-chạy\", <b>co mạch máu</b> và cản trở cương. Thư giãn và giao tiếp cởi mở giúp phá vòng lặp.",
+        "en": "Anxiety triggers fight-or-flight, <b>constricting vessels</b> and blocking erections. Relaxation and open talk break the loop."
+      }
+    },
+    {
+      "s": "min",
+      "q": {
+        "vi": "Stress mãn tính (cortisol cao) ảnh hưởng nội tiết nam ra sao?",
+        "en": "How does chronic stress (high cortisol) affect male hormones?"
+      },
+      "o": [
+        {
+          "vi": "Làm giảm testosterone & ham muốn",
+          "en": "Lowers testosterone & desire"
+        },
+        {
+          "vi": "Tăng ham muốn",
+          "en": "Raises desire"
+        },
+        {
+          "vi": "Không ảnh hưởng",
+          "en": "No effect"
+        }
+      ],
+      "c": 0,
+      "e": {
+        "vi": "Cortisol cao kéo dài <b>đối kháng với testosterone</b> và giảm ham muốn. Ngủ đủ, thiền, vận động giúp hạ cortisol.",
+        "en": "Sustained high cortisol <b>opposes testosterone</b> and dampens desire. Sleep, meditation, and exercise lower it."
+      }
+    },
+    {
+      "s": "min",
+      "q": {
+        "vi": "Lầm tưởng: \"Rối loạn cương chỉ gặp ở người già\".",
+        "en": "Myth: \"Erectile issues only happen to old men.\""
+      },
+      "o": [
+        {
+          "vi": "Sai — người trẻ cũng gặp, thường do tâm lý/lối sống",
+          "en": "False — young men too, often psychological/lifestyle"
+        },
+        {
+          "vi": "Đúng",
+          "en": "True"
+        }
+      ],
+      "c": 0,
+      "e": {
+        "vi": "<b>Sai.</b> Nam giới trẻ cũng gặp, thường do stress, lo âu, thiếu ngủ hoặc lối sống — và thường cải thiện được.",
+        "en": "<b>False.</b> Young men experience it too, often from stress, anxiety, poor sleep, or lifestyle — and it's often reversible."
+      }
+    },
+    {
+      "s": "min",
+      "q": {
+        "vi": "Cương cứng vào buổi sáng (sáng sớm) thường cho biết điều gì?",
+        "en": "What do morning erections usually indicate?"
+      },
+      "o": [
+        {
+          "vi": "Mạch máu & thần kinh đang hoạt động tốt",
+          "en": "Vessels & nerves are working well"
+        },
+        {
+          "vi": "Dấu hiệu bệnh",
+          "en": "A sign of illness"
+        },
+        {
+          "vi": "Vô nghĩa",
+          "en": "Meaningless"
+        }
+      ],
+      "c": 0,
+      "e": {
+        "vi": "Cương buổi sáng là <b>dấu hiệu tốt</b> cho thấy cơ chế mạch máu - thần kinh hoạt động. Mất hẳn trong thời gian dài thì nên đi khám.",
+        "en": "Morning erections are a <b>good sign</b> that the vascular-nerve system works. Their prolonged absence is worth a check-up."
+      }
+    },
+    {
+      "s": "min",
+      "q": {
+        "vi": "Giao tiếp cởi mở với bạn đời về tình dục giúp gì?",
+        "en": "How does open communication with a partner help?"
+      },
+      "o": [
+        {
+          "vi": "Giảm áp lực, tăng hoà hợp & tự tin",
+          "en": "Lowers pressure, boosts harmony & confidence"
+        },
+        {
+          "vi": "Làm tệ hơn",
+          "en": "Makes it worse"
+        },
+        {
+          "vi": "Không cần thiết",
+          "en": "Unnecessary"
+        }
+      ],
+      "c": 0,
+      "e": {
+        "vi": "Nói chuyện thẳng thắn <b>giảm áp lực thầm lặng</b> và hiểu nhau hơn — một trong những yếu tố quan trọng nhất.",
+        "en": "Honest conversation <b>removes silent pressure</b> and builds understanding — one of the most important factors."
+      }
+    },
+    {
+      "s": "min",
+      "q": {
+        "vi": "Lầm tưởng: \"Càng nhiều lần càng nam tính/khỏe\".",
+        "en": "Myth: \"More frequency = more manly/healthier.\""
+      },
+      "o": [
+        {
+          "vi": "Sai — chất lượng & sức khỏe tổng thể mới quan trọng",
+          "en": "False — quality & overall health matter"
+        },
+        {
+          "vi": "Đúng",
+          "en": "True"
+        }
+      ],
+      "c": 0,
+      "e": {
+        "vi": "<b>Sai.</b> Không có \"con số chuẩn\". Sức khỏe tổng thể, sự thoả mãn và kết nối quan trọng hơn số lần.",
+        "en": "<b>False.</b> There's no \"correct number.\" Overall health, satisfaction, and connection matter more than frequency."
+      }
+    },
+    {
+      "s": "min",
+      "q": {
+        "vi": "Thở sâu / thiền đều đặn giúp ích gì cho sinh lý?",
+        "en": "How do deep breathing / meditation help function?"
+      },
+      "o": [
+        {
+          "vi": "Giảm lo âu & cải thiện kiểm soát",
+          "en": "Reduce anxiety & improve control"
+        },
+        {
+          "vi": "Gây hại",
+          "en": "Harmful"
+        },
+        {
+          "vi": "Không tác dụng",
+          "en": "No effect"
+        }
+      ],
+      "c": 0,
+      "e": {
+        "vi": "Thở sâu kích hoạt hệ thần kinh <b>phó giao cảm</b> (thư giãn), giảm lo âu thể hiện và hỗ trợ kiểm soát tốt hơn.",
+        "en": "Deep breathing activates the <b>parasympathetic</b> (calming) system, easing performance anxiety and aiding control."
+      }
+    },
+    {
+      "s": "min",
+      "q": {
+        "vi": "Khi nào nên đi gặp bác sĩ về vấn đề sinh lý?",
+        "en": "When should you see a doctor about sexual issues?"
+      },
+      "o": [
+        {
+          "vi": "Khi kéo dài & ảnh hưởng cuộc sống/tâm lý",
+          "en": "When persistent & affecting life/wellbeing"
+        },
+        {
+          "vi": "Không bao giờ",
+          "en": "Never"
+        },
+        {
+          "vi": "Chỉ khi 80 tuổi",
+          "en": "Only at age 80"
+        }
+      ],
+      "c": 0,
+      "e": {
+        "vi": "Nếu vấn đề <b>kéo dài vài tuần</b>, lặp lại hoặc ảnh hưởng tâm lý/mối quan hệ — hãy gặp bác sĩ. Đó là việc bình thường và khôn ngoan.",
+        "en": "If issues <b>persist for weeks</b>, recur, or affect your wellbeing/relationship — see a doctor. It's normal and wise."
+      }
+    },
+    {
+      "s": "min",
+      "q": {
+        "vi": "Lầm tưởng: \"Có loại đồ ăn/thuốc thần kỳ chữa ngay lập tức\".",
+        "en": "Myth: \"Some magic food/pill fixes everything instantly.\""
+      },
+      "o": [
+        {
+          "vi": "Sai — không có thần dược; lối sống mới bền vững",
+          "en": "False — no magic cure; lifestyle is what lasts"
+        },
+        {
+          "vi": "Đúng",
+          "en": "True"
+        }
+      ],
+      "c": 0,
+      "e": {
+        "vi": "<b>Sai.</b> Cảnh giác với quảng cáo \"thần dược\". Cải thiện thật đến từ <b>lối sống, luyện tập và sức khỏe tổng thể</b> — đôi khi cần bác sĩ.",
+        "en": "<b>False.</b> Beware \"miracle\" ads. Real improvement comes from <b>lifestyle, training, and overall health</b> — sometimes with medical help."
+      }
+    }
+  ],
+  "levels": [
+    {
+      "n": 1,
+      "s": "end",
+      "boss": false,
+      "title": {
+        "vi": "Sàn chậu cơ bản",
+        "en": "Pelvic basics"
+      }
+    },
+    {
+      "n": 2,
+      "s": "end",
+      "boss": false,
+      "title": {
+        "vi": "Vận động & sức bền",
+        "en": "Movement & stamina"
+      }
+    },
+    {
+      "n": 3,
+      "s": "end",
+      "boss": true,
+      "title": {
+        "vi": "Trùm: Lầm tưởng tập luyện",
+        "en": "Boss: Training myths"
+      }
+    },
+    {
+      "n": 4,
+      "s": "hea",
+      "boss": false,
+      "title": {
+        "vi": "Lối sống & thói quen",
+        "en": "Lifestyle & habits"
+      }
+    },
+    {
+      "n": 5,
+      "s": "hea",
+      "boss": false,
+      "title": {
+        "vi": "Dinh dưỡng & tuần hoàn",
+        "en": "Nutrition & circulation"
+      }
+    },
+    {
+      "n": 6,
+      "s": "hea",
+      "boss": true,
+      "title": {
+        "vi": "Trùm: Sức khỏe ẩn",
+        "en": "Boss: Hidden health"
+      }
+    },
+    {
+      "n": 7,
+      "s": "min",
+      "boss": false,
+      "title": {
+        "vi": "Tâm lý & tự tin",
+        "en": "Mind & confidence"
+      }
+    },
+    {
+      "n": 8,
+      "s": "min",
+      "boss": false,
+      "title": {
+        "vi": "Đập tan lầm tưởng",
+        "en": "Bust the myths"
+      }
+    },
+    {
+      "n": 9,
+      "s": "min",
+      "boss": true,
+      "title": {
+        "vi": "Trùm: Vua lầm tưởng",
+        "en": "Boss: Myth king"
+      }
+    },
+    {
+      "n": 10,
+      "s": "all",
+      "boss": false,
+      "title": {
+        "vi": "Tổng ôn I",
+        "en": "Mastery I"
+      }
+    },
+    {
+      "n": 11,
+      "s": "all",
+      "boss": false,
+      "title": {
+        "vi": "Tổng ôn II",
+        "en": "Mastery II"
+      }
+    },
+    {
+      "n": 12,
+      "s": "all",
+      "boss": true,
+      "title": {
+        "vi": "TRÙM CUỐI: Bản lĩnh",
+        "en": "FINAL BOSS: Vitality"
+      }
+    }
+  ],
+  "tiers": [
+    {
+      "min": 0,
+      "emoji": "😴",
+      "name": {
+        "vi": "Khởi đầu",
+        "en": "Awakening"
+      },
+      "sub": {
+        "vi": "Mọi hành trình bắt đầu từ một bước.",
+        "en": "Every journey starts with one step."
+      },
+      "cls": "t0"
+    },
+    {
+      "min": 80,
+      "emoji": "🙂",
+      "name": {
+        "vi": "Tỉnh thức",
+        "en": "Aware"
+      },
+      "sub": {
+        "vi": "Bạn đã bắt đầu hiểu cơ thể mình.",
+        "en": "You're starting to understand your body."
+      },
+      "cls": "t1"
+    },
+    {
+      "min": 220,
+      "emoji": "😎",
+      "name": {
+        "vi": "Tự tin",
+        "en": "Confident"
+      },
+      "sub": {
+        "vi": "Kiến thức tạo nên sự tự tin.",
+        "en": "Knowledge breeds confidence."
+      },
+      "cls": "t2"
+    },
+    {
+      "min": 420,
+      "emoji": "💪",
+      "name": {
+        "vi": "Mạnh mẽ",
+        "en": "Strong"
+      },
+      "sub": {
+        "vi": "Thân và tâm cùng vững vàng.",
+        "en": "Body and mind growing strong."
+      },
+      "cls": "t3"
+    },
+    {
+      "min": 680,
+      "emoji": "🔥",
+      "name": {
+        "vi": "Bản lĩnh",
+        "en": "Unstoppable"
+      },
+      "sub": {
+        "vi": "Bạn làm chủ sức khỏe của mình.",
+        "en": "You command your own health."
+      },
+      "cls": "t4"
+    },
+    {
+      "min": 1000,
+      "emoji": "👑",
+      "name": {
+        "vi": "Bậc thầy",
+        "en": "Master"
+      },
+      "sub": {
+        "vi": "Bậc thầy của bản lĩnh và sức khỏe.",
+        "en": "A master of vitality and health."
+      },
+      "cls": "t5"
+    }
+  ],
+  "badges": []
+}

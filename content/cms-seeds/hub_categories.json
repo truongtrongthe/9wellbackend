@@ -1,0 +1,29 @@
+{
+  "cats": {
+    "co-the": {
+      "name": "Hiểu cơ thể",
+      "icon": "🧠",
+      "grad": "linear-gradient(135deg,#EE4421,#4F2780)"
+    },
+    "luyen-tap": {
+      "name": "Luyện tập",
+      "icon": "💪",
+      "grad": "linear-gradient(135deg,#D93F2E,#7a2f9e)"
+    },
+    "tam-ly": {
+      "name": "Tâm lý & cảm xúc",
+      "icon": "🌤️",
+      "grad": "linear-gradient(135deg,#4F2780,#EE4421)"
+    },
+    "cap-doi": {
+      "name": "Kết nối cặp đôi",
+      "icon": "💞",
+      "grad": "linear-gradient(135deg,#c0392b,#4F2780)"
+    },
+    "loi-song": {
+      "name": "Lối sống",
+      "icon": "🌙",
+      "grad": "linear-gradient(135deg,#4F2780,#1F183E)"
+    }
+  }
+}

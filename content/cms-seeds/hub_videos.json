@@ -1,0 +1,37 @@
+{
+  "videos": [
+    {
+      "id": "v1",
+      "type": "youtube",
+      "ytid": "aqz-KE-bpKQ",
+      "cat": "co-the",
+      "dur": "9:56",
+      "date": "2026-07-10",
+      "featured": true,
+      "title": "(MẪU) Vì sao xuất tinh sớm không phải là “yếu”",
+      "desc": "Video mẫu để xem khung. → Thay ytid bằng mã video thật của anh."
+    },
+    {
+      "id": "v2",
+      "type": "youtube",
+      "vertical": true,
+      "ytid": "h4efcUC2wOU",
+      "cat": "luyen-tap",
+      "dur": "0:30",
+      "date": "2026-07-09",
+      "title": "(MẪU) Clip dọc 9:16 — kiểu Shorts/Reels",
+      "desc": "Video dọc mẫu để xem khung 9:16. → Thay ytid bằng YouTube Short của anh (hoặc để type:short + url cho TikTok/FB)."
+    },
+    {
+      "id": "v3",
+      "type": "short",
+      "platform": "facebook",
+      "url": "",
+      "cat": "tam-ly",
+      "dur": "1:00",
+      "date": "2026-07-08",
+      "title": "(MẪU) 3 cách hạ lo âu trước khi gần gũi",
+      "desc": "Thẻ clip ngắn (Reels). → Dán link Facebook vào field url."
+    }
+  ]
+}

@@ -1,0 +1,1381 @@
+{
+  "NW_TIERS": {
+    "start": {
+      "name": "Điểm xuất phát",
+      "sub": "Biết mình đang ở đâu",
+      "color": "#8479b8"
+    },
+    "antoan": {
+      "name": "An toàn",
+      "sub": "Hệ thần kinh",
+      "color": "#EE4421"
+    },
+    "nhanbiet": {
+      "name": "Nhận biết",
+      "sub": "Đọc tín hiệu sớm",
+      "color": "#D93F2E"
+    },
+    "dieuchinh": {
+      "name": "Điều chỉnh",
+      "sub": "Kỹ thuật chủ động",
+      "color": "#c0392b"
+    },
+    "nenmong": {
+      "name": "Nền móng",
+      "sub": "Thể chất",
+      "color": "#7a2f9e"
+    },
+    "ketnoi": {
+      "name": "Kết nối",
+      "sub": "Bạn đời",
+      "color": "#4F2780"
+    },
+    "duytri": {
+      "name": "Duy trì",
+      "sub": "Thói quen trọn đời",
+      "color": "#5a3a8a"
+    }
+  },
+  "NW_TIER_ORDER": [
+    "antoan",
+    "nhanbiet",
+    "dieuchinh",
+    "nenmong",
+    "ketnoi",
+    "duytri"
+  ],
+  "NW_SCALE": [
+    {
+      "v": 0,
+      "t": "Thư giãn hoàn toàn",
+      "zone": "calm"
+    },
+    {
+      "v": 1,
+      "t": "Rất bình tĩnh",
+      "zone": "calm"
+    },
+    {
+      "v": 2,
+      "t": "Thoải mái",
+      "zone": "calm"
+    },
+    {
+      "v": 3,
+      "t": "Ham muốn xuất hiện",
+      "zone": "calm"
+    },
+    {
+      "v": 4,
+      "t": "Bắt đầu hưng phấn — vùng luyện Cấp 1",
+      "zone": "lvl1"
+    },
+    {
+      "v": 5,
+      "t": "Cương ổn định, vẫn hoàn toàn bình tĩnh",
+      "zone": "lvl1"
+    },
+    {
+      "v": 6,
+      "t": "Hưng phấn tăng nhanh — Cấp 1: Reset ngay",
+      "zone": "lvl1"
+    },
+    {
+      "v": 7,
+      "t": "NGƯỠNG HÀNH ĐỘNG — Cấp 2: chủ động hạ về 4",
+      "zone": "thr"
+    },
+    {
+      "v": 8,
+      "t": "Rất gần ngưỡng — dùng Squeeze nếu lỡ lên",
+      "zone": "high"
+    },
+    {
+      "v": 9,
+      "t": "Điểm không quay lại",
+      "zone": "high"
+    },
+    {
+      "v": 10,
+      "t": "Xuất tinh",
+      "zone": "peak"
+    }
+  ],
+  "NW_WEEKS": [
+    {
+      "n": 0,
+      "tier": "start",
+      "title": "Điểm xuất phát",
+      "msg": "Trước khi thay đổi, hãy biết chính xác mình đang ở đâu.",
+      "milestone": "Có điểm xuất phát (baseline) + đã sàng lọc an toàn.",
+      "lessons": [
+        {
+          "id": "0.1",
+          "fmt": "VIDEO",
+          "dur": "3'",
+          "title": "Chào mừng đến hành trình 8 tuần",
+          "summary": "Bạn sắp đi qua một lộ trình có thật, có cơ sở khoa học, đi theo đúng thứ tự.",
+          "body": "<p>Chào mừng bạn. Trong 8 tuần tới, bạn sẽ không học 'mẹo' hay 'thủ thuật' — bạn sẽ <b>huấn luyện lại cơ thể và hệ thần kinh</b> của mình, từng bước một, theo đúng thứ tự.</p><h3>Khóa học này khác gì?</h3><p>Đây là <b>luyện tập, không phải thuốc</b>. Kết quả không đến từ một buổi kỳ diệu, mà từ sự đều đặn. Mỗi tuần là một tầng của <b>Vòng Tự Chủ</b>: An toàn → Nhận biết → Điều chỉnh → Nền móng → Kết nối → Duy trì. Các tầng xây lên nhau — vì thế thứ tự rất quan trọng.</p><h3>Bạn cần làm gì?</h3><ul><li>Mỗi tuần: xem/đọc các bài, làm phần thực hành, rồi check-in cuối tuần.</li><li>Dành 5–10 phút mỗi ngày cho thực hành — đều đặn hơn là nhiều.</li><li>Trung thực với chính mình ở mỗi bài đo và check-in.</li></ul><p>Trước khi bắt đầu Tuần 1, hãy làm <b>bài đo xuất phát</b> ở hai bài tiếp theo. Đó là cách bạn biết mình đang ở đâu — để tuần 8 nhìn lại và thấy mình đã đi bao xa.</p>",
+          "action": "Xem xong, chuyển sang bài Sàng lọc an toàn."
+        },
+        {
+          "id": "0.2",
+          "fmt": "FORM",
+          "form": "F0a",
+          "title": "Sàng lọc an toàn",
+          "summary": "Vài câu hỏi sức khỏe để đảm bảo luyện tập là phù hợp và an toàn với bạn.",
+          "body": "<p>Trước khi bắt đầu bất kỳ chương trình nào tác động đến cơ thể, việc kiểm tra vài yếu tố an toàn là bước có trách nhiệm. Một số tình trạng sức khỏe cần được bác sĩ đánh giá trước — không phải để ngăn bạn, mà để đảm bảo bạn đi đúng hướng.</p><p>Hãy trả lời trung thực. Nếu có dấu hiệu cần lưu ý, bạn sẽ được khuyên đi khám <b>trước</b> khi luyện tập. Nếu không, bạn có thể bắt đầu ngay.</p>",
+          "action": "Trả lời trung thực để nhận khuyến nghị phù hợp."
+        },
+        {
+          "id": "0.3",
+          "fmt": "FORM",
+          "form": "F0b",
+          "title": "Bài đo xuất phát",
+          "summary": "Đo điểm khởi đầu: mức độ hiện tại, thời gian tự cảm nhận, sự tự tin và mục tiêu.",
+          "body": "<p>Đây là 'ảnh chụp' điểm khởi đầu của bạn, dựa trên một thang tự đánh giá chuẩn hóa (PEDT). <b>Không có câu trả lời đúng hay sai</b> — chỉ là hiện trạng.</p><p>Đến <b>tuần 8</b>, bạn sẽ làm lại đúng bộ câu này. Khi đó, so sánh 'bạn của tuần 8' với 'bạn của tuần 0' sẽ cho bạn thấy tiến bộ thật — đo được, không cảm tính.</p>",
+          "action": "Hoàn thành bài đo để mở khóa Tuần 1."
+        },
+        {
+          "id": "0.4",
+          "fmt": "DOC",
+          "title": "Cách học hiệu quả nhất",
+          "summary": "Ba nguyên tắc giúp bạn về đích.",
+          "body": "<h3>1. Học đúng thứ tự</h3><p>Mỗi tuần đặt nền cho tuần sau. Kỹ năng kiểm soát (tuần 4, 6) chỉ hiệu quả khi hệ thần kinh đã an toàn (tuần 1, 2) và cơ thể có nền móng (tuần 3, 5). Đừng nhảy cóc — nền không vững thì kỹ thuật không giữ được.</p><h3>2. Tin vào thay đổi nhỏ</h3><p>Não thay đổi nhờ lặp lại đều đặn, không nhờ một buổi hoàn hảo. 5–10 phút mỗi ngày mạnh hơn một buổi dài rồi bỏ. Đừng đánh giá cả hành trình qua một ngày tệ.</p><h3>3. Không bỏ check-in</h3><p>Check-in cuối mỗi tuần là cách bạn (và hệ thống) biết mình đang tiến ra sao — và là dữ liệu để cá nhân hóa lời khuyên cho bạn. Nó chỉ tốn 1–2 phút nhưng giữ bạn đi đúng hướng.</p>",
+          "action": "Ghi nhớ 3 nguyên tắc, rồi bắt đầu Tuần 1."
+        }
+      ]
+    },
+    {
+      "n": 1,
+      "tier": "antoan",
+      "title": "Hiểu đúng cơ thể mình",
+      "msg": "Bạn không yếu. Cơ thể bạn đang ở sai chế độ.",
+      "milestone": "Thực hành thở ≥5/7 ngày · căng thẳng giảm ≥1 bậc.",
+      "lessons": [
+        {
+          "id": "1.1",
+          "fmt": "VIDEO",
+          "dur": "5'",
+          "title": "Gốc rễ vấn đề: hệ thần kinh, không phải 'bạn yếu'",
+          "summary": "Xuất sớm thường không phải là dấu hiệu bạn 'yếu' — mà là dấu hiệu cơ thể đang kẹt ở chế độ căng thẳng.",
+          "body": "<p>Hãy bắt đầu bằng điều quan trọng nhất cả khóa: <b>vấn đề của bạn không phải là 'yếu'</b>. Nó là một vấn đề về <b>chế độ của hệ thần kinh</b>.</p><h3>Cơ thể bạn có hai chế độ</h3><p><b>Chế độ sinh tồn (giao cảm):</b> khi cơ thể cảm thấy cần phản ứng nhanh — tim đập nhanh, cơ căng, hơi thở gấp, mọi thứ diễn ra vội vàng. Đây là chế độ 'chiến hay chạy'.</p><p><b>Chế độ kết nối (phó giao cảm):</b> khi cơ thể thấy an toàn — nhịp chậm lại, cơ giãn, bạn có thể tận hưởng và điều tiết.</p><h3>Điều gì đang xảy ra?</h3><p>Ở nhiều người, khi gần gũi, cơ thể lại vô thức nhảy vào chế độ <b>sinh tồn</b>: lo lắng, vội vàng, căng cứng. Mà trong chế độ sinh tồn, mọi phản xạ đều bị đẩy nhanh — kể cả phản xạ xuất tinh. Đó là lý do bạn 'không kịp'.</p><h3>Tin tốt</h3><p>Vì đây là vấn đề chế độ, không phải khiếm khuyết, nên nó <b>huấn luyện lại được</b>. Cả khóa học này là để dạy cơ thể bạn ở đúng chế độ 'kết nối' khi cần. Và bước đầu tiên — đơn giản đến bất ngờ — là hơi thở, ở bài tiếp theo.</p>",
+          "points": [
+            "Hai chế độ: sinh tồn (vội) và kết nối (điều tiết được).",
+            "Xuất sớm thường do cơ thể kẹt ở chế độ sinh tồn.",
+            "Đây là vấn đề chế độ — huấn luyện lại được."
+          ],
+          "action": "Nhận ra: đây là vấn đề chế độ thần kinh — không phải 'bạn yếu'."
+        },
+        {
+          "id": "1.2",
+          "fmt": "AUDIO",
+          "tool": "breathe",
+          "title": "Kỹ thuật thở 4-7-8 — quick win đầu tiên",
+          "summary": "Thở ra dài kích hoạt hệ phó giao cảm — công tắc 'bình tĩnh' của cơ thể.",
+          "body": "<p>Đây là kỹ năng nền của cả khóa. Bạn sẽ dùng nó ở mọi tuần: để làm dịu trước khi ngủ, để hạ căng thẳng, và sau này để hạ hưng phấn khi luyện kiểm soát.</p><h3>Cách làm 4-7-8</h3><ol><li><b>Hít vào bằng mũi</b> trong <b>4 giây</b> — nhẹ nhàng, không cần đầy phổi tối đa.</li><li><b>Giữ hơi</b> trong <b>7 giây</b> — thả lỏng, đừng gồng.</li><li><b>Thở ra bằng miệng</b> trong <b>8 giây</b> — chậm, đều, như thổi qua ống hút.</li></ol><p>Đó là 1 chu kỳ. Làm 4 chu kỳ mỗi lần. Điểm mấu chốt: <b>thở ra dài hơn hít vào</b> — chính điều này bật 'phanh' của hệ thần kinh.</p><h3>Tập khi nào?</h3><ul><li>Mỗi tối trước khi ngủ (giúp ngủ sâu hơn — nối sang tuần 2).</li><li>Bất cứ khi nào bạn thấy căng thẳng trong ngày.</li><li>Mục tiêu tuần này: thực hành ≥5 trong 7 ngày.</li></ul><p>Bấm nút bên dưới, nhắm mắt và thở theo quả cầu hướng dẫn. Thả lỏng vai và hàm trước khi bắt đầu.</p>",
+          "points": [
+            "Hít mũi 4 · giữ 7 · thở ra miệng 8.",
+            "Thở ra dài hơn hít vào là chìa khóa làm dịu.",
+            "Tập ≥5/7 ngày, nhất là trước khi ngủ."
+          ],
+          "action": "Bấm 'Bắt đầu thở' và làm cùng nhịp 4 chu kỳ.",
+          "toolLabel": "Bắt đầu bài thở 4-7-8"
+        },
+        {
+          "id": "1.3",
+          "fmt": "DOC",
+          "title": "Vì sao thở ra dài làm dịu cơ thể",
+          "summary": "Cơ chế khoa học đằng sau hơi thở.",
+          "body": "<p>Nhịp tim của bạn không đều một cách hoàn hảo — nó nhanh lên khi hít vào và chậm lại khi thở ra. Khoảng dao động này gọi là <b>biến thiên nhịp tim (HRV)</b>, và nó phản ánh mức độ cân bằng của hệ thần kinh.</p><p>Khi bạn <b>kéo dài hơi thở ra</b>, bạn kích hoạt dây thần kinh phế vị — 'phanh' của hệ thần kinh — đưa cơ thể về trạng thái phó giao cảm: tim chậm lại, cơ giãn, tâm trí bớt cảnh giác.</p><p>Đó là lý do một việc đơn giản như thở 4-7-8 lại có tác động thật đến trạng thái cơ thể. Không phải 'tâm linh' — đó là sinh lý học. Và vì nó tác động vào chính hệ thần kinh, nó là công cụ nền cho mọi kỹ thuật kiểm soát ở các tuần sau.</p><p class='src'>Tham khảo: các nghiên cứu về HRV và hô hấp chậm; kỹ thuật 4-7-8 (A. Weil, gốc từ pranayama).</p>",
+          "action": "Hiểu vì sao — rồi tin vào bài thở mỗi ngày."
+        },
+        {
+          "id": "1.4",
+          "fmt": "FORM",
+          "form": "CHECKIN",
+          "title": "Check-in tuần 1",
+          "summary": "Ghi lại tuần đầu tiên của bạn.",
+          "body": "<p>Tuần đầu tiên là tuần khó nhất để bắt đầu — và bạn đã làm được. Hãy dành 1 phút ghi lại tuần này. Đây không phải bài kiểm tra; đó là cách bạn theo dõi chính mình và giúp hệ thống hiểu bạn hơn.</p>",
+          "action": "Trả lời để đánh dấu hoàn thành Tuần 1."
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "tier": "antoan",
+      "title": "Phục hồi hệ thần kinh: Giấc ngủ",
+      "msg": "Giấc ngủ là ca làm đêm của phong độ.",
+      "milestone": "Khung giờ ngủ ổn định ≥5/7 ngày hoặc +30' ngủ · Recovery Score lần 1.",
+      "lessons": [
+        {
+          "id": "2.1",
+          "fmt": "VIDEO",
+          "dur": "5'",
+          "title": "Vì sao giấc ngủ quyết định phong độ",
+          "summary": "Phần lớn quá trình phục hồi và điều hòa hormone diễn ra khi bạn ngủ sâu.",
+          "body": "<p>Bạn có thể làm mọi bài tập đúng, nhưng nếu thiếu ngủ triền miên, cơ thể bạn luôn ở thế bất lợi. Vì sao?</p><h3>Ca làm đêm của cơ thể</h3><p>Khi bạn ngủ sâu, cơ thể làm 'ca đêm': phục hồi cơ, cân bằng hormone, dọn dẹp căng thẳng tích tụ trong ngày. Phần lớn quá trình điều hòa <b>testosterone</b> — nội tiết nền của ham muốn và năng lượng — diễn ra trong giấc ngủ.</p><p>Nghiên cứu cho thấy chỉ cần ngủ khoảng <b>5 tiếng/đêm suốt một tuần</b>, testosterone ban ngày ở nam trẻ khỏe có thể giảm hai chữ số phần trăm. Thiếu ngủ cũng đẩy cơ thể vào chế độ căng thẳng (giao cảm) — đúng cái chế độ ta đang cố thoát khỏi ở tuần 1.</p><h3>Điều này nghĩa là gì với bạn?</h3><p>Giấc ngủ không phải 'chuyện phụ' bên cạnh luyện tập. Nó <b>là</b> một phần của luyện tập — và là phần rẻ nhất, mạnh nhất. Tuần này ta sẽ chăm nó tử tế.</p>",
+          "points": [
+            "Ngủ ~5h/đêm một tuần có thể làm testosterone giảm hai chữ số %.",
+            "Thiếu ngủ đẩy cơ thể về chế độ căng thẳng.",
+            "Ngủ đủ là 'liều' rẻ và mạnh nhất cho phong độ."
+          ],
+          "action": "Coi giấc ngủ là một phần của luyện tập, không phải chuyện phụ."
+        },
+        {
+          "id": "2.2",
+          "fmt": "VIDEO",
+          "dur": "4'",
+          "title": "3 điều chỉnh giấc ngủ đầu tiên",
+          "summary": "Ba thay đổi đơn giản, tác động lớn.",
+          "body": "<p>Bạn không cần đổi cả cuộc sống. Chỉ cần ba điều chỉnh này, làm đều, là đủ tạo khác biệt.</p><h3>1. Cố định giờ ngủ – giờ dậy</h3><p>Đi ngủ và thức dậy <b>cùng khung giờ mỗi ngày</b>, kể cả cuối tuần. Đồng hồ sinh học thích sự đều đặn hơn là số giờ ngủ. Cố định giờ dậy trước — nó kéo giờ ngủ theo.</p><h3>2. Tắt màn hình sáng trước ngủ</h3><p>Ánh sáng xanh từ điện thoại/máy tính đánh lừa não rằng 'vẫn đang là ban ngày', làm chậm cơn buồn ngủ. Tắt hoặc để chế độ ấm <b>30–60 phút trước khi ngủ</b>.</p><h3>3. Tối, mát, yên</h3><p>Phòng càng tối càng dễ ngủ sâu. Nhiệt độ hơi mát tốt hơn nóng. Tránh caffeine (cà phê, trà đặc, nước tăng lực) từ đầu giờ chiều.</p><p><b>Mẹo:</b> đừng làm cả ba cùng lúc. Chọn <b>một</b> điều chỉnh dễ nhất với bạn, làm cho quen, rồi thêm cái tiếp theo.</p>",
+          "points": [
+            "Cố định giờ ngủ – giờ dậy, kể cả cuối tuần.",
+            "Tắt màn hình sáng 30–60' trước ngủ.",
+            "Phòng tối, mát, yên; tránh caffeine buổi chiều."
+          ],
+          "action": "Chọn 1 trong 3 điều chỉnh để bắt đầu tối nay."
+        },
+        {
+          "id": "2.3",
+          "fmt": "DOC",
+          "title": "Nhật ký giấc ngủ 7 ngày",
+          "summary": "Theo dõi để thấy quy luật.",
+          "body": "<p>Mỗi tối, ghi nhanh 3 con số: <b>giờ đi ngủ</b>, <b>chất lượng giấc ngủ /5</b>, <b>năng lượng ngày hôm đó /5</b>. Sau 7 ngày, bạn sẽ thấy rõ mối liên hệ giữa ngủ và năng lượng của chính mình — dữ liệu thuyết phục hơn mọi lời khuyên.</p><p>Vì sao ghi lại quan trọng? Vì bạn không thể cải thiện thứ mình không đo. Khi thấy tận mắt 'đêm ngủ sớm → hôm sau năng lượng cao hơn', bạn sẽ tự nguyện giữ thói quen, không cần ép.</p><p>Bạn có thể ghi ngay trong phần Check-in, hoặc dùng một cuốn sổ nhỏ cạnh giường.</p>",
+          "action": "Bắt đầu ghi nhật ký ngủ từ tối nay."
+        },
+        {
+          "id": "2.4",
+          "fmt": "FORM",
+          "form": "CHECKIN",
+          "recovery": true,
+          "title": "Check-in tuần 2 + Recovery Score lần 1",
+          "summary": "Lần đầu tính Recovery Score — điểm phục hồi tổng hợp của bạn.",
+          "body": "<p>Đây là lần đầu bạn nhận <b>Recovery Score</b> — một điểm tổng hợp (thang 100) phản ánh mức độ cơ thể bạn đang phục hồi, tính từ giấc ngủ, mức luyện tập, căng thẳng và sự đều đặn của bạn.</p><p>Con số này không phải để chấm điểm bạn — nó là mốc. Bạn sẽ đo lại ở tuần 5 và tuần 8 để thấy đường đi lên.</p>",
+          "action": "Hoàn thành để nhận Recovery Score đầu tiên."
+        }
+      ]
+    },
+    {
+      "n": 3,
+      "tier": "duytri",
+      "title": "Làm chủ thói quen + gieo hạt sàn chậu",
+      "msg": "Não thay đổi nhờ lặp lại, không nhờ hoàn hảo.",
+      "milestone": "Bộ 3 hành động ≥5/7 ngày · xử lý ≥1 'cơn thèm' · tìm đúng cơ sàn chậu.",
+      "lessons": [
+        {
+          "id": "3.1",
+          "fmt": "VIDEO",
+          "dur": "5'",
+          "title": "Cơ chế 'nhờn thần kinh' — hiểu để không tự trách",
+          "summary": "Xuất sớm thường là một 'lối mòn' thần kinh được lặp lại, không phải khiếm khuyết.",
+          "body": "<p>Hãy hình dung não bạn như một cánh rừng. Khi bạn đi một lối nhiều lần, cỏ mòn đi và thành <b>con đường mòn</b> — lần sau chân tự đi vào đó, không cần nghĩ.</p><h3>Điều gì đã xảy ra</h3><p>Nếu trong quá khứ bạn thường xuyên 'đi đến đích thật nhanh' — vì vội, vì lo bị phát hiện, vì thói quen từ sớm — thì não đã tạo một con đường mòn: <b>hưng phấn cao → kết thúc ngay</b>. Cơ thể học lối đó và tự động đi theo. Đây gọi là 'nhờn' phản xạ.</p><p>Điểm quan trọng: đây <b>không phải</b> vì bạn hỏng hay yếu. Đó chỉ là một lối mòn được lặp lại. Và cái gì học được thì <b>tập lại được</b>.</p><h3>Làm sao đổi lối?</h3><p>Bạn không xóa được con đường cũ ngay — nhưng bạn mở được con đường <b>mới</b> (hưng phấn cao → nhận biết → điều chỉnh), và đi lại nhiều lần cho đến khi nó thành đường chính. Đó chính là việc bạn làm ở các tuần 4 và 6. Tuần này, ta xây thói quen nền để việc 'đi lại nhiều lần' đó diễn ra được.</p>",
+          "points": [
+            "Thói quen cũ = con đường mòn dễ đi.",
+            "Luyện tập = mở đường mới, đi lại cho quen.",
+            "Không tự trách — chỉ cần kiên nhẫn tạo lối mới."
+          ],
+          "action": "Bỏ ý nghĩ 'mình bị hỏng' — thay bằng 'mình đang tạo lối mới'."
+        },
+        {
+          "id": "3.2",
+          "fmt": "VIDEO",
+          "dur": "4'",
+          "title": "Chặng khởi động 21 ngày",
+          "summary": "21 ngày là chặng khởi động để tạo đà, KHÔNG phải 'đủ để thành thói quen'.",
+          "body": "<p>Bạn hẳn từng nghe '21 ngày tạo thành thói quen'. Sự thật khoa học khác một chút — và biết sự thật sẽ giúp bạn không bỏ cuộc.</p><h3>Con số thật</h3><p>Nghiên cứu cho thấy hình thành một thói quen mất trung bình <b>khoảng 66 ngày</b> (dao động tùy người và tùy việc). Vậy '21 ngày' là gì? Nó là <b>chặng khởi động</b> — đủ để tạo đà và vượt qua giai đoạn khó nhất, nhưng chưa đủ để mọi thứ 'tự động'.</p><h3>Vì sao điều này quan trọng?</h3><p>Nếu bạn tưởng 21 ngày là xong, đến ngày 22 thấy vẫn phải cố gắng, bạn sẽ nghĩ 'mình thất bại' và bỏ. Nhưng nếu bạn biết <b>66 ngày mới là mốc</b>, thì việc ngày 22 vẫn phải cố là hoàn toàn bình thường — bạn đang đi đúng đường.</p><p>Vậy hãy cam kết 21 ngày đầu như một chặng khởi động. Qua được nó, phần còn lại nhẹ hơn nhiều.</p>",
+          "points": [
+            "21 ngày = tạo đà, không phải đích.",
+            "Thói quen thật cần trung bình ~66 ngày.",
+            "Ngày 22 vẫn phải cố là bình thường — cứ tiếp tục."
+          ],
+          "action": "Cam kết 21 ngày đầu như một chặng khởi động."
+        },
+        {
+          "id": "3.3",
+          "fmt": "VIDEO",
+          "dur": "5'",
+          "title": "Xử lý 'cơn thèm' — 3 công cụ thay thế tức thì",
+          "summary": "Khi cơn thúc giục xuất hiện, bạn cần công cụ thay thế ngay lập tức thay vì đấu tranh trong đầu.",
+          "body": "<p>Sẽ có lúc cơn thúc giục (thèm 'giải tỏa nhanh') xuất hiện. Đấu tranh bằng ý chí trong đầu ('đừng, đừng') thường thua, vì càng chống càng chú ý vào nó. Thay vào đó, hãy có sẵn <b>công cụ thay thế</b> để dùng ngay.</p><h3>Công cụ 1 — Đổi hành động</h3><p>Đứng dậy, rời khỏi vị trí, vận động 2 phút: đi bộ, chống đẩy vài cái, rửa mặt bằng nước lạnh. Đổi trạng thái cơ thể sẽ đổi trạng thái đầu óc.</p><h3>Công cụ 2 — Đổi hơi thở</h3><p>Làm vài nhịp <b>4-7-8</b>. Thở ra dài kéo cơ thể ra khỏi chế độ hưng phấn, cho bạn khoảng lặng để chọn lại.</p><h3>Công cụ 3 — Đổi sự chú ý</h3><p>Chuyển sang một việc cần cả tay lẫn đầu: nhắn tin cho ai đó, dọn một góc bàn, làm một việc nhỏ đang dang dở. Cơn thèm giống một con sóng — nếu bạn không 'cưỡi' nó, nó tự tan sau vài phút.</p><p>Chọn trước <b>một</b> công cụ bạn thấy hợp nhất, để lần sau không phải nghĩ.</p>",
+          "points": [
+            "Đổi hành động: đứng dậy, vận động, nước lạnh.",
+            "Đổi hơi thở: 4-7-8 vài nhịp.",
+            "Đổi chú ý: một việc cần tay và đầu. Cơn thèm sẽ tự tan."
+          ],
+          "action": "Chọn sẵn 1 công cụ để dùng khi cơn thèm tới lần sau."
+        },
+        {
+          "id": "3.4",
+          "fmt": "VIDEO",
+          "dur": "4'",
+          "star": true,
+          "tool": "kegel",
+          "title": "Tìm đúng cơ sàn chậu — nhóm cơ bị bỏ quên",
+          "summary": "Cơ sàn chậu tham gia trực tiếp vào khả năng điều tiết. Tìm đúng cơ là bước đầu — và cần gieo từ bây giờ.",
+          "body": "<p>Có một nhóm cơ mà hầu hết đàn ông chưa từng chủ động 'gặp': <b>cơ sàn chậu</b> — lớp cơ ở đáy khung chậu. Nó tham gia trực tiếp vào khả năng điều tiết. Tuần này bạn chỉ cần làm một việc: <b>tìm đúng nó</b>.</p><h3>Cách nhận diện cơ sàn chậu</h3><p>Cách đơn giản nhất: hình dung động tác <b>ngắt dòng tiểu giữa chừng</b> — cảm giác 'nhấc nhẹ' lên ở bên trong, giữa hậu môn và bộ phận sinh dục. Nhóm cơ tạo ra cảm giác đó chính là cơ sàn chậu.</p><p><b>Lưu ý quan trọng:</b> chỉ dùng cách ngắt dòng tiểu <b>một lần duy nhất để nhận diện</b> — KHÔNG tập bằng cách nhịn tiểu thường xuyên (không tốt cho bàng quang).</p><h3>Bài Kegel cơ bản</h3><ul><li>Siết cơ sàn chậu (nhấc nhẹ lên) và giữ vài giây, rồi thả lỏng hoàn toàn.</li><li>Làm <b>10 lần siết–thả × 2 hiệp mỗi ngày</b>.</li><li>Giữ <b>bụng, mông, đùi thả lỏng</b> — chỉ siết đúng nhóm cơ sàn chậu.</li></ul><h3>Vì sao gieo từ tuần 3?</h3><p>Cơ sàn chậu cần <b>4–12 tuần</b> luyện mới cho kết quả rõ. Nếu đợi đến cuối khóa mới bắt đầu, bạn sẽ hết khóa mà chưa kịp 'gặt'. Vì thế ta gieo hạt ngay bây giờ. Bấm nút bên dưới để tập Kegel có hướng dẫn nhịp.</p>",
+          "points": [
+            "Nhận diện: hình dung động tác nhịn tiểu (chỉ 1 lần để nhận biết).",
+            "Kegel cơ bản: 10 lần siết–thả × 2 hiệp/ngày.",
+            "Bụng/mông/đùi thả lỏng — chỉ siết đúng cơ."
+          ],
+          "action": "Mở app luyện tập để tập Kegel có hướng dẫn.",
+          "toolLabel": "Mở bài tập Kegel có hướng dẫn"
+        },
+        {
+          "id": "3.5",
+          "fmt": "FORM",
+          "form": "CHECKIN",
+          "title": "Mini-milestone tuần 3",
+          "summary": "Đánh dấu tuần bản lề: thói quen + sàn chậu.",
+          "body": "<p>Tuần 3 là tuần bản lề: bạn vừa xây thói quen nền, vừa gieo hạt sàn chậu. Ghi lại xem bạn đã duy trì đều thế nào và đã tìm đúng cơ sàn chậu chưa.</p>",
+          "action": "Trả lời, gồm câu về Kegel."
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "tier": "nhanbiet",
+      "title": "Kiểm soát Cấp 1: Nhận biết",
+      "msg": "Kiểm soát không bắt đầu khi sắp xuất tinh. Nó bắt đầu ở mức 4.",
+      "milestone": "Gọi tên mức ±1 · nhận biết ở mức ≤6 trong ≥50% buổi luyện.",
+      "lessons": [
+        {
+          "id": "4.1",
+          "fmt": "VIDEO",
+          "dur": "5'",
+          "tool": "scale",
+          "title": "Kiểm soát không bắt đầu khi gần xuất tinh",
+          "summary": "Kiểm soát bắt đầu sớm — ở mức hưng phấn 4, không phải mức 9.",
+          "body": "<p>Hãy tưởng tượng bạn lái xe xuống dốc. Bạn không đợi đến sát vách đá mới đạp phanh — bạn rà phanh từ sớm, nhẹ nhàng, liên tục. Kiểm soát hưng phấn cũng vậy.</p><h3>Sai lầm phổ biến nhất</h3><p>Đa số đàn ông chỉ cố 'ghìm' khi đã ở mức 8–9 — tức là sát 'điểm không quay lại'. Ở đó thì đã quá muộn: phản xạ gần như không dừng được nữa. Đó là lý do 'cố nhịn vào phút chót' hầu như luôn thất bại.</p><h3>Bí mật: kiểm soát bắt đầu ở mức 4</h3><p>Người thật sự tự chủ không 'ghìm phút chót'. Họ <b>nhận biết sớm</b> và điều chỉnh liên tục từ khi hưng phấn còn thấp — quanh mức 4–6. Khi bạn quen với việc đó, bạn gần như không bao giờ chạm tới vùng nguy hiểm.</p><h3>Công cụ chung cả khóa: thang 0–10</h3><p>Từ tuần này, ta dùng <b>một thang duy nhất</b> để nói về hưng phấn: 0 (thư giãn) đến 10 (xuất tinh). Tuần này bạn học <b>đọc</b> vùng 4–6. Mở thang 0–10 tương tác ở nút bên dưới để làm quen từng mức.</p>",
+          "points": [
+            "Đợi đến mức 8–9 mới hành động là quá muộn.",
+            "Kiểm soát thật sự bắt đầu ở mức 4, không phải mức 9.",
+            "Cả khóa dùng một thang duy nhất: 0–10."
+          ],
+          "action": "Xem thang 0–10 tương tác để làm quen từng mức.",
+          "toolLabel": "Mở thang hưng phấn 0–10"
+        },
+        {
+          "id": "4.2",
+          "fmt": "VIDEO",
+          "dur": "5'",
+          "title": "Bản đồ tín hiệu cơ thể",
+          "summary": "Cơ thể luôn báo trước khi hưng phấn tăng — qua 5 điểm tín hiệu.",
+          "body": "<p>Làm sao 'nhận biết sớm' khi bạn chưa quen? Bằng cách học đọc <b>bản đồ tín hiệu</b> của chính cơ thể. Trước khi bạn 'cảm thấy gần', cơ thể đã gửi tín hiệu ở 5 điểm — như bảng đồng hồ trên ô tô báo trước khi máy nóng.</p><h3>5 điểm cần để ý</h3><ul><li><b>Hơi thở:</b> bắt đầu nhanh và nông hơn.</li><li><b>Vai:</b> nhô lên, căng về phía tai.</li><li><b>Hàm:</b> siết lại, nghiến nhẹ.</li><li><b>Bụng:</b> gồng cứng, hóp vào.</li><li><b>Vùng chậu:</b> căng lên, cơ sàn chậu tự siết.</li></ul><h3>Bài tập</h3><p>Trong ngày thường (không chỉ khi gần gũi), thỉnh thoảng <b>quét nhanh 5 điểm này</b>: vai mình đang thế nào? hàm có siết không? Việc luyện 'quét cơ thể' lúc bình thường giúp bạn tự động nhận ra tín hiệu khi cần — vì lúc đó bạn không còn tỉnh táo để nghĩ.</p><p>Khi bạn thấy các tín hiệu này xuất hiện, đó là cơ thể nói: 'đang lên mức 5–6 rồi đấy'. Và đó là lúc dùng Reset (bài 4.4).</p>",
+          "points": [
+            "5 tín hiệu: hơi thở · vai · hàm · bụng · vùng chậu.",
+            "Tín hiệu xuất hiện sớm, trước khi bạn 'cảm thấy gần'.",
+            "Luyện quét cơ thể lúc bình thường để tự động nhận ra khi cần."
+          ],
+          "action": "Trong ngày, thỉnh thoảng quét nhanh 5 điểm này trên cơ thể."
+        },
+        {
+          "id": "4.3",
+          "fmt": "DOC",
+          "tool": "scale",
+          "title": "Đọc thang 0–10 trên chính cơ thể bạn",
+          "summary": "Bảng tra nhanh thang hưng phấn — xem lại bất cứ lúc nào.",
+          "body": "<p>Vùng luyện tuần này là <b>4–6</b>. Bài tập: khi luyện tập một mình, cứ mỗi ~30 giây tự hỏi <b>'mình đang ở mức mấy?'</b> và gọi tên con số. Mục tiêu là gọi đúng ±1 so với thực tế.</p><h3>Các mốc cần thuộc</h3><ul><li><b>Mức 4:</b> bắt đầu hưng phấn — đây là nơi 'kiểm soát bắt đầu'.</li><li><b>Mức 5:</b> cương ổn định nhưng bạn vẫn hoàn toàn bình tĩnh.</li><li><b>Mức 6:</b> hưng phấn tăng nhanh — <b>Cấp 1: Reset ngay tại đây</b>.</li><li><b>Mức 7:</b> ngưỡng hành động (đây là việc của tuần 6, Cấp 2).</li></ul><p>Mở <b>thang 0–10 tương tác</b> ở nút bên dưới để ghi nhớ mô tả từng mức. Càng gọi tên chính xác, bạn càng điều chỉnh sớm.</p>",
+          "action": "Ghi nhớ mô tả các mức 4, 5, 6, 7.",
+          "toolLabel": "Mở thang 0–10"
+        },
+        {
+          "id": "4.4",
+          "fmt": "VIDEO",
+          "dur": "5'",
+          "tool": "reset",
+          "title": "Kỹ thuật Reset 30 giây",
+          "summary": "Khi chạm mức 6, dùng Reset để đưa hưng phấn xuống.",
+          "body": "<p>Bạn đã biết đọc cơ thể và nhận ra khi chạm mức 6. Giờ là công cụ để <b>hạ nó xuống</b>: Reset 30 giây. Đây là kỹ thuật Cấp 1 — đơn giản, an toàn, dùng được nhiều.</p><h3>Trigger</h3><p>Ngay khi bạn nhận ra mình vừa chạm <b>mức 6</b> (hưng phấn tăng nhanh) → thực hiện Reset. Đừng đợi lên 7–8.</p><h3>4 bước Reset (≈30 giây)</h3><ol><li><b>Dừng</b> mọi kích thích.</li><li><b>Thả lỏng vai và hàm</b> — hai nơi ta hay siết vô thức.</li><li><b>Thở ra thật dài</b> bằng miệng (kích hoạt phanh phó giao cảm).</li><li><b>Quan sát</b> cơ thể trong ~30 giây, không phán xét — chỉ để hưng phấn tự lắng xuống vùng 4.</li></ol><p>Sau Reset, hưng phấn thường về khoảng 4–5, và bạn tiếp tục. Mỗi lần làm vậy, bạn đang dạy cơ thể một điều mới: 'hưng phấn cao không nhất thiết dẫn tới kết thúc'. Bấm nút bên dưới để luyện Reset có bộ đếm.</p>",
+          "points": [
+            "Trigger: vừa chạm mức 6 → Reset ngay.",
+            "4 bước: dừng · thả vai/hàm · thở ra dài · quan sát 30s.",
+            "Mỗi lần Reset là một lần dạy cơ thể tự chủ."
+          ],
+          "action": "Thử bài Reset 30 giây có hướng dẫn.",
+          "toolLabel": "Luyện Reset 30 giây"
+        },
+        {
+          "id": "4.5",
+          "fmt": "VIDEO",
+          "dur": "6'",
+          "star": true,
+          "title": "5 sai lầm khiến bạn không bao giờ kiểm soát được",
+          "summary": "Những lỗi phổ biến âm thầm phá tiến bộ của bạn.",
+          "body": "<p>Đây có thể là bài giá trị nhất tuần. Năm sai lầm dưới đây khiến rất nhiều người luyện mãi không tiến — nhận ra chúng là bạn đã đi trước phần lớn.</p><h3>Sai lầm 1 — Gồng cơ để 'ghìm'</h3><p>Gồng bụng, mông hoặc cơ sàn chậu để cố giữ lại. Nghịch lý: <b>gồng sàn chậu chính là 'đạp ga'</b> — nó đẩy hưng phấn lên nhanh hơn. (Tuần 5 bạn sẽ học 'thả lỏng' thay vì gồng.)</p><h3>Sai lầm 2 — Nín thở</h3><p>Khi căng, ta hay nín thở. Nhưng nín thở kích hoạt hệ giao cảm — chế độ vội vàng. Hãy làm ngược lại: thở ra dài.</p><h3>Sai lầm 3 — Hành động quá muộn</h3><p>Đợi đến mức 8–9 mới cố. Như đã học ở 4.1: quá muộn. Hành động ở mức 6.</p><h3>Sai lầm 4 — Chìm vào suy nghĩ tiêu cực</h3><p>'Lại sắp hỏng rồi' — dòng suy nghĩ này kéo bạn khỏi cơ thể và tăng lo âu. Thay vì phán xét, hãy <b>đọc</b> cơ thể (bạn đang ở mức mấy?).</p><h3>Sai lầm 5 — Bỏ luyện khi 'thấy ổn'</h3><p>Vừa khá lên là ngừng. Nền chưa vững, phản xạ mới chưa thành đường chính, nên dễ trượt lại. Cứ duy trì đủ lâu.</p><p>Bạn hay mắc sai lầm nào nhất? Nhận diện nó và để ý sửa trong tuần này.</p>",
+          "points": [
+            "Gồng cơ = đạp ga, càng nhanh.",
+            "Nín thở kích hoạt chế độ vội.",
+            "Hành động muộn (8–9) · chìm vào suy nghĩ tiêu cực · bỏ luyện sớm."
+          ],
+          "action": "Nhận diện sai lầm bạn hay mắc nhất và để ý sửa."
+        },
+        {
+          "id": "4.6",
+          "fmt": "FORM",
+          "form": "CHECKIN",
+          "title": "Check-in tuần 4",
+          "summary": "Đo khả năng nhận biết mức hưng phấn.",
+          "body": "<p>Tuần 4 là bước ngoặt: bạn chuyển từ 'hiểu' sang 'kiểm soát'. Ghi lại xem bạn đã gọi tên mức hưng phấn chính xác đến đâu và nhận biết sớm được bao nhiêu.</p>",
+          "action": "Trả lời, dùng thang 0–10."
+        }
+      ]
+    },
+    {
+      "n": 5,
+      "tier": "nenmong",
+      "title": "Cơ thể là nền móng",
+      "msg": "Phong độ là kết quả tự nhiên của một cơ thể vận hành đúng.",
+      "milestone": "≥3 buổi vận động · Kegel + reverse Kegel hằng ngày · năng lượng tăng.",
+      "lessons": [
+        {
+          "id": "5.1",
+          "fmt": "VIDEO",
+          "dur": "4'",
+          "title": "Cơ thể quyết định phong độ nhiều hơn bạn nghĩ",
+          "summary": "Tuần 'nạp nền' — để kỹ năng tuần 4 ngấm, đồng thời củng cố thể chất.",
+          "body": "<p>Bạn vừa học kỹ năng nhận biết ở tuần 4. Kỹ năng đó cần <b>thời gian ngấm</b> vào phản xạ. Vì thế tuần 5 là tuần 'nạp nền' — không phải tuần nghỉ, mà là tuần bồi đắp thể chất để mọi kỹ thuật có chỗ dựa.</p><h3>Vì sao thể chất quan trọng</h3><p>Tuần hoàn tốt, nội tiết cân bằng, năng lượng dồi dào — tất cả khiến cơ thể dễ vào chế độ 'kết nối' và khó rơi vào chế độ 'căng thẳng'. Nói cách khác: một cơ thể khỏe mạnh <b>tự nó</b> đã hỗ trợ phong độ, trước cả khi bạn dùng kỹ thuật.</p><p>Tuần này có hai việc: (1) vận động đều, ăn đúng; (2) nâng cấp bài sàn chậu — thêm 'thả lỏng' (reverse Kegel), thứ sẽ trực tiếp giúp bạn ở tuần 6.</p>",
+          "points": [
+            "Tuần đệm giữa hai cấp kiểm soát — rất quan trọng.",
+            "Thể chất tốt = cơ thể dễ vào chế độ 'kết nối'.",
+            "Kegel tăng cấp trong tuần này."
+          ],
+          "action": "Coi tuần 5 là tuần bồi nền, không phải tuần nghỉ."
+        },
+        {
+          "id": "5.2",
+          "fmt": "VIDEO",
+          "dur": "4'",
+          "title": "3 nhóm vận động tác động mạnh nhất",
+          "summary": "Không cần tập nặng — cần đúng nhóm.",
+          "body": "<p>Bạn không cần thành người tập gym. Chỉ cần chạm đủ ba nhóm vận động này, mỗi tuần vài buổi.</p><h3>1. Vận động sức mạnh</h3><p>Các bài dùng nhiều nhóm cơ lớn cùng lúc (squat, chống đẩy, kéo) kích thích nội tiết mạnh nhất. Không cần tạ nặng — trọng lượng cơ thể là đủ để bắt đầu.</p><h3>2. Tim mạch vừa phải</h3><p>Đi bộ nhanh, đạp xe, bơi 20–30 phút cải thiện tuần hoàn — nền của phong độ. 'Vừa phải' là chính: quá sức lại phản tác dụng.</p><h3>3. Linh hoạt & thư giãn</h3><p>Giãn cơ, các động tác mở hông, kết hợp thở. Nhóm này giảm căng cơ mạn tính (đặc biệt vùng hông–chậu) và hỗ trợ trực tiếp cho reverse Kegel.</p><p>Chọn hình thức bạn thấy <b>dễ duy trì nhất</b> — vì cái gì duy trì được mới có tác dụng.</p>",
+          "points": [
+            "Sức mạnh (compound) — kích thích nội tiết.",
+            "Tim mạch vừa phải — cải thiện tuần hoàn.",
+            "Linh hoạt/thư giãn — giảm căng cơ mạn tính."
+          ],
+          "action": "Chọn hình thức bạn thấy dễ duy trì nhất."
+        },
+        {
+          "id": "5.3",
+          "fmt": "DOC",
+          "title": "Lịch tập tối giản 3 buổi/tuần",
+          "summary": "Bản lịch tra cứu lại nhiều lần.",
+          "body": "<p>Mục tiêu: <b>3 buổi/tuần</b>, mỗi buổi 20–30 phút. Một gợi ý đơn giản:</p><ul><li><b>Buổi 1 — Sức mạnh:</b> squat, chống đẩy, plank (2–3 vòng, nghỉ vừa phải giữa vòng).</li><li><b>Buổi 2 — Tim mạch:</b> đi bộ nhanh hoặc đạp xe 20–30 phút.</li><li><b>Buổi 3 — Linh hoạt:</b> giãn cơ toàn thân + reverse Kegel + vài phút thở.</li></ul><p>Đều đặn quan trọng hơn cường độ. Ghi 3 khung giờ cố định vào lịch như một cuộc hẹn với chính mình — thứ được lên lịch thì được làm.</p>",
+          "action": "Đặt 3 khung giờ cố định trong tuần này."
+        },
+        {
+          "id": "5.4",
+          "fmt": "DOC",
+          "title": "Ăn đúng để có nguyên liệu tạo phong độ",
+          "summary": "Đĩa ăn nền tảng.",
+          "body": "<p>Không cần ăn kiêng khắc nghiệt. Chỉ cần đủ 'nguyên liệu' cho cơ thể. Nguyên tắc 'đĩa ăn phong độ':</p><ul><li><b>Đạm</b> (thịt nạc, cá, trứng, đậu) — nguyên liệu phục hồi cơ và nội tiết.</li><li><b>Chất béo tốt</b> (cá béo, các loại hạt, dầu ô liu) — nền để tạo hormone.</li><li><b>Rau xanh</b> nhiều màu — vi chất và hỗ trợ tuần hoàn.</li><li><b>Tinh bột tốt</b> vừa phải (gạo lứt, khoai, yến mạch) — năng lượng bền.</li></ul><p>Điều cần hạn chế: <b>rượu</b> và <b>đồ siêu chế biến</b> — cả hai kéo giấc ngủ và nội tiết đi xuống, đi ngược mọi việc bạn đang làm.</p><p>Bạn không cần hoàn hảo. Chỉ cần áp dụng 'đĩa ăn phong độ' cho <b>một bữa mỗi ngày</b> là đã tạo khác biệt.</p>",
+          "action": "Áp dụng 'đĩa ăn phong độ' cho 1 bữa mỗi ngày."
+        },
+        {
+          "id": "5.5",
+          "fmt": "VIDEO",
+          "dur": "5'",
+          "star": true,
+          "tool": "kegel",
+          "title": "Sàn chậu nâng cao: Kegel đúng + Reverse Kegel",
+          "summary": "Thêm REVERSE Kegel — chủ động THẢ LỎNG sàn chậu. Đây là chìa khóa.",
+          "body": "<p>Ở tuần 3 bạn đã tìm đúng cơ sàn chậu và tập siết (Kegel). Tuần này ta nâng cấp — và thêm nửa <b>bị bỏ quên</b> nhưng cực kỳ quan trọng: <b>reverse Kegel</b>.</p><h3>Kegel (siết) — xây sức mạnh</h3><p>Tiếp tục bài siết–thả, nhưng tăng dần: giữ lâu hơn một chút, thêm hiệp. Sức mạnh sàn chậu cho bạn khả năng điều tiết.</p><h3>Reverse Kegel (thả) — xây khả năng buông</h3><p>Đây là động tác <b>ngược lại</b>: chủ động <b>thả lỏng và đẩy nhẹ ra ngoài</b> vùng sàn chậu, như khi bạn thả lỏng hoàn toàn để 'buông'. Hãy làm cùng hơi thở ra dài: thở ra → thả lỏng sàn chậu.</p><h3>Vì sao reverse Kegel là chìa khóa</h3><p>Nhớ sai lầm 'gồng' ở bài 4.5? Khi hưng phấn cao mà bạn siết sàn chậu, đó là <b>đạp ga</b>. Biết <b>thả lỏng</b> sàn chậu đúng lúc chính là 'nhả ga' — và đó là điều bạn sẽ dùng liên tục ở kỹ thuật Tăng–Giảm tuần 6.</p><p>Tập cả hai hằng ngày. Bấm nút bên dưới để vào app luyện tập có hướng dẫn.</p>",
+          "points": [
+            "Kegel (siết) xây sức mạnh; reverse Kegel (thả) xây khả năng buông.",
+            "Reverse Kegel: thở ra dài + thả lỏng, đẩy nhẹ ra.",
+            "Thả lỏng sàn chậu = 'nhả ga' — chìa khóa cho tuần 6."
+          ],
+          "action": "Tập cả Kegel và reverse Kegel trong app luyện tập.",
+          "toolLabel": "Mở bài tập sàn chậu"
+        },
+        {
+          "id": "5.6",
+          "fmt": "FORM",
+          "form": "CHECKIN",
+          "title": "Check-in tuần 5 + thử thách '3 ngày chăm cơ thể'",
+          "summary": "Đánh dấu tuần nền móng.",
+          "body": "<p>Ghi lại tuần nền móng: bạn vận động mấy buổi, có tập cả Kegel lẫn reverse Kegel không, và năng lượng thay đổi ra sao. Đây cũng là mốc <b>Recovery Score lần 2</b> nếu bạn đã đo lần 1 ở tuần 2.</p>",
+          "action": "Trả lời, gồm câu về Kegel và giấc ngủ."
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "tier": "dieuchinh",
+      "title": "Kiểm soát Cấp 2: Điều chỉnh",
+      "msg": "Tuần 4 bạn học ĐỌC cơ thể. Tuần này bạn học LÁI nó.",
+      "milestone": "≥3 buổi Tăng–Giảm × ≥3 chu kỳ 7→4 · hạ hưng phấn thành công ≥70%.",
+      "lessons": [
+        {
+          "id": "6.1",
+          "fmt": "VIDEO",
+          "dur": "5'",
+          "title": "Kiểm soát không phải là 'gồng'",
+          "summary": "Điều khiển hưng phấn giống lái xe bằng chân ga, không phải đạp phanh chết cứng.",
+          "body": "<p>Nhiều người nghĩ kiểm soát nghĩa là 'ghìm thật chặt'. Thực ra ngược lại. Hãy nghĩ về lái xe: bạn không giữ tốc độ bằng cách đạp cả ga lẫn phanh cùng lúc — bạn <b>điều tiết chân ga</b> một cách mượt mà.</p><h3>'Gồng' là đạp ga</h3><p>Khi hưng phấn cao, phản xạ tự nhiên là gồng — siết bụng, mông, sàn chậu. Nhưng như bạn đã học: <b>gồng sàn chậu chính là đạp ga</b>, đẩy bạn tới đích nhanh hơn. Càng cố ghìm bằng cách gồng, càng phản tác dụng.</p><h3>Lái nhẹ thay vì chiến đấu</h3><p>Kiểm soát thật sự là sự <b>nhẹ nhàng</b>: nhận biết sớm (tuần 4), rồi thả lỏng có chủ đích (reverse Kegel, tuần 5), rồi điều tiết nhịp. Bạn không đánh nhau với cơ thể — bạn dẫn dắt nó. Tuần này ta ghép mọi mảnh lại thành một kỹ thuật hoàn chỉnh: Tăng–Giảm.</p>",
+          "points": [
+            "Gồng = đạp ga; thả lỏng có kiểm soát = nhả ga.",
+            "Nối với reverse Kegel tuần 5.",
+            "Lái nhẹ nhàng, không chiến đấu với cơ thể."
+          ],
+          "action": "Đổi tư duy: từ 'ghìm lại' sang 'lái nhẹ'."
+        },
+        {
+          "id": "6.2",
+          "fmt": "VIDEO",
+          "dur": "3'",
+          "tool": "scale",
+          "title": "Nâng ngưỡng: từ 6 lên 7",
+          "summary": "Bạn đã đủ nền để dám đi lên mức 7 rồi chủ động hạ về 4 — dấu hiệu bạn LÊN CẤP.",
+          "body": "<p>Ở tuần 4, bạn dừng ở <b>mức 6</b> và Reset — đó là Cấp 1: an toàn, giữ khoảng cách với ngưỡng. Giờ bạn đã có đủ nền (nhận biết tốt hơn, sàn chậu khỏe hơn, biết thả lỏng) để <b>lên cấp</b>.</p><h3>Cấp 2: ngưỡng mới là 7</h3><p>Thay vì tránh né vùng cao, bạn <b>chủ động</b> đưa hưng phấn lên tới <b>mức 7</b> (ngưỡng hành động), rồi hạ nó về mức 4 — và lặp lại. Việc dám lên 7 rồi hạ được xuống chính là bằng chứng bạn đang thật sự tự chủ, không chỉ né tránh.</p><p>Đừng nhầm: đây không phải học lại tuần 4. Đây là <b>nâng cấp</b> — bạn mở rộng vùng an toàn của mình từ '≤6' lên 'kiểm soát được cả ở 7'. Mở lại thang 0–10 và chú ý kỹ ranh giới mức 7.</p>",
+          "points": [
+            "Cấp 1: ngưỡng an toàn = 6. Cấp 2: ngưỡng = 7.",
+            "Chủ động lên 7, rồi hạ về 4.",
+            "Bạn không học lại — bạn nâng cấp."
+          ],
+          "action": "Xem lại thang 0–10, chú ý ranh giới mức 7.",
+          "toolLabel": "Mở thang 0–10"
+        },
+        {
+          "id": "6.3",
+          "fmt": "VIDEO",
+          "dur": "6'",
+          "tool": "updown",
+          "title": "Kỹ thuật Tăng–Giảm (chu trình 7→4)",
+          "summary": "Chủ động đưa hưng phấn lên 7, rồi hạ về 4, lặp lại — ghép 3 kỹ năng thành 1 combo.",
+          "body": "<p>Đây là kỹ thuật trục của cả khóa — nơi mọi thứ bạn học ghép lại. Nền tảng của nó là kỹ thuật 'dừng–nghỉ' kinh điển, nhưng ở đây bạn làm nó một cách <b>chủ động và có nhịp</b>.</p><h3>Chu trình Tăng–Giảm</h3><ol><li><b>Tăng:</b> để hưng phấn tăng dần lên tới <b>mức 7</b> (ngưỡng hành động).</li><li><b>Ở đỉnh (mức 7):</b> dừng kích thích, rồi dùng <b>combo 3 kỹ năng</b>: <b>thở ra dài</b> (làm dịu) + <b>thả lỏng sàn chậu</b> (reverse Kegel — 'nhả ga') + <b>đọc cơ thể</b> (bạn đang xuống mức mấy?).</li><li><b>Giảm:</b> để hưng phấn hạ về <b>mức 4</b>.</li><li><b>Lặp lại</b> chu kỳ 7→4.</li></ol><h3>Liều lượng</h3><p>Mỗi buổi <b>≥5 chu kỳ</b>, kéo dài <b>≥15 phút</b>. Mục tiêu tuần: ≥3 buổi, và hạ hưng phấn thành công ≥70% số lần.</p><p>Mỗi lần bạn đưa hưng phấn lên 7 rồi hạ được xuống, bạn dạy cơ thể một điều mạnh mẽ: <b>'lên cao không có nghĩa là phải kết thúc'</b>. Đó chính là tự chủ. Bấm nút bên dưới để luyện theo nhịp hướng dẫn.</p>",
+          "points": [
+            "≥5 chu kỳ/buổi, ≥15 phút; ≥3 buổi/tuần.",
+            "Ở đỉnh 7: thở ra dài + thả lỏng sàn chậu + đọc cơ thể.",
+            "Mỗi lần hạ thành công là một lần dạy cơ thể tự chủ."
+          ],
+          "action": "Thử chu trình Tăng–Giảm có hướng dẫn nhịp.",
+          "toolLabel": "Luyện chu trình Tăng–Giảm 7→4"
+        },
+        {
+          "id": "6.4",
+          "fmt": "VIDEO",
+          "dur": "4'",
+          "star": true,
+          "tool": "squeeze",
+          "title": "Squeeze — phương án dự phòng khi lỡ lên 8",
+          "summary": "Kỹ thuật hạ nhanh khi lỡ vượt mức 7 — 'phanh khẩn cấp', không phải kỹ thuật chính.",
+          "body": "<p>Đôi khi bạn sẽ lỡ vượt mức 7 lên 8 — sát ngưỡng. Cần một 'phanh khẩn cấp' để kéo lại. Đó là kỹ thuật <b>Squeeze</b> (bóp), một phương pháp kinh điển.</p><h3>Cách làm</h3><ol><li>Khi cảm thấy lỡ lên mức 8, <b>tạm dừng</b> ngay.</li><li><b>Bóp nhẹ</b> ngay dưới quy đầu trong <b>3–5 giây</b> — vừa đủ để hưng phấn giảm.</li><li>Thả ra, <b>thở ra dài</b>, đợi hưng phấn hạ về vùng an toàn (~4–5).</li><li>Tiếp tục.</li></ol><h3>Định vị đúng</h3><p>Squeeze là <b>phanh khẩn cấp</b>, KHÔNG phải kỹ thuật chính. Nếu bạn phải dùng nó thường xuyên, nghĩa là bạn đang để hưng phấn lên quá cao trước khi hành động — hãy quay lại nhận biết sớm hơn (mức 6–7). Mục tiêu là <b>hiếm khi</b> cần dùng Squeeze.</p>",
+          "points": [
+            "Bóp nhẹ dưới quy đầu 3–5 giây khi lỡ lên 8.",
+            "Chỉ là phanh khẩn cấp — không phải kỹ thuật chính.",
+            "Phải dùng nhiều = cần nhận biết sớm hơn."
+          ],
+          "action": "Ghi nhớ Squeeze như 'phanh khẩn cấp' dự phòng.",
+          "toolLabel": "Xem hướng dẫn Squeeze"
+        },
+        {
+          "id": "6.5",
+          "fmt": "FORM",
+          "form": "CHECKIN",
+          "title": "Check-in tuần 6",
+          "summary": "Đo khả năng chủ động hạ hưng phấn.",
+          "body": "<p>Nhắc bạn: mất kiểm soát đôi lúc là hoàn toàn bình thường, kể cả ở tuần 6 — đó là một phần của việc học. Ghi lại số buổi Tăng–Giảm và tỷ lệ bạn hạ được hưng phấn thành công.</p>",
+          "action": "Trả lời bảng check-in."
+        }
+      ]
+    },
+    {
+      "n": 7,
+      "tier": "ketnoi",
+      "title": "Từ kỹ thuật đến tự tin & kết nối",
+      "msg": "Tự tin không phải là kết quả của thành công. Là niềm tin rằng dù chuyện gì xảy ra, bạn vẫn biết cách xử lý.",
+      "milestone": "Ghi nhận ≥3 tiến bộ · có 1 câu nói với chính mình · viết được 'Tôi là người…' · ≥1 lần áp dụng khi gần gũi thật.",
+      "lessons": [
+        {
+          "id": "7.1",
+          "fmt": "VIDEO",
+          "dur": "5'",
+          "title": "Từ kỹ thuật đến tự tin",
+          "summary": "Tự tin không đến sau khi mọi thứ hoàn hảo. Tự tin là biết mình sẽ xử lý được, dù có chuyện gì.",
+          "body": "<p>Đến tuần này, bạn đã thấy: khả năng kiểm soát không đến từ một kỹ thuật đơn lẻ, mà từ cả quá trình hiểu cơ thể, đổi thói quen và luyện tập. Nhưng hôm nay là một điều còn quan trọng hơn kỹ thuật: <b>sự tự tin</b>.</p><h3>Hiểu ngược lại về tự tin</h3><p>Nhiều người nghĩ: <i>\"khi nào tôi kéo dài được lâu hơn, khi nào mọi lần đều như ý — lúc đó tôi mới tự tin\"</i>. Thực tế ngược lại. <b>Tự tin không phải là kết quả của thành công. Tự tin là niềm tin rằng dù chuyện gì xảy ra, bạn vẫn biết cách xử lý.</b></p><p>Hãy nghĩ về một người lái xe lâu năm. Họ tự tin không phải vì chưa bao giờ gặp tình huống bất ngờ — mà vì nếu trời mưa, xe chết máy hay đường đông, họ biết mình xử lý được. Luyện tập của chúng ta cũng vậy: mục tiêu không phải để mọi thứ luôn hoàn hảo, mà để khi cơ thể có dấu hiệu mất kiểm soát, bạn <b>không còn hoảng loạn</b>.</p><h3>Bạn đã thay đổi nhiều hơn bạn nghĩ</h3><p>Có thể kết quả chưa đổi nhiều, nhưng <b>con người bạn đã đổi</b>. Trước đây căng thẳng thì chỉ biết lo; giờ bạn biết hít một hơi sâu. Trước đây cơ thể phản ứng lạ là nghĩ ngay \"mình yếu\"; giờ bạn hiểu đó là tín hiệu thần kinh. Trước đây chỉ nhìn kết quả; giờ bạn quan sát cả quá trình.</p><p>Vấn đề là não bộ <b>luôn nhớ những lần làm chưa tốt và rất nhanh quên những tiến bộ nhỏ</b>. Nếu bạn không chủ động ghi nhận, bạn sẽ luôn thấy mình đứng yên — dù không phải vậy. Mỗi lần bạn ghi nhận một tiến bộ, bạn gửi cho não một thông điệp: <i>\"Mình đang thay đổi\"</i>. Lặp đủ nhiều, niềm tin cũ \"mình có vấn đề\" sẽ được thay bằng \"mình đang tiến bộ\".</p>",
+          "points": [
+            "Tự tin = biết mình xử lý được, không phải mọi thứ đều hoàn hảo.",
+            "Não nhớ lỗi, quên tiến bộ — nên phải chủ động ghi nhận.",
+            "Ghi nhận tiến bộ = xây lại niềm tin từ gốc."
+          ],
+          "action": "Viết ra 3 điều bạn làm TỐT HƠN so với tuần 1 — là thay đổi, không phải kết quả (vd: 'tôi bình tĩnh hơn khi áp lực', 'tôi vẫn kiên trì đến tuần 7').",
+          "write": [
+            {
+              "k": "better3",
+              "q": "✍️ 3 điều tôi làm tốt hơn so với tuần 1",
+              "ph": "1. Tôi bình tĩnh hơn khi gặp áp lực.\n2. Có lúc tôi nhớ dùng hơi thở thay vì hoảng loạn.\n3. Tôi vẫn kiên trì đến tuần thứ bảy."
+            }
+          ]
+        },
+        {
+          "id": "7.2",
+          "fmt": "VIDEO",
+          "dur": "5'",
+          "title": "Đừng để một lần thất bại định nghĩa bạn",
+          "summary": "Điều làm ta đau không phải sự việc — mà là câu chuyện ta kể với chính mình sau đó.",
+          "body": "<p>Bạn còn nhớ lần gần nhất mình nghĩ \"mình thất bại\" không? Đa số đàn ông nhớ rất rõ những khoảnh khắc đó. Nhưng điều đáng nói: <b>điều khiến chúng ta đau khổ không phải bản thân sự việc — mà là câu chuyện chúng ta kể với chính mình sau đó.</b></p><p>Sự việc chỉ kéo dài vài phút. Nhưng câu \"mình yếu\", \"mình không còn như trước\", \"chắc lần sau cũng vậy thôi\" có thể theo bạn hàng tháng, hàng năm. Rồi mỗi lần chuẩn bị gần gũi, thay vì nghĩ đến sự kết nối, bạn bước vào <b>một kỳ thi</b> — và chính suy nghĩ đó khiến cơ thể căng lên, hơi thở ngắn lại, hệ thần kinh chuyển sang phòng vệ.</p><h3>Thử một cách khác</h3><p>Nếu một người bạn thân nói với bạn: <i>\"Hôm qua mình không kiểm soát được, chắc mình yếu thật rồi\"</i> — bạn sẽ trả lời sao? Chắc chắn không phải \"đúng rồi, cậu hết hy vọng rồi\". Bạn sẽ nói \"không sao đâu\", \"rất nhiều người gặp\", \"đừng tự áp lực quá\".</p><p>Chúng ta thường rất bao dung với người khác, nhưng vô cùng khắt khe với chính mình. <b>Sự trưởng thành không bắt đầu khi bạn không còn thất bại — mà khi bạn không còn đồng nhất bản thân với thất bại.</b> Một trải nghiệm không quyết định giá trị của bạn.</p><h3>Khi một buổi không như ý xảy ra — 3 bước</h3><ul><li><b>Đừng xin lỗi quá đà.</b> Xin lỗi rối rít biến một khoảnh khắc thành \"sự cố lớn\", tạo thêm áp lực cho cả hai. Một câu nhẹ nhàng là đủ.</li><li><b>Sự gần gũi chưa kết thúc.</b> Tiếp tục âu yếm, quan tâm đến cảm giác của bạn đời — giữ kết nối và gỡ áp lực \"thành tích\".</li><li><b>Ghi nhận như một điểm dữ liệu.</b> Bình thản tự hỏi: \"mình lên mức mấy trước khi mất kiểm soát? có tín hiệu nào bị bỏ lỡ?\". Đó là thông tin, không phải bản án.</li></ul><p>Nếu cơ thể đang cần thời gian để học lại, điều nó cần không phải sự chỉ trích — mà là một người đồng hành. Người đó chính là bạn.</p>",
+          "points": [
+            "Nỗi đau đến từ câu chuyện bạn kể, không phải sự việc.",
+            "Hãy nói với mình như nói với người bạn thân.",
+            "Một buổi không như ý là dữ liệu, không phải bản án."
+          ],
+          "action": "Viết 1 câu bạn sẽ nói với chính mình mỗi khi chưa như ý — chọn câu bạn THỰC SỰ tin, không phải câu nghe hay.",
+          "write": [
+            {
+              "k": "fail_story",
+              "q": "✍️ Lần gần nhất bạn nghĩ mình 'thất bại' — chuyện gì đã xảy ra?",
+              "ph": "Chỉ viết đúng sự thật, không cần phân tích."
+            },
+            {
+              "k": "friend_words",
+              "q": "✍️ Nếu đó là người bạn thân nhất của bạn — bạn sẽ nói gì với họ?",
+              "ph": "vd: Không sao cả. Ai cũng có những lúc như vậy. Cậu đang tiến bộ rồi."
+            },
+            {
+              "k": "mantra",
+              "q": "✍️ Câu tôi sẽ nói với chính mình mỗi khi chưa như ý",
+              "ph": "vd: Tôi đang học. Tôi chưa hoàn hảo, nhưng tôi đang tiến bộ."
+            }
+          ]
+        },
+        {
+          "id": "7.3",
+          "fmt": "VIDEO",
+          "dur": "5'",
+          "tool": "breathe",
+          "toolLabel": "Tập thở — quay về cơ thể",
+          "title": "Đừng ở trong đầu, hãy quay về với cơ thể",
+          "summary": "Khi càng quan sát bản thân để đánh giá, bạn càng rời xa cảm giác để trải nghiệm.",
+          "body": "<p>Khi gần gũi với người mình yêu — <b>bạn đang ở đâu?</b> Nghe lạ, nhưng hãy nhớ lại: trong đầu bạn lúc đó nghĩ gì? \"Mình cương đủ chưa?\", \"được bao lâu rồi?\", \"sắp mất kiểm soát chưa?\", \"cô ấy có hài lòng không?\".</p><h3>Cái bẫy tự làm khán giả</h3><p>Hiện tượng này có tên: <b>spectatoring</b> — tự đứng ngoài quan sát và chấm điểm mình. Cơ thể ở một nơi, tâm trí ở một nơi khác. Giống như vừa đá bóng vừa liên tục nhìn bảng tỷ số — rất khó chơi tốt.</p><p>Và đây là chỗ khép vòng với tuần 1: tự chấm điểm → <b>lo âu thể hiện</b> → kích hoạt hệ <b>giao cảm</b> (chế độ căng thẳng) → mọi phản xạ bị đẩy nhanh → mất kiểm soát. Đúng điều bạn sợ lại tự thành hiện thực. <b>Khi bạn càng quan sát bản thân để đánh giá, bạn càng rời xa cảm giác để trải nghiệm.</b></p><p>Đó là lý do nhiều người nói \"mọi thứ diễn ra rất nhanh\" — không phải vì cơ thể quá nhanh, mà vì tâm trí chưa bao giờ thật sự có mặt.</p><h3>Bài tập 5 phút mỗi ngày — quay về cơ thể</h3><p>Ngồi thoải mái ở nơi yên tĩnh. <b>Đừng cố thay đổi gì. Đừng cố thư giãn.</b> Chỉ quan sát:</p><ul><li><b>Hơi thở</b> (~1 phút) — không cần hít sâu hơn, chỉ cảm nhận không khí vào và ra.</li><li><b>Lòng bàn tay</b> — nhiệt độ, sức nặng, bất kỳ cảm giác nào đang có.</li><li><b>Bàn chân</b> — cảm nhận chân chạm mặt đất.</li><li><b>Nhịp tim</b> — nếu không rõ cũng không sao.</li></ul><p>Nếu đầu óc đi lạc, đừng trách mình — nhẹ nhàng đưa chú ý về hơi thở. <b>Đó chính là bài tập</b>: không phải giữ đầu trống rỗng, mà là mỗi lần đi lạc thì biết cách quay về. Sau này khi tâm trí hỏi \"được bao lâu rồi?\", bạn không cần xua đuổi — chỉ cần nhận ra, rồi quay về hơi thở, cơ thể và người trước mặt.</p>",
+          "points": [
+            "Spectatoring: tự chấm điểm → lo âu → giao cảm → mất kiểm soát.",
+            "Tình dục là trải nghiệm, không phải bài kiểm tra.",
+            "Bài tập không phải giữ đầu trống — mà là biết quay về."
+          ],
+          "action": "5 phút mỗi ngày: hơi thở → lòng bàn tay → bàn chân → nhịp tim."
+        },
+        {
+          "id": "7.4",
+          "fmt": "DOC",
+          "star": true,
+          "title": "Đưa vào thực tế với bạn đời",
+          "summary": "Nói thế nào, 3 buổi không mục tiêu, và cách 'reset tự nhiên' khi gần gũi thật.",
+          "body": "<p>Tự tin và hiện diện là nền. Đây là phần thực hành để đưa nó vào đời thật.</p><h3>1. Mở lời — mời đồng hành, không phải 'thú nhận'</h3><p>Mục tiêu là <b>mời đồng hành</b>, không phải xin lỗi. Chọn kịch bản hợp hoàn cảnh:</p><ul><li><b>Nếu bạn đời đã biết:</b> \"Anh đang theo một chương trình để cải thiện chuyện của tụi mình. Anh muốn em cùng anh thử vài điều — không phải để 'sửa' anh, mà để tụi mình thoải mái và gần nhau hơn.\"</li><li><b>Nếu bạn đời chưa biết:</b> \"Anh muốn tụi mình gần nhau theo cách thong thả hơn. Anh đang học vài cách để chậm lại và tận hưởng — em thử cùng anh nhé?\"</li><li><b>Nếu quan hệ đang căng:</b> đừng bắt đầu bằng chuyện gần gũi. Xây lại kết nối cảm xúc trước.</li></ul><h3>2. Ba buổi gần gũi không mục tiêu</h3><p>Ý tưởng cốt lõi: <b>tạm bỏ 'mục tiêu'</b>, chỉ tập trung vào cảm giác. Khi không còn 'phải đạt' điều gì, lo âu thể hiện tan đi.</p><ul><li><b>Buổi 1:</b> chạm nhẹ nhàng, khám phá cảm giác trên da — <b>không</b> chạm vùng kín.</li><li><b>Buổi 2:</b> có thể chạm vùng kín, nhưng <b>không</b> giao hợp.</li><li><b>Buổi 3:</b> giao hợp nhưng <b>không đặt mục tiêu thời gian</b> — chỉ tận hưởng. Áp lực quay lại thì lùi về hơi thở.</li></ul><p><i>Nếu bạn độc thân:</i> luyện phiên bản solo — không đặt mục tiêu thời gian, tập trung cảm nhận cơ thể.</p><h3>3. Reset tự nhiên — Tăng–Giảm trong dòng chảy</h3><p>Khi ở bên bạn đời, bạn cần cách <b>tự nhiên và kín đáo hơn</b> so với lúc luyện một mình:</p><ul><li><b>Đổi nhịp</b> thay vì dừng hẳn: chậm lại khi chạm mức 7, tăng lại khi về 4–5.</li><li><b>Đổi tư thế</b> = một lần reset tự nhiên, không ai thấy ngại.</li><li><b>Thở ra dài kín đáo</b> — không ai để ý, nhưng cơ thể bạn hiểu.</li><li><b>Chọn tư thế ít kích thích hơn</b> lúc mới bắt đầu để có nhiều khoảng đệm.</li></ul>",
+          "action": "Chọn 1 kịch bản mở lời + chọn sẵn 1 cách 'reset tự nhiên' để dùng khi cần."
+        },
+        {
+          "id": "7.5",
+          "fmt": "VIDEO",
+          "dur": "5'",
+          "star": true,
+          "title": "Người đàn ông mới trong bạn",
+          "summary": "Con người không đổi đời bằng việc làm một lần — mà bằng việc họ tin mình là ai.",
+          "body": "<p>Đây có lẽ là bài quan trọng nhất tuần này. Từ đầu khóa, chúng ta nói nhiều về kỹ thuật, hệ thần kinh, hơi thở, luyện tập. Hôm nay nói về <b>con người mà bạn đang trở thành</b>.</p><h3>Não tìm bằng chứng cho điều nó đã tin</h3><p>Nếu một người luôn nghĩ \"tôi là người yếu sinh lý\", họ sẽ nhìn mọi trải nghiệm qua lăng kính đó — chỉ cần một lần chưa như ý là \"đúng như mình nghĩ\". Không phải vì họ kém hơn ai, mà vì <b>bộ não luôn cố tìm bằng chứng để chứng minh điều nó đã tin</b>. Tin điều gì, nó sẽ tìm điều đó.</p><h3>Viết lại bản sắc</h3><p>Không phải một hình ảnh hoàn hảo. Không phải người đàn ông không bao giờ sai. Mà là một phiên bản <b>trưởng thành hơn, bình tĩnh hơn, hiểu bản thân hơn</b>.</p><p>Hãy viết ở đầu trang: <b>\"Tôi muốn trở thành người đàn ông như thế nào?\"</b> — không nghĩ đến người khác mong gì, xã hội đánh giá ra sao. Rồi viết 5–7 câu bắt đầu bằng <b>\"Tôi là người…\"</b>:</p><ul><li>\"Tôi là người bình tĩnh trước áp lực.\"</li><li>\"Tôi là người biết lắng nghe cơ thể mình.\"</li><li>\"Tôi là người tự tin mà không cần phải chứng minh điều gì.\"</li><li>\"Tôi là người không còn để một lần thất bại quyết định giá trị của mình.\"</li></ul><h3>Bản sắc, không phải kết quả</h3><p>Đừng viết điều bạn muốn <i>có</i> — hãy viết con người bạn muốn <i>trở thành</i>. Thay vì \"tôi muốn kiểm soát tốt hơn\" → \"tôi là người biết bình tĩnh và làm chủ cơ thể mình\". Thay vì \"tôi muốn hết lo\" → \"tôi là người đủ bình an để tận hưởng sự kết nối\".</p><p><b>Khi bản sắc thay đổi, hành động sẽ dần thay đổi theo. Và khi hành động thay đổi đủ lâu, kết quả sẽ tự nhiên xuất hiện.</b> Có thể hôm nay bạn chưa hoàn toàn là người đó. Nhưng mỗi lần bạn thở thay vì hoảng loạn, mỗi lần bạn dừng lại lắng nghe cơ thể, mỗi lần bạn đối xử với mình bằng sự cảm thông — bạn đang trở thành người đó.</p>",
+          "points": [
+            "Não luôn tìm bằng chứng cho điều nó đã tin.",
+            "Viết bản sắc ('Tôi là người…'), không viết kết quả ('Tôi muốn…').",
+            "Bản sắc đổi → hành động đổi → kết quả tự đến."
+          ],
+          "action": "Viết 5–7 câu 'Tôi là người…' và đọc chậm mỗi sáng hoặc tối 1 phút.",
+          "write": [
+            {
+              "k": "identity",
+              "q": "✍️ Tôi muốn trở thành người đàn ông như thế nào? — viết 5–7 câu 'Tôi là người…'",
+              "ph": "Tôi là người bình tĩnh trước áp lực.\nTôi là người biết lắng nghe cơ thể mình.\nTôi là người tự tin mà không cần phải chứng minh điều gì.\nTôi là người không còn để một lần thất bại quyết định giá trị của mình."
+            }
+          ]
+        },
+        {
+          "id": "7.6",
+          "fmt": "FORM",
+          "form": "CHECKIN",
+          "title": "Check-in tuần 7",
+          "summary": "Nhìn lại 7 tuần — bạn đã đi xa hơn bạn tưởng.",
+          "body": "<p>Tuần này đo bằng <b>con người</b>, không phải bằng phút. Hãy tự chấm 1–10 cho từng điều: tôi hiểu cơ thể mình hơn trước · tôi bình tĩnh hơn khi gặp áp lực · tôi bớt tự trách bản thân · tôi tự tin hơn vào chính mình · tôi tận hưởng sự kết nối nhiều hơn là lo phải thể hiện tốt.</p><p>Rồi trả lời 3 câu trước khi bước sang tuần cuối: <b>Điều tôi tự hào nhất về bản thân sau 7 tuần là gì? · Một niềm tin cũ tôi đã bắt đầu buông bỏ là gì? · Người đàn ông tôi đang trở thành là người như thế nào?</b></p><p><i>Nếu hôm nay bạn chưa chấm cho mình điểm 10 ở tất cả — điều đó hoàn toàn bình thường. Mục tiêu chưa bao giờ là hoàn hảo, mà là mỗi tuần hiểu mình hơn một chút.</i></p>",
+          "action": "Chấm 5 điều trên thang 1–10 và ghi lại 3 câu nhìn lại vào ô ghi chú."
+        }
+      ]
+    },
+    {
+      "n": 8,
+      "tier": "duytri",
+      "title": "Kết quả bền vững",
+      "msg": "Những gì bạn đạt được không phải đích đến — chúng là nền móng.",
+      "milestone": "Delta PEDT giảm · tự tin +≥2 · Recovery Score lần 3 · 100% có kế hoạch duy trì.",
+      "lessons": [
+        {
+          "id": "8.1",
+          "fmt": "VIDEO",
+          "dur": "5'",
+          "title": "Hành trình thật sự chỉ mới bắt đầu",
+          "summary": "Mục tiêu không phải là không bao giờ gặp khó khăn — mà là biết mình cần làm gì khi khó khăn xuất hiện.",
+          "body": "<p>Trước hết, chúc mừng bạn. Không phải vì bạn đã xem hết bài học, mà vì bạn <b>đủ kiên trì để ở lại với chính mình</b> suốt 8 tuần — điều không hề dễ.</p><p>Rất nhiều người khi gặp khó khăn sẽ tìm một giải pháp thật nhanh: một viên thuốc, một mẹo trên mạng. Bạn đã chọn con đường khác: hiểu cơ thể trước, rồi mới học cách thay đổi nó.</p><h3>Đây là nền móng, không phải đích đến</h3><p>Trong 8 tuần qua, có lẽ bạn đã nhận ra: <b>sức khỏe sinh lý không tồn tại tách biệt với phần còn lại của cuộc sống</b>. Nó phản ánh cách bạn ngủ, chịu áp lực, chăm sóc cơ thể, đối xử với cảm xúc và kết nối với bạn đời. Đó là lý do chúng ta không bắt đầu bằng kỹ thuật kiểm soát — mà bắt đầu từ hệ thần kinh, hơi thở, giấc ngủ.</p><h3>\"Sau khóa học này tôi có khỏi hoàn toàn không?\"</h3><p>Mục tiêu của khóa học <b>chưa bao giờ</b> là giúp bạn thành người không bao giờ gặp khó khăn nữa. Mục tiêu là giúp bạn thành <b>người biết mình cần làm gì mỗi khi khó khăn xuất hiện</b>.</p><p>Cuộc sống sẽ luôn có giai đoạn áp lực — thức khuya vì công việc, căng thẳng vì tài chính, mệt mỏi vì gia đình. Khác biệt là giờ bạn <b>có công cụ</b> để đưa cơ thể về cân bằng, và nhận ra tín hiệu sớm trước khi mọi thứ nghiêm trọng. Bạn không còn bất lực như trước. Đó mới là thay đổi lớn nhất.</p><p>Và một nghịch lý thú vị: <b>khi bạn ngừng chiến đấu với cơ thể, cơ thể lại bắt đầu hợp tác với bạn.</b> Không phải vì bạn mạnh hơn — mà vì cơ thể đã cảm thấy an toàn hơn.</p>",
+          "points": [
+            "Đây là nền móng, không phải đích đến.",
+            "Mục tiêu: biết làm gì khi khó khăn xuất hiện — không phải hết khó khăn.",
+            "Ngừng chiến đấu với cơ thể → cơ thể hợp tác."
+          ],
+          "action": "Nhớ lại con người của mình ở tuần 1 — và nhìn lại mình hôm nay."
+        },
+        {
+          "id": "8.2",
+          "fmt": "FORM",
+          "form": "F8",
+          "title": "Bài đo cuối khóa",
+          "summary": "Lặp lại đúng bộ câu tuần 0 để so sánh sạch, cộng thêm cảm nhận về sự tự do.",
+          "body": "<p>Đã đến lúc đo lại. Bạn sẽ trả lời <b>đúng bộ câu của tuần 0</b> (PEDT + thời gian + tự tin) — để so sánh thật sự công bằng — cộng thêm một câu về việc bạn thấy tự do/thoải mái hơn đến đâu.</p><p>Hãy trả lời trung thực theo cảm nhận hiện tại, đừng cố 'cho đẹp'. Con số thật mới có ý nghĩa với bạn.</p>",
+          "action": "Hoàn thành để mở khóa Dashboard kết quả."
+        },
+        {
+          "id": "8.3",
+          "fmt": "RESULT",
+          "star": true,
+          "title": "Kết quả của bạn: trước – sau",
+          "summary": "Bảng so sánh tự sinh từ dữ liệu tuần 0 và tuần 8.",
+          "body": "<p>Đây là khoảnh khắc 'Kết quả thật'. Hệ thống sẽ so dữ liệu <b>tuần 0</b> và <b>tuần 8</b> của bạn để cho thấy thay đổi đo được: điểm PEDT, thời gian tự cảm nhận, sự tự tin, cùng chuỗi ngày luyện tập và Recovery Score.</p><p>Dù kết quả thế nào, hãy nhớ: bạn đã đi trọn 8 tuần và xây được những kỹ năng ở lại với bạn. Bấm để xem bảng của bạn.</p>",
+          "action": "Xem kết quả thật của bạn."
+        },
+        {
+          "id": "8.4",
+          "fmt": "DOC",
+          "title": "Đừng cố gắng nhiều hơn, hãy sống đúng hơn",
+          "summary": "Người giữ kết quả lâu nhất không phải người cố gắng nhiều nhất — mà là người sống đúng hơn.",
+          "body": "<p>Nhiều người nghĩ để duy trì kết quả thì phải <i>cố gắng nhiều hơn</i>: tập thêm, luyện kỹ thuật nhiều hơn, luôn giữ phong độ. Thực tế ngược lại.</p><p>Hãy tưởng tượng một cái cây: nếu mỗi ngày bạn chỉ lau từng chiếc lá nhưng quên tưới gốc, cây vẫn héo. Ngược lại, gốc rễ khỏe thì lá tự xanh. Trong 8 tuần qua, chúng ta đang học cách <b>chăm sóc gốc rễ</b>: hệ thần kinh, giấc ngủ, cách đối diện căng thẳng, cách chăm cơ thể, cách kết nối.</p><h3>3 trụ cần duy trì</h3><ul><li><b>Vài phút mỗi ngày cho hệ thần kinh.</b> Không cần lúc nào cũng đúng bài 4-7-8. Quan trọng là mỗi ngày đều có một khoảng để cơ thể thật sự chậm lại — thở, đi bộ, ngồi yên, nghe nhạc nhẹ. <i>Cơ thể không cần kỹ thuật hoàn hảo — nó cần cảm giác an toàn được lặp lại.</i></li><li><b>Chăm sóc cơ thể.</b> Ngủ đủ, ăn cân bằng, vài buổi vận động mỗi tuần, hạn chế rượu bia. Không phải vì bạn đang chữa bệnh — mà vì đó là cách một cơ thể khỏe mạnh nên được đối xử.</li><li><b>Chăm sóc mối quan hệ.</b> Sự gần gũi không bắt đầu ở phòng ngủ. Nó bắt đầu từ một cuộc trò chuyện, một cái ôm, một lời hỏi thăm, một bữa cơm chung. <b>Kết nối cảm xúc luôn đi trước hòa hợp thể chất.</b></li></ul><h3>3 tín hiệu cảnh báo sớm</h3><ul><li>Ngủ vỡ nhịp <b>≥3 đêm</b> liên tục.</li><li>Bỏ luyện tập <b>≥2 tuần</b>.</li><li>Lo âu quay lại trước khi gần gũi.</li></ul><p>Thấy một trong ba — đừng chờ. Quay lại tuần tương ứng và luyện lại vài ngày. 'Hâm nóng' luôn nhanh hơn học lại từ đầu.</p><h3>Giao thức duy trì — 15 phút/tuần</h3><ul><li><b>1 buổi Tăng–Giảm</b> (giữ kỹ năng điều chỉnh).</li><li><b>Kegel + reverse Kegel</b> vài phút mỗi ngày (giữ nền sàn chậu).</li><li><b>1 lần kiểm tra nhịp ngủ</b> (giữ hệ thần kinh an toàn).</li></ul><p>Sẽ có ngày bạn thấy mình không tốt như trước — <b>hoàn toàn bình thường</b>. Không ai có phong độ cao mỗi ngày. Khác biệt nằm ở phản ứng: trước đây bạn hoảng sợ; giờ bạn mỉm cười và tự nhủ \"mình biết chuyện gì đang xảy ra — chỉ cần quay lại những điều cơ bản\". <b>Đó chính là sự trưởng thành: không phải vì bạn hết khó khăn, mà vì bạn không còn bị khó khăn điều khiển.</b></p>",
+          "action": "Lưu giao thức 15 phút/tuần vào lịch định kỳ — và chọn 1 việc nhỏ cho mối quan hệ tuần này."
+        },
+        {
+          "id": "8.5",
+          "fmt": "FORM",
+          "form": "CHECKIN",
+          "recovery": true,
+          "title": "Check-in tuần 8 + Recovery Score lần 3",
+          "summary": "Mốc đo cuối — hoàn tất đường cong phục hồi của bạn.",
+          "body": "<p>Đây không phải một cuộc thi, và bạn không cần đạt số điểm nào để 'tốt nghiệp'. Check-in này hoàn tất <b>mốc Recovery Score thứ 3</b> (tuần 2 → 5 → 8) để bạn thấy trọn đường cong phục hồi của mình.</p><p>Có thể hôm nay bạn chưa đạt tất cả mục tiêu từng đặt ra — hoàn toàn bình thường. Có người cảm nhận rất nhanh, có người cần thêm vài tháng. <b>Điều quyết định không phải bạn thay đổi nhanh đến đâu, mà là bạn có tiếp tục đi tiếp hay không.</b></p>",
+          "action": "Hoàn thành check-in cuối để chốt Recovery Score lần 3."
+        },
+        {
+          "id": "8.6",
+          "fmt": "VIDEO",
+          "dur": "5'",
+          "star": true,
+          "title": "Điều quý giá nhất bạn vừa lấy lại",
+          "summary": "Không chỉ là khả năng kiểm soát — mà là sự tự tin, sự bình an và khả năng kết nối.",
+          "body": "<p>Đây là bài học cuối của hành trình. Ngày đầu, điều bạn mong muốn có lẽ chỉ là giải quyết được vấn đề. Nhưng sau 8 tuần, tôi hy vọng bạn nhận ra: <b>điều quý giá nhất bạn vừa lấy lại không chỉ là khả năng kiểm soát — mà là sự tự tin, sự bình an, và khả năng kết nối với chính mình.</b></p><h3>Nhìn lại Vòng Tự Chủ bạn đã đi qua</h3><p>Bạn bắt đầu ở <b>An toàn</b> — đưa cơ thể ra khỏi chế độ căng thẳng bằng hơi thở và giấc ngủ. Rồi <b>Nhận biết</b> — đọc tín hiệu và thang 0–10. Rồi <b>Điều chỉnh</b> — lái hưng phấn bằng Tăng–Giảm. <b>Nền móng</b> giữ thể chất vững. <b>Kết nối</b> đưa mọi thứ vào đời thật. Và giờ là <b>Duy trì</b> — giữ nó trọn đời.</p><p>Trong 8 tuần, chúng ta không cố đánh bại cơ thể. Chúng ta học cách <b>lắng nghe</b> nó — không ép buộc, không trách móc, không coi nó là kẻ thù. Khi cơ thể cảm thấy được lắng nghe, nó phản hồi rất khác. Đó là lý do nhiều học viên nói điều họ cảm nhận rõ nhất không phải kéo dài thêm mấy phút — mà là <b>bình tĩnh hơn, ít áp lực hơn, gần gũi tự nhiên hơn</b>.</p><h3>Bạn không chỉ là khả năng tình dục</h3><p>Sẽ luôn có giai đoạn bạn không ở phong độ tốt nhất — vì công việc, con nhỏ, sức khỏe, tuổi tác. Điều đó <b>không có nghĩa là bạn thất bại</b>. Một mối quan hệ hạnh phúc không được quyết định bởi việc mọi lần đều hoàn hảo, mà bởi sự thấu hiểu và khả năng cùng nhau vượt qua những giai đoạn không hoàn hảo.</p><p>Bạn còn là một người chồng. Một người cha. Một người con. Một người đồng hành. Tất cả những vai trò đó đều cần một con người khỏe mạnh, bình an và biết yêu thương.</p><h3>Cảm ơn bạn</h3><p>Hãy dành ít phút để <b>cảm ơn chính mình</b> — vì đã không bỏ cuộc, vì đã đủ dũng cảm đối diện điều mình từng né tránh, vì đã cho bản thân một cơ hội để thay đổi.</p><p><b>Tám tuần không thể thay đổi cả cuộc đời. Nhưng tám tuần có thể thay đổi hướng đi của cuộc đời.</b></p><p>Đây không phải một 'mẹo' bạn có thể mất — đây là <b>kỹ năng</b>, và kỹ năng thì là của bạn, trọn đời. Cảm ơn bạn đã tin tưởng và đồng hành cùng 9well. Chúc bạn luôn mạnh khỏe, bình an và giữ được sự hòa hợp — trong chính mình và trong gia đình.</p>",
+          "points": [
+            "Điều lấy lại lớn nhất: tự tin, bình an, khả năng kết nối.",
+            "Giá trị của bạn không nằm ở khả năng tình dục.",
+            "Đây là kỹ năng — của bạn trọn đời."
+          ],
+          "action": "Dành 1 phút cảm ơn chính mình. Và viết 1 câu cho chính bạn của tuần 0 — người đã can đảm bắt đầu."
+        },
+        {
+          "id": "8.7",
+          "fmt": "FORM",
+          "form": "SUMMARY",
+          "title": "Phiếu tổng kết hành trình",
+          "summary": "Giữ lại để một ngày nào đó đọc lại — và nhớ mình đã từng rất dũng cảm.",
+          "body": "<p>Hãy dành vài phút trả lời — không phải để đánh giá, mà để <b>nhìn lại chính mình</b>. Đôi khi dừng lại nhìn về phía sau, ta mới nhận ra mình đã đi xa đến thế nào.</p><p><i>Hãy giữ lại những câu trả lời này. Không phải để so sánh với ai — mà để một ngày nào đó, khi cuộc sống bận rộn và bạn vô tình quên mất mình đã thay đổi thế nào, bạn có thể mở ra đọc lại.</i></p><h3>7 câu tổng kết</h3><ol><li><b>Khi bắt đầu khóa học, điều khiến bạn lo lắng nhất là gì?</b></li><li><b>Hôm nay, điều đó đã thay đổi như thế nào?</b></li><li><b>Trong suốt 8 tuần, điều bạn thấy hữu ích nhất là gì?</b><br><i>Hiểu đúng nguyên nhân · Bài tập thở · Các bài tập kiểm soát · Học cách giảm áp lực · Cải thiện giao tiếp với bạn đời · Khác…</i></li><li><b>Điều bạn tự hào nhất về bản thân sau 8 tuần là gì?</b></li><li><b>Bạn muốn tiếp tục duy trì những thói quen nào?</b><br><i>Thở mỗi ngày · Ngủ đủ giấc · Tập luyện thể chất · Giảm rượu bia · Dành thời gian cho bạn đời · Chủ động chăm sóc sức khỏe</i></li><li><b>Nếu gặp lại chính mình của 8 tuần trước, bạn sẽ nhắn điều gì?</b></li><li><b>Trong 3 tháng tới, bạn cam kết điều gì với bản thân?</b></li></ol>",
+          "action": "Viết câu trả lời và lưu lại (giấy, ghi chú điện thoại, hoặc gửi cho chuyên gia đồng hành)."
+        },
+        {
+          "id": "8.8",
+          "fmt": "VIDEO",
+          "dur": "4'",
+          "title": "Lộ trình tiếp theo của bạn",
+          "summary": "Dựa trên kết quả của bạn, đây là hướng đi phù hợp — như bác sĩ kê đơn.",
+          "body": "<p>Khóa học đã trọn vẹn. Phần này chỉ dành cho bạn nào muốn biết <b>đi tiếp thế nào</b> — không có 'một hướng cho tất cả'. Hướng đi tùy vào kết quả tuần 8 của bạn:</p><ul><li><b>Nếu kết quả tốt:</b> mục tiêu giờ là <b>giữ vững</b>. Một gói duy trì nhẹ nhàng giúp bạn không tuột lại và tiếp tục tiến bộ dần.</li><li><b>Nếu tiến bộ chưa như mong muốn:</b> có thể bạn cần đồng hành <b>sát hơn 1-1</b> để tìm đúng điểm nghẽn của riêng mình.</li><li><b>Nếu bạn nhận thấy dấu hiệu bệnh lý</b> (đau, bất thường, không cải thiện dù luyện đúng): nên <b>đi khám chuyên khoa</b>. Luyện tập không thay thế được y tế khi cần.</li></ul><p>Dù chọn hướng nào, quyết định nên đến từ <b>kết quả của bạn</b>, không phải từ quảng cáo. Và nếu bạn chọn tự đi tiếp một mình — điều đó cũng hoàn toàn ổn. Bạn đã có đủ công cụ rồi.</p>",
+          "points": [
+            "Kết quả tốt → gói duy trì.",
+            "Tiến bộ chưa đủ → coaching 1-1 sát hơn.",
+            "Có dấu hiệu bệnh lý → nên đi khám chuyên khoa."
+          ],
+          "action": "Chọn hướng phù hợp với kết quả của bạn — nhắn chuyên gia nếu cần."
+        }
+      ]
+    }
+  ],
+  "NW_FORMS": {
+    "F0a": {
+      "title": "Sàng lọc an toàn",
+      "type": "screen",
+      "intro": "Trả lời trung thực. Đây là để đảm bảo luyện tập an toàn với bạn.",
+      "questions": [
+        {
+          "q": "Bạn có bệnh tim mạch hoặc huyết áp đang điều trị không?",
+          "flag": true
+        },
+        {
+          "q": "Bạn có tiểu đường chưa kiểm soát tốt không?",
+          "flag": true
+        },
+        {
+          "q": "Bạn có đau khi quan hệ, hoặc đau/khó chịu vùng chậu kéo dài không?",
+          "flag": true
+        },
+        {
+          "q": "Bạn có tiểu buốt, tiểu ra máu, hoặc bất thường khi đi tiểu không?",
+          "flag": true
+        },
+        {
+          "q": "Bạn có đang dùng thuốc ảnh hưởng chức năng tình dục (theo chỉ định) không?",
+          "flag": true
+        },
+        {
+          "q": "Bạn có đang trong giai đoạn trầm cảm nặng hoặc lo âu nghiêm trọng không?",
+          "flag": true
+        }
+      ],
+      "passMsg": "Tốt — không có dấu hiệu cần lưu ý đặc biệt. Bạn có thể bắt đầu luyện tập.",
+      "flagMsg": "Bạn có một vài dấu hiệu nên được bác sĩ kiểm tra trước. Hãy đi khám chuyên khoa trước khi bắt đầu — luyện tập vẫn hữu ích, nhưng an toàn của bạn là ưu tiên. (Nội dung này là giáo dục, không thay thế khám bệnh.)"
+    },
+    "F0b": {
+      "title": "Bài đo xuất phát",
+      "type": "baseline",
+      "intro": "Ảnh chụp điểm khởi đầu của bạn. Không có đúng/sai.",
+      "pedt": [
+        {
+          "q": "Việc trì hoãn thời điểm kết thúc với bạn khó tới mức nào?",
+          "opts": [
+            "Không khó",
+            "Hơi khó",
+            "Khó vừa",
+            "Rất khó",
+            "Cực kỳ khó"
+          ]
+        },
+        {
+          "q": "Bạn có kết thúc trước khi mình muốn không?",
+          "opts": [
+            "Gần như không",
+            "Thỉnh thoảng",
+            "Khoảng một nửa số lần",
+            "Phần lớn",
+            "Gần như luôn"
+          ]
+        },
+        {
+          "q": "Bạn có kết thúc chỉ với rất ít kích thích không?",
+          "opts": [
+            "Gần như không",
+            "Thỉnh thoảng",
+            "Khoảng một nửa",
+            "Phần lớn",
+            "Gần như luôn"
+          ]
+        },
+        {
+          "q": "Bạn có thấy khó chịu/hụt hẫng vì kết thúc quá sớm không?",
+          "opts": [
+            "Không chút nào",
+            "Một chút",
+            "Vừa phải",
+            "Nhiều",
+            "Rất nhiều"
+          ]
+        },
+        {
+          "q": "Bạn có lo việc này khiến bạn đời không hài lòng không?",
+          "opts": [
+            "Không chút nào",
+            "Một chút",
+            "Vừa phải",
+            "Nhiều",
+            "Rất nhiều"
+          ]
+        }
+      ],
+      "time": {
+        "q": "Thời gian trung bình bạn tự cảm nhận (từ khi bắt đầu đến khi kết thúc)?",
+        "opts": [
+          "Dưới 1 phút",
+          "1–2 phút",
+          "2–5 phút",
+          "5–10 phút",
+          "Trên 10 phút"
+        ]
+      },
+      "confidence": {
+        "q": "Mức độ tự tin của bạn về chuyện này hiện tại?"
+      },
+      "goal": {
+        "q": "Mục tiêu quan trọng nhất với bạn là gì?",
+        "opts": [
+          "Tự chủ thời gian",
+          "Bớt lo lắng, tự tin hơn",
+          "Kết nối cảm xúc với bạn đời",
+          "Hiểu cơ thể mình"
+        ]
+      }
+    }
+  },
+  "NW_CHECKINS": {
+    "1": {
+      "intro": "Tuần đầu tiên là để cơ thể bắt đầu nhớ lại cảm giác an toàn. Không đánh giá — chỉ quan sát.",
+      "extra": [
+        {
+          "k": "feel",
+          "type": "multi",
+          "q": "Sau khi thực hành thở, bạn cảm nhận điều gì rõ nhất?",
+          "opts": [
+            "Bình tĩnh hơn",
+            "Dễ ngủ hơn",
+            "Ít suy nghĩ hơn",
+            "Dễ tập trung hơn",
+            "Chưa thấy khác biệt"
+          ]
+        },
+        {
+          "k": "conf",
+          "type": "scale",
+          "q": "Mức độ tự tin về khả năng cải thiện của bạn hiện tại:",
+          "min": 0,
+          "max": 10,
+          "lo": "Không tin chút nào",
+          "hi": "Tin mình cải thiện được"
+        },
+        {
+          "k": "learned",
+          "type": "text",
+          "q": "Điều giá trị nhất bạn học được trong tuần này là gì?"
+        },
+        {
+          "k": "block",
+          "type": "text",
+          "q": "Điều gì đang khiến bạn lo lắng hoặc cản trở bạn nhất lúc này?"
+        }
+      ],
+      "outro": "Bạn không cần trở nên hoàn hảo. Bạn chỉ cần tiếp tục xuất hiện mỗi ngày."
+    },
+    "2": {
+      "intro": "Hai tuần qua không phải để thay đổi cuộc đời bạn — mà để cơ thể bắt đầu nhớ lại cảm giác an toàn. Những thay đổi lớn luôn bắt đầu từ tín hiệu rất nhỏ.",
+      "extra": [
+        {
+          "k": "change",
+          "type": "multi",
+          "q": "Bạn đã thấy tín hiệu thay đổi đầu tiên nào?",
+          "opts": [
+            "Ngủ sâu hơn",
+            "Bớt căng thẳng hơn",
+            "Bình tĩnh hơn",
+            "Ít phản ứng hơn",
+            "Chưa thấy rõ"
+          ]
+        },
+        {
+          "k": "note2",
+          "type": "text",
+          "q": "Điều gì bạn muốn ghi nhận cho chính mình sau 2 tuần?"
+        }
+      ],
+      "outro": "Bạn đã hoàn thành 25% hành trình: hiểu cơ chế thần kinh · học kỹ thuật thở · bắt đầu cải thiện giấc ngủ · xây nền tảng phục hồi."
+    },
+    "3": {
+      "intro": "Hôm nay không học thêm điều gì mới. Chỉ dừng lại và nhìn lại — vì đôi khi ta bỏ lỡ những thay đổi đang xảy ra chỉ vì chúng diễn ra quá từ từ.",
+      "extra": [
+        {
+          "k": "did",
+          "type": "multi",
+          "q": "Ba tuần qua, bạn đã làm được những gì?",
+          "opts": [
+            "Ngủ sớm hơn",
+            "Thực hành bài thở",
+            "Quay lại sau một ngày bỏ lỡ",
+            "Quan sát cơ thể mình",
+            "Thay đổi vài thói quen nhỏ"
+          ]
+        },
+        {
+          "k": "then_now",
+          "type": "text",
+          "q": "Ba tuần trước bạn ở trạng thái nào — và hôm nay khác gì?"
+        }
+      ],
+      "outro": "Bạn đang làm tốt hơn phần lớn những người chỉ nghĩ về thay đổi nhưng không bao giờ bắt đầu."
+    },
+    "4": {
+      "intro": "Tuần này không đánh giá bạn quan hệ được bao lâu. Điều quan trọng nhất là bạn đã nhận ra cơ thể sớm hơn trước.",
+      "extra": [
+        {
+          "k": "notice",
+          "type": "opt",
+          "q": "Bạn có nhận ra dấu hiệu cơ thể sớm hơn trước không?",
+          "opts": [
+            "Chưa nhận ra",
+            "Có nhưng chưa đều",
+            "Nhận ra trong đa số lần"
+          ]
+        },
+        {
+          "k": "level",
+          "type": "scale",
+          "q": "Bạn thường nhận ra mình ở mức hưng phấn nào? (mục tiêu tuần này: 4–6)",
+          "min": 1,
+          "max": 10,
+          "lo": "Bình tĩnh",
+          "hi": "Rất gần ngưỡng"
+        },
+        {
+          "k": "signal",
+          "type": "multi",
+          "q": "Dấu hiệu đầu tiên bạn nhận thấy là gì?",
+          "opts": [
+            "Hơi thở ngắn",
+            "Vai căng",
+            "Hàm siết",
+            "Đùi căng",
+            "Mông siết",
+            "Tim đập nhanh",
+            "Khó tập trung"
+          ]
+        },
+        {
+          "k": "reset",
+          "type": "opt",
+          "q": "Kỹ thuật Reset 30 giây giúp bạn giảm hưng phấn thế nào?",
+          "opts": [
+            "Không giảm",
+            "Giảm ít",
+            "Giảm vừa",
+            "Giảm rõ"
+          ]
+        },
+        {
+          "k": "hard",
+          "type": "multi",
+          "q": "Điều khó nhất tuần này là gì?",
+          "opts": [
+            "Quên thực hành",
+            "Khó nhận biết cơ thể",
+            "Không kiên nhẫn",
+            "Thực hành nhưng chưa thấy hiệu quả",
+            "Khó áp dụng khi gần gũi"
+          ]
+        },
+        {
+          "k": "prog",
+          "type": "opt",
+          "q": "Sau tuần này bạn thấy mình tiến bộ bao nhiêu?",
+          "opts": [
+            "Chưa thấy",
+            "Có một chút",
+            "Đang tiến bộ",
+            "Tự tin hơn",
+            "Khác biệt rõ ràng"
+          ]
+        }
+      ],
+      "outro": "Bạn đang xây dựng khả năng kiểm soát từ gốc. Nhận ra cơ thể sớm hơn — đó mới là nền tảng của mọi kỹ thuật ở các tuần sau."
+    },
+    "5": {
+      "intro": "Dành 3 phút nhìn lại tuần này. Không cần hoàn hảo, chỉ cần trung thực với chính mình.",
+      "extra": [
+        {
+          "k": "move",
+          "type": "opt",
+          "q": "Tuần này bạn đã vận động bao nhiêu buổi?",
+          "opts": [
+            "0 buổi",
+            "1 buổi",
+            "2 buổi",
+            "3 buổi trở lên"
+          ]
+        },
+        {
+          "k": "walk",
+          "type": "opt",
+          "q": "Trung bình mỗi ngày bạn đi bộ / vận động nhẹ khoảng bao lâu?",
+          "opts": [
+            "Dưới 15 phút",
+            "15–30 phút",
+            "30–60 phút",
+            "Trên 60 phút"
+          ]
+        },
+        {
+          "k": "sleephrs",
+          "type": "opt",
+          "q": "Tuần này bạn ngủ trung bình bao nhiêu giờ mỗi đêm?",
+          "opts": [
+            "Dưới 6 giờ",
+            "6–7 giờ",
+            "7–8 giờ",
+            "Trên 8 giờ"
+          ]
+        },
+        {
+          "k": "energy",
+          "type": "opt",
+          "q": "Mức năng lượng của bạn thay đổi thế nào?",
+          "opts": [
+            "Mệt mỏi hơn",
+            "Không thay đổi",
+            "Khỏe hơn một chút",
+            "Tràn đầy năng lượng"
+          ]
+        },
+        {
+          "k": "diet",
+          "type": "opt",
+          "q": "Bạn duy trì chế độ ăn lành mạnh ở mức nào?",
+          "opts": [
+            "Chưa duy trì",
+            "Khoảng 50%",
+            "Khoảng 70%",
+            "Trên 80%"
+          ]
+        },
+        {
+          "k": "change5",
+          "type": "multi",
+          "q": "Sau 5 tuần, bạn thấy điều gì thay đổi rõ nhất?",
+          "opts": [
+            "Ngủ ngon hơn",
+            "Ít căng thẳng hơn",
+            "Cơ thể khỏe hơn",
+            "Kiểm soát tốt hơn",
+            "Tự tin hơn",
+            "Chưa thấy thay đổi rõ"
+          ]
+        }
+      ],
+      "outro": "Phong độ không được tạo nên trong một ngày, mà được xây từ những lựa chọn nhỏ lặp lại mỗi ngày."
+    },
+    "6": {
+      "intro": "Dành 2–3 phút nhìn lại việc luyện tập tuần này. Không có đáp án đúng hay sai — hãy chọn điều phản ánh đúng trải nghiệm của bạn nhất.",
+      "extra": [
+        {
+          "k": "level6",
+          "type": "opt",
+          "q": "Tuần này bạn thường nhận ra mình ở mức hưng phấn nào?",
+          "opts": [
+            "4–5: nhận biết khá sớm, còn nhiều thời gian điều chỉnh",
+            "6–7: hưng phấn đã cao nhưng vẫn kiểm soát được",
+            "8–10: thường chỉ nhận ra khi đã rất gần ngưỡng"
+          ]
+        },
+        {
+          "k": "back4",
+          "type": "opt",
+          "q": "Khi ở mức ~7, bạn có chủ động đưa cơ thể về mức 4 được không?",
+          "opts": [
+            "Chưa làm được",
+            "Làm được đôi lúc",
+            "Thường xuyên làm được"
+          ]
+        },
+        {
+          "k": "lose",
+          "type": "multi",
+          "q": "Điều gì khiến bạn mất kiểm soát nhiều nhất?",
+          "opts": [
+            "Lo lắng / áp lực phải 'thể hiện'",
+            "Kích thích quá mạnh hoặc quá nhanh",
+            "Hơi thở nhanh, cơ thể căng cứng",
+            "Thiếu tập trung vào cảm nhận cơ thể"
+          ]
+        },
+        {
+          "k": "updown",
+          "type": "opt",
+          "q": "Tuần này bạn tập 'Tăng–Giảm' bao nhiêu buổi?",
+          "opts": [
+            "0–1 buổi",
+            "2–3 buổi",
+            "4–5 buổi",
+            "Trên 5 buổi"
+          ]
+        },
+        {
+          "k": "aware",
+          "type": "opt",
+          "q": "Khả năng nhận biết mức hưng phấn so với trước đây?",
+          "opts": [
+            "Chưa thay đổi nhiều",
+            "Nhận biết sớm hơn một chút",
+            "Nhận biết rõ ràng và chủ động hơn"
+          ]
+        },
+        {
+          "k": "conf6",
+          "type": "scale",
+          "q": "Mức độ tự tin hiện tại so với tuần đầu tiên:",
+          "min": 1,
+          "max": 10,
+          "lo": "Chưa tự tin hơn",
+          "hi": "Tự tin hơn rất nhiều"
+        },
+        {
+          "k": "happy",
+          "type": "text",
+          "q": "Điều bạn hài lòng nhất sau tuần luyện tập này là gì?"
+        },
+        {
+          "k": "hard6",
+          "type": "text",
+          "q": "Khó khăn lớn nhất bạn đang gặp là gì?"
+        },
+        {
+          "k": "commit",
+          "type": "multi",
+          "q": "Cam kết của bạn cho tuần tiếp theo:",
+          "opts": [
+            "Tôi sẽ luyện tập đủ theo hướng dẫn",
+            "Tôi sẽ không nóng vội hay tự tạo áp lực",
+            "Tôi sẽ tiếp tục quan sát & lắng nghe cơ thể mỗi ngày"
+          ]
+        }
+      ],
+      "outro": "Tiến bộ không đo bằng việc bạn kéo dài được bao lâu, mà bằng việc bạn hiểu cơ thể mình hơn bao nhiêu."
+    },
+    "7": {
+      "intro": "Tuần này đo bằng CON NGƯỜI, không phải bằng phút. Tự chấm 1–10 cho từng điều dưới đây.",
+      "extra": [
+        {
+          "k": "u1",
+          "type": "scale",
+          "q": "1. Tôi hiểu cơ thể mình hơn trước.",
+          "sub": "Tôi nhận ra tín hiệu sớm hơn và biết điều gì đang xảy ra với mình.",
+          "min": 1,
+          "max": 10,
+          "lo": "Chưa",
+          "hi": "Rất rõ"
+        },
+        {
+          "k": "u2",
+          "type": "scale",
+          "q": "2. Tôi bình tĩnh hơn khi gặp áp lực.",
+          "sub": "Tôi không còn hoảng loạn và biết cách đưa mình về cân bằng.",
+          "min": 1,
+          "max": 10,
+          "lo": "Chưa",
+          "hi": "Rất rõ"
+        },
+        {
+          "k": "u3",
+          "type": "scale",
+          "q": "3. Tôi bớt tự trách bản thân sau những lần chưa như mong muốn.",
+          "sub": "Tôi nhìn đó như cơ hội học hỏi thay vì thất bại.",
+          "min": 1,
+          "max": 10,
+          "lo": "Chưa",
+          "hi": "Rất rõ"
+        },
+        {
+          "k": "u4",
+          "type": "scale",
+          "q": "4. Tôi cảm thấy tự tin hơn vào chính mình.",
+          "sub": "Tự tin đến từ việc biết mình xử lý được, không phụ thuộc kết quả.",
+          "min": 1,
+          "max": 10,
+          "lo": "Chưa",
+          "hi": "Rất rõ"
+        },
+        {
+          "k": "u5",
+          "type": "scale",
+          "q": "5. Tôi tận hưởng sự kết nối nhiều hơn là lo phải thể hiện tốt.",
+          "sub": "Khi ở bên người mình yêu, tôi hiện diện nhiều hơn.",
+          "min": 1,
+          "max": 10,
+          "lo": "Chưa",
+          "hi": "Rất rõ"
+        },
+        {
+          "k": "proud7",
+          "type": "text",
+          "q": "Điều khiến tôi tự hào nhất về bản thân sau 7 tuần là gì?"
+        },
+        {
+          "k": "letgo",
+          "type": "text",
+          "q": "Một niềm tin cũ mà tôi đã bắt đầu buông bỏ là gì?"
+        },
+        {
+          "k": "becoming",
+          "type": "text",
+          "q": "Người đàn ông mà tôi đang trở thành là người như thế nào?"
+        }
+      ],
+      "outro": "Nếu hôm nay bạn chưa chấm cho mình điểm 10 ở tất cả — hoàn toàn bình thường. Mục tiêu chưa bao giờ là hoàn hảo, mà là mỗi tuần hiểu mình hơn một chút."
+    },
+    "8": {
+      "intro": "Đây không phải một cuộc thi, và bạn không cần đạt số điểm nào để 'tốt nghiệp'. Check-in này chốt mốc Recovery Score thứ 3 để bạn thấy trọn đường cong phục hồi của mình.",
+      "extra": [
+        {
+          "k": "keep",
+          "type": "multi",
+          "q": "Bạn muốn tiếp tục duy trì những thói quen nào?",
+          "opts": [
+            "Thở mỗi ngày",
+            "Ngủ đủ giấc",
+            "Tập luyện thể chất",
+            "Giảm rượu bia",
+            "Dành thời gian cho bạn đời",
+            "Chủ động chăm sóc sức khỏe"
+          ]
+        }
+      ],
+      "outro": "Điều quyết định không phải là bạn thay đổi nhanh đến đâu, mà là bạn có tiếp tục đi tiếp hay không."
+    }
+  },
+  "NW_SUMMARY": {
+    "title": "Phiếu tổng kết hành trình",
+    "intro": "Hãy dành vài phút trả lời — không phải để đánh giá, mà để nhìn lại chính mình. Câu trả lời được lưu lại trên máy bạn, và sẽ hiện ở tab Kết quả.",
+    "questions": [
+      {
+        "k": "s1",
+        "type": "text",
+        "q": "1. Khi bắt đầu khóa học, điều khiến bạn lo lắng nhất là gì?"
+      },
+      {
+        "k": "s2",
+        "type": "text",
+        "q": "2. Hôm nay, điều đó đã thay đổi như thế nào?"
+      },
+      {
+        "k": "s3",
+        "type": "multi",
+        "q": "3. Trong suốt 8 tuần, điều bạn cảm thấy hữu ích nhất là gì?",
+        "opts": [
+          "Hiểu đúng nguyên nhân của vấn đề",
+          "Bài tập thở",
+          "Các bài tập kiểm soát",
+          "Học cách giảm áp lực",
+          "Cải thiện giao tiếp với bạn đời"
+        ]
+      },
+      {
+        "k": "s4",
+        "type": "text",
+        "q": "4. Điều bạn tự hào nhất về bản thân sau 8 tuần là gì?"
+      },
+      {
+        "k": "s5",
+        "type": "multi",
+        "q": "5. Bạn muốn tiếp tục duy trì những thói quen nào?",
+        "opts": [
+          "Thở mỗi ngày",
+          "Ngủ đủ giấc",
+          "Tập luyện thể chất",
+          "Giảm rượu bia",
+          "Dành thời gian cho bạn đời",
+          "Chủ động chăm sóc sức khỏe"
+        ]
+      },
+      {
+        "k": "s6",
+        "type": "text",
+        "q": "6. Nếu gặp lại chính mình của 8 tuần trước, bạn sẽ nhắn điều gì?"
+      },
+      {
+        "k": "s7",
+        "type": "text",
+        "q": "7. Trong 3 tháng tới, bạn cam kết điều gì với bản thân?"
+      }
+    ],
+    "outro": "Hãy giữ lại những câu trả lời này. Không phải để so sánh với ai — mà để một ngày nào đó, khi cuộc sống bận rộn và bạn vô tình quên mất mình đã thay đổi thế nào, bạn có thể mở ra đọc lại. Để nhớ rằng mình đã từng rất dũng cảm."
+  }
+}

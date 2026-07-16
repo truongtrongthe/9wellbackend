@@ -55,11 +55,10 @@ def get_static_root() -> Path:
             pass
     if env:
         return Path(env)
-    # Prefer sibling monorepo path
     here = Path(__file__).resolve()
+    backend_root = here.parents[3]
     candidates = [
-        here.parents[4] / "9wellcms" / "apps" / "web" / "public" / "v2",
-        Path("/Users/thetruong/happy/9wellcms/apps/web/public/v2"),
+        backend_root.parent / "9wellcms" / "apps" / "web" / "public" / "v2",
         Path.cwd() / "apps" / "web" / "public" / "v2",
     ]
     for c in candidates:
@@ -83,9 +82,11 @@ def get_seeds_dir() -> Path | None:
             pass
     if env and Path(env).exists():
         return Path(env)
+    here = Path(__file__).resolve()
+    backend_root = here.parents[3]  # .../9wellbackend
     candidates = [
-        Path("/Users/thetruong/happy/9wellcms/content/cms-seeds"),
-        Path(__file__).resolve().parents[4] / "9wellcms" / "content" / "cms-seeds",
+        backend_root / "content" / "cms-seeds",
+        backend_root.parent / "9wellcms" / "content" / "cms-seeds",
         Path.cwd() / "content" / "cms-seeds",
     ]
     for c in candidates:

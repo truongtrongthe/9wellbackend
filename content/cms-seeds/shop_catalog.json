@@ -1,0 +1,201 @@
+{
+  "disclaimer": "Thực phẩm này không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh.",
+  "cats": {
+    "ngu": {
+      "name": "Giấc ngủ & Thư giãn",
+      "icon": "🌙",
+      "grad": "linear-gradient(135deg,#4F2780,#1F183E)"
+    },
+    "noitiet": {
+      "name": "Nội tiết & Sinh lực",
+      "icon": "⚡",
+      "grad": "linear-gradient(135deg,#EE4421,#4F2780)"
+    },
+    "timmach": {
+      "name": "Tuần hoàn & Tim mạch",
+      "icon": "❤️",
+      "grad": "linear-gradient(135deg,#D93F2E,#7a2f9e)"
+    },
+    "nentang": {
+      "name": "Nền tảng vi chất",
+      "icon": "🛡️",
+      "grad": "linear-gradient(135deg,#7a2f9e,#EE4421)"
+    },
+    "dungcu": {
+      "name": "Dụng cụ luyện tập",
+      "icon": "🎯",
+      "grad": "linear-gradient(135deg,#EE4421,#7a2f9e)"
+    },
+    "donghang": {
+      "name": "Đồng hành hàng ngày",
+      "icon": "🔥",
+      "grad": "linear-gradient(135deg,#D93F2E,#4F2780)"
+    },
+    "combo": {
+      "name": "Combo tiết kiệm",
+      "icon": "🎁",
+      "grad": "linear-gradient(135deg,#EE4421,#D93F2E,#4F2780)"
+    }
+  },
+  "products": [
+    {
+      "id": "combo-donghanh",
+      "cat": "combo",
+      "emoji": "⭐",
+      "name": "Combo Đồng Hành 8 Tuần",
+      "price": 2290000,
+      "oldPrice": 3270000,
+      "featured": true,
+      "short": "Trọn bộ để tự chủ: khóa học 8 tuần + đồ uống + dụng cụ + quà đồng hành. Cầm được, uống được, học được.",
+      "body": "<p>Combo được yêu thích nhất — vì bạn <b>không chỉ mua kiến thức</b>, bạn nhận cả một hộp đồ để đồng hành mỗi ngày. Học, uống, cầm nắm — mỗi thứ nhắc bạn đang đi đúng hướng.</p><p><b>Trong hộp của bạn:</b></p><ul><li>✅ <b>Khóa học 8 tuần đầy đủ</b> (gói Đồng hành ★) — mã kích hoạt gửi qua email · <span style='color:#888'>1.990.000₫</span></li><li>✅ <b>Bộ 3 TPCN Nền Móng</b> (Magie · Ashwagandha · Multivitamin) — uống mỗi ngày · <span style='color:#888'>940.000₫</span></li><li>✅ <b>Bộ dây kháng lực</b> — tập tại nhà · <span style='color:#888'>190.000₫</span></li><li>🎁 <b>Quà tặng: Vòng tay “Tự chủ”</b> — nhắc cam kết mỗi ngày · <span style='color:#888'>150.000₫</span></li></ul><p><b>Tổng giá trị 3.270.000₫ → chỉ còn 2.290.000₫ · tiết kiệm 980.000₫.</b></p><p>Vừa có lộ trình bài bản, vừa có đồ cầm trên tay và uống mỗi ngày — số tiền bỏ ra thấy rõ giá trị.</p>",
+      "usage": "Khóa học kích hoạt qua email; sản phẩm giao tận nơi. Dùng TPCN theo hướng dẫn từng loại."
+    },
+    {
+      "id": "combo-khoidong",
+      "cat": "combo",
+      "emoji": "🚀",
+      "name": "Combo Khởi Động Tự Chủ",
+      "price": 690000,
+      "oldPrice": 830000,
+      "short": "Bắt đầu nhẹ nhàng mà vẫn có đồ cầm tay: khóa khởi đầu + đồ uống hỗ trợ giấc ngủ + sổ tay + quà.",
+      "body": "<p>Dành cho người muốn bắt đầu mà vẫn thấy “đáng đồng tiền” ngay — có ngay đồ để uống và cầm trên tay.</p><p><b>Trong hộp của bạn:</b></p><ul><li>✅ <b>Khóa Khởi đầu</b> (chẩn đoán + lộ trình tự tập tuần 1–4) · <span style='color:#888'>390.000₫</span></li><li>✅ <b>Magie Glycinate</b> — hỗ trợ giấc ngủ, uống mỗi tối · <span style='color:#888'>290.000₫</span></li><li>🎁 <b>Quà tặng: Vòng tay “Tự chủ”</b> · <span style='color:#888'>150.000₫</span></li></ul><p><b>Tổng giá trị 830.000₫ → chỉ còn 690.000₫ · tiết kiệm 140.000₫.</b></p>",
+      "usage": "Khóa học kích hoạt qua email; sản phẩm giao tận nơi."
+    },
+    {
+      "id": "combo-chuyensau",
+      "cat": "combo",
+      "emoji": "👑",
+      "name": "Combo Chuyên Sâu Toàn Diện",
+      "price": 4490000,
+      "oldPrice": 5920000,
+      "short": "Tất cả trong một: coaching 1-1, thiết bị tập, bộ TPCN đầy đủ, và trọn bộ đồ đồng hành.",
+      "body": "<p>Gói mạnh nhất cho người muốn kết quả nhanh và trọn vẹn — một “bộ đồ nghề” đầy đủ đặt trên bàn bạn.</p><p><b>Trong hộp của bạn:</b></p><ul><li>✅ <b>Khóa Chuyên sâu</b> (coaching 1-1 sát + module bạn đời) · <span style='color:#888'>3.990.000₫</span></li><li>✅ <b>Thiết bị tập cơ sàn chậu (biofeedback)</b> · <span style='color:#888'>590.000₫</span></li><li>✅ <b>Bộ 3 TPCN Nền Móng</b> · <span style='color:#888'>940.000₫</span></li><li>✅ <b>Con lăn giãn cơ</b> · <span style='color:#888'>250.000₫</span></li><li>🎁 <b>Quà tặng: Vòng tay “Tự chủ”</b> · <span style='color:#888'>150.000₫</span></li></ul><p><b>Tổng giá trị 5.920.000₫ → chỉ còn 4.490.000₫ · tiết kiệm 1.430.000₫.</b></p>",
+      "usage": "Khóa học & lịch coaching kích hoạt qua email; sản phẩm giao tận nơi."
+    },
+    {
+      "id": "combo-nenmong",
+      "cat": "combo",
+      "name": "Combo Nền Móng Phong Độ",
+      "price": 790000,
+      "oldPrice": 1000000,
+      "img": "",
+      "short": "Bộ 3 hỗ trợ nền tảng: giấc ngủ · giảm căng thẳng · vi chất. Đi cùng khóa học 8 tuần.",
+      "featured": true,
+      "body": "<p>Bộ ba sản phẩm hỗ trợ đúng những trụ cột mà khóa học 8 tuần nhấn mạnh: <b>giấc ngủ</b> (tuần 2), <b>giảm căng thẳng thần kinh</b> (tuần 1) và <b>nền tảng vi chất</b> (tuần 5).</p><ul><li>Magie Glycinate — hỗ trợ giấc ngủ sâu & thư giãn cơ.</li><li>Ashwagandha — hỗ trợ cơ thể thích ứng với căng thẳng.</li><li>Multivitamin nam giới — bổ sung vi chất nền tảng.</li></ul><p>Tiết kiệm hơn khi mua lẻ. Phù hợp người đang theo lộ trình luyện tập.</p>",
+      "usage": "Theo hướng dẫn trên từng sản phẩm trong bộ."
+    },
+    {
+      "id": "magie",
+      "cat": "ngu",
+      "name": "Magie Glycinate",
+      "price": 290000,
+      "img": "",
+      "short": "Hỗ trợ giấc ngủ sâu và thư giãn cơ — nền tảng phục hồi ban đêm.",
+      "body": "<p>Magie tham gia vào hàng trăm phản ứng của cơ thể, trong đó có điều hòa hệ thần kinh và chất lượng giấc ngủ. Dạng <b>glycinate</b> dễ hấp thu và dịu nhẹ với dạ dày.</p><p><b>Hỗ trợ:</b> thư giãn cơ, dễ đi vào giấc ngủ, giảm cảm giác căng thẳng cuối ngày. Kết hợp tốt với bài thở 4-7-8 và thói quen ngủ ở tuần 2 của khóa học.</p>",
+      "usage": "1 viên sau bữa tối hoặc trước khi ngủ ~30 phút, hoặc theo tư vấn."
+    },
+    {
+      "id": "ashwagandha",
+      "cat": "ngu",
+      "name": "Ashwagandha KSM-66",
+      "price": 350000,
+      "img": "",
+      "short": "Thảo dược thích nghi (adaptogen) — hỗ trợ cơ thể ứng phó căng thẳng.",
+      "body": "<p>Ashwagandha là thảo dược 'thích nghi' được dùng lâu đời, hỗ trợ cơ thể cân bằng khi căng thẳng kéo dài. Chiết xuất chuẩn hóa KSM-66.</p><p><b>Hỗ trợ:</b> cảm giác bình tĩnh, năng lượng ổn định, tinh thần thư thái — cộng hưởng với mục tiêu 'đưa hệ thần kinh về chế độ an toàn' ở tuần 1.</p>",
+      "usage": "1 viên mỗi ngày sau bữa ăn, hoặc theo tư vấn."
+    },
+    {
+      "id": "kem-selen",
+      "cat": "noitiet",
+      "name": "Kẽm & Selen",
+      "price": 250000,
+      "img": "",
+      "short": "Bổ sung khoáng chất hỗ trợ nội tiết tố nam & miễn dịch.",
+      "body": "<p>Kẽm và selen là hai khoáng chất thiết yếu tham gia vào quá trình sản xuất và điều hòa nội tiết tố nam, cũng như hệ miễn dịch.</p><p><b>Hỗ trợ:</b> duy trì nội tiết tố nam ở mức khỏe mạnh, hỗ trợ miễn dịch và năng lượng chung.</p>",
+      "usage": "1 viên/ngày sau bữa ăn, hoặc theo tư vấn."
+    },
+    {
+      "id": "vitd3k2",
+      "cat": "noitiet",
+      "name": "Vitamin D3 + K2",
+      "price": 260000,
+      "img": "",
+      "short": "Hỗ trợ nội tiết tố tự nhiên, xương chắc và hấp thu canxi đúng chỗ.",
+      "body": "<p>Vitamin D đóng vai trò như một tiền hormone, liên quan đến nhiều chức năng bao gồm nội tiết. K2 giúp canxi đi đúng vào xương. Đặc biệt hữu ích với người ít tiếp xúc nắng.</p><p><b>Hỗ trợ:</b> duy trì nội tiết tố nam tự nhiên, sức khỏe xương và cơ.</p>",
+      "usage": "1 viên/ngày cùng bữa ăn có chất béo, hoặc theo tư vấn."
+    },
+    {
+      "id": "omega3",
+      "cat": "timmach",
+      "name": "Omega-3 (Dầu cá)",
+      "price": 320000,
+      "img": "",
+      "short": "Hỗ trợ tuần hoàn và sức khỏe tim mạch — nền của phong độ.",
+      "body": "<p>Omega-3 (EPA/DHA) hỗ trợ sức khỏe tim mạch và tuần hoàn — mà tuần hoàn tốt là một trong những nền tảng của phong độ. Chọn loại đã tinh lọc, hàm lượng EPA/DHA rõ ràng.</p><p><b>Hỗ trợ:</b> tuần hoàn, tim mạch, và chức năng não bộ.</p>",
+      "usage": "1–2 viên/ngày cùng bữa ăn, hoặc theo tư vấn."
+    },
+    {
+      "id": "multivit",
+      "cat": "nentang",
+      "name": "Multivitamin Nam Giới",
+      "price": 300000,
+      "img": "",
+      "short": "Bổ sung vi chất nền tảng hằng ngày cho nam giới bận rộn.",
+      "body": "<p>Chế độ ăn hiện đại thường thiếu hụt vi chất. Multivitamin dành riêng cho nam giới bù đắp các vitamin và khoáng chất nền tảng cho năng lượng và sức khỏe chung.</p><p><b>Hỗ trợ:</b> năng lượng hằng ngày, chuyển hóa và sức khỏe tổng thể — 'lớp bảo hiểm' dinh dưỡng cho tuần 5 (nền móng).</p>",
+      "usage": "1 viên/ngày cùng bữa sáng, hoặc theo tư vấn."
+    },
+    {
+      "id": "kegel-trainer",
+      "cat": "dungcu",
+      "emoji": "🩺",
+      "name": "Thiết bị tập cơ sàn chậu (biofeedback)",
+      "price": 590000,
+      "img": "",
+      "short": "Hỗ trợ tập đúng nhóm cơ sàn chậu với phản hồi sinh học — đồng bộ với tuần 3 & 5 của khóa.",
+      "body": "<p>Thiết bị hỗ trợ luyện tập cơ sàn chậu theo phong cách y khoa, giúp bạn <b>tập đúng nhóm cơ</b> và theo dõi tiến bộ theo thời gian. Kết hợp cùng bài Kegel và reverse Kegel trong khóa 8 tuần.</p><p>Thiết kế kín đáo, dùng tại nhà.</p>",
+      "usage": "Dùng theo hướng dẫn kèm sản phẩm; kết hợp bài tập tuần 3 & 5."
+    },
+    {
+      "id": "resistance-band",
+      "cat": "dungcu",
+      "emoji": "💪",
+      "name": "Bộ dây kháng lực",
+      "price": 190000,
+      "img": "",
+      "short": "Dụng cụ nhỏ gọn cho lịch vận động 3 buổi/tuần — tập tại nhà, không cần phòng gym.",
+      "body": "<p>Bộ dây kháng lực nhiều mức, phục vụ các bài sức mạnh ở tuần 5 (nền móng thể chất). Nhỏ gọn, mang theo đâu cũng tập được.</p>",
+      "usage": "Dùng cho các bài squat, kéo, đẩy trong lịch tập 3 buổi/tuần."
+    },
+    {
+      "id": "foam-roller",
+      "cat": "dungcu",
+      "emoji": "🧘",
+      "name": "Con lăn giãn cơ (foam roller)",
+      "price": 250000,
+      "img": "",
+      "short": "Giãn cơ hông & lưng dưới — hỗ trợ thả lỏng, cộng hưởng với reverse Kegel.",
+      "body": "<p>Con lăn giãn cơ giúp thả lỏng vùng hông và lưng dưới — nơi thường căng cứng. Hỗ trợ khả năng 'buông' của cơ sàn chậu mà bài reverse Kegel hướng tới.</p>",
+      "usage": "Lăn nhẹ 5–10 phút sau buổi tập hoặc trước khi ngủ."
+    },
+    {
+      "id": "bracelet",
+      "cat": "donghang",
+      "emoji": "➰",
+      "name": "Vòng tay “Tự chủ”",
+      "price": 150000,
+      "img": "",
+      "short": "Vòng tay khắc biểu tượng vòng lặp — nhắc bạn về cam kết mỗi ngày, kín đáo.",
+      "body": "<p>Một lời nhắc nhỏ đeo trên tay: bạn đang đi trên hành trình của chính mình. Khắc biểu tượng vòng lặp của 9well — <b>không ai đoán được chủ đề</b>, chỉ bạn hiểu ý nghĩa.</p>"
+    },
+    {
+      "id": "boxer",
+      "cat": "donghang",
+      "emoji": "🩲",
+      "name": "Boxer 9well (thoáng mát)",
+      "price": 180000,
+      "img": "",
+      "short": "Quần lót boxer co giãn, thoáng khí — thoải mái để vận động & luyện tập mỗi ngày.",
+      "body": "<p>Chất liệu co giãn, thoáng khí, ôm vừa vặn — thoải mái khi vận động và luyện tập. Logo nhỏ kín đáo. Sự thoải mái mỗi ngày cũng là một phần của sự tự tin.</p>"
+    }
+  ]
+}
