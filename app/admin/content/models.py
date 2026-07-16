@@ -365,6 +365,16 @@ class SeedResponse(BaseModel):
     keys: list[str] = Field(default_factory=list)
 
 
+class ValidateResponse(BaseModel):
+    ok: bool
+    key: str
+    errors: list[str] = Field(default_factory=list)
+
+
+class ValidateRequest(BaseModel):
+    payload: Any | None = None
+
+
 class ContentExportResponse(BaseModel):
     weeks: list[dict[str, Any]]
     lessons: list[dict[str, Any]]

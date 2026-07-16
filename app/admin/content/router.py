@@ -34,6 +34,7 @@ from app.admin.content.repository import (
     upsert_settings,
     upsert_week,
 )
+from app.admin.content.site_map import build_site_map
 from app.admin.content.static_publish import (
     BUNDLE_KEYS,
     get_bundle,
@@ -42,6 +43,7 @@ from app.admin.content.static_publish import (
     seed_bundles_from_files,
     upsert_bundle,
 )
+from app.admin.content.validate_bundle import validate_bundle_payload
 from app.admin.content.media import router as media_router
 from app.admin.deps import AdminContext, require_admin
 from app.content.revalidate import trigger_revalidate
@@ -451,6 +453,32 @@ def portal_checkins_list(
         )
         for r in rows
     ]
+
+
+@router.get("/site-map")
+def content_site_map(
+    _admin: AdminContext = Depends(require_admin),
+    client: Client = Depends(get_supabase),
+) -> dict:
+    return build_site_map(client)
+
+
+@router.post("/validate/{key}", response_model=m.ValidateResponse)
+def content_validate_bundle(
+    key: str,
+    body: m.ValidateRequest | None = None,
+    _admin: AdminContext = Depends(require_admin),
+    client: Client = Depends(get_supabase),
+) -> m.ValidateResponse:
+    if key not in BUNDLE_KEYS:
+        raise HTTPException(status_code=404, detail=f"Unknown bundle key: {key}")
+    if body and body.payload is not None:
+        payload = body.payload
+    else:
+        row = get_bundle(client, key)
+        payload = (row or {}).get("payload") or {}
+    errors = validate_bundle_payload(key, payload)
+    return m.ValidateResponse(ok=len(errors) == 0, key=key, errors=errors)
 
 
 @router.get("/bundles", response_model=list[m.BundleListItem])
