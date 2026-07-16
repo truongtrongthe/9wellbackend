@@ -341,6 +341,28 @@ class PublishResponse(BaseModel):
     status: str
     message: str
     log_id: str | None = None
+    files: list[str] = Field(default_factory=list)
+
+
+class BundleResponse(BaseModel):
+    key: str
+    payload: Any
+    updated_at: str | None = None
+
+
+class BundleUpdate(BaseModel):
+    payload: Any
+
+
+class BundleListItem(BaseModel):
+    key: str
+    updated_at: str | None = None
+
+
+class SeedResponse(BaseModel):
+    status: str
+    message: str
+    keys: list[str] = Field(default_factory=list)
 
 
 class ContentExportResponse(BaseModel):

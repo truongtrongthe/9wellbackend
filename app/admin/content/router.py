@@ -34,6 +34,14 @@ from app.admin.content.repository import (
     upsert_settings,
     upsert_week,
 )
+from app.admin.content.static_publish import (
+    BUNDLE_KEYS,
+    get_bundle,
+    list_bundles,
+    publish_all_static,
+    seed_bundles_from_files,
+    upsert_bundle,
+)
 from app.admin.content.media import router as media_router
 from app.admin.deps import AdminContext, require_admin
 from app.content.revalidate import trigger_revalidate
@@ -445,6 +453,62 @@ def portal_checkins_list(
     ]
 
 
+@router.get("/bundles", response_model=list[m.BundleListItem])
+def bundles_list(
+    admin: AdminContext = Depends(require_admin),
+    client: Client = Depends(get_supabase),
+) -> list[m.BundleListItem]:
+    rows = list_bundles(client)
+    return [m.BundleListItem(key=r["key"], updated_at=str(r["updated_at"]) if r.get("updated_at") else None) for r in rows]
+
+
+@router.get("/bundles/{key}", response_model=m.BundleResponse)
+def bundles_get(
+    key: str,
+    admin: AdminContext = Depends(require_admin),
+    client: Client = Depends(get_supabase),
+) -> m.BundleResponse:
+    if key not in BUNDLE_KEYS:
+        raise HTTPException(status_code=404, detail=f"Unknown bundle key: {key}")
+    row = get_bundle(client, key)
+    if not row:
+        return m.BundleResponse(key=key, payload={}, updated_at=None)
+    return m.BundleResponse(
+        key=row["key"],
+        payload=row.get("payload") or {},
+        updated_at=str(row["updated_at"]) if row.get("updated_at") else None,
+    )
+
+
+@router.put("/bundles/{key}", response_model=m.BundleResponse)
+def bundles_put(
+    key: str,
+    body: m.BundleUpdate,
+    admin: AdminContext = Depends(require_admin),
+    client: Client = Depends(get_supabase),
+) -> m.BundleResponse:
+    if key not in BUNDLE_KEYS:
+        raise HTTPException(status_code=404, detail=f"Unknown bundle key: {key}")
+    row = upsert_bundle(client, key, body.payload)
+    return m.BundleResponse(
+        key=row["key"],
+        payload=row.get("payload") or {},
+        updated_at=str(row["updated_at"]) if row.get("updated_at") else None,
+    )
+
+
+@router.post("/bundles/seed", response_model=m.SeedResponse)
+def bundles_seed(
+    admin: AdminContext = Depends(require_admin),
+    client: Client = Depends(get_supabase),
+) -> m.SeedResponse:
+    try:
+        keys = seed_bundles_from_files(client, overwrite=True)
+        return m.SeedResponse(status="success", message=f"Seeded {len(keys)} bundles from offline v3", keys=keys)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e)) from e
+
+
 @router.post("/publish", response_model=m.PublishResponse)
 def content_publish(
     admin: AdminContext = Depends(require_admin),
@@ -452,17 +516,20 @@ def content_publish(
 ) -> m.PublishResponse:
     user_id = admin.actor_user_id
     try:
-        blog_slugs = [p["slug"] for p in list_blog_posts(client, published_only=True)]
-        paths = ["/", "/blog", "/lieu-trinh", "/khoa-hoc", "/chuyen-gia", "/quiz"]
+        blog_posts = list_blog_posts(client, published_only=True)
+        files = publish_all_static(client, blog_posts)
+        blog_slugs = [p["slug"] for p in blog_posts]
+        paths = ["/", "/blog", "/learn", "/shop", "/app", "/trainer", "/game", "/legal", "/lieu-trinh", "/khoa-hoc"]
         paths.extend(f"/blog/{s}" for s in blog_slugs)
         result = trigger_revalidate(paths)
-        msg = result["message"] if result["ok"] else f"Cache refresh: {result['message']}"
+        msg = f"Wrote {len(files)} files. Cache: {result['message']}"
         log = create_publish_log(client, user_id, "success" if result["ok"] else "failed", msg)
         return m.PublishResponse(
             status="success" if result["ok"] else "failed",
             message=msg,
             log_id=str(log["id"]),
+            files=files,
         )
     except Exception as e:
         log = create_publish_log(client, user_id, "failed", str(e))
-        return m.PublishResponse(status="failed", message=str(e), log_id=str(log["id"]))
+        return m.PublishResponse(status="failed", message=str(e), log_id=str(log["id"]), files=[])

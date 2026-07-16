@@ -17,6 +17,7 @@ from app.admin.content.repository import (
     list_timeline,
     list_weeks,
 )
+from app.admin.content.static_publish import get_bundle
 from app.content.deps import get_optional_user, user_can_access_lesson_row
 from app.content.models import (
     TYPE_META,
@@ -289,6 +290,26 @@ def public_settings(
         zalo_link=s.get("zalo_link", ""),
         messenger_link=s.get("messenger_link", ""),
     )
+
+
+@router.get("/landing")
+def public_landing(
+    response: Response,
+    client: Client = Depends(get_supabase),
+) -> dict[str, Any]:
+    _public_cache(response)
+    row = get_bundle(client, "landing_copy")
+    return (row or {}).get("payload") or {}
+
+
+@router.get("/legal")
+def public_legal(
+    response: Response,
+    client: Client = Depends(get_supabase),
+) -> dict[str, Any]:
+    _public_cache(response)
+    row = get_bundle(client, "legal_pages")
+    return (row or {}).get("payload") or {}
 
 
 @router.post("/revalidate", response_model=RevalidateResponse)
