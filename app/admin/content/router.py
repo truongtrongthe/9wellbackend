@@ -522,10 +522,19 @@ def content_publish(
         paths = ["/", "/blog", "/learn", "/shop", "/app", "/trainer", "/game", "/legal", "/lieu-trinh", "/khoa-hoc"]
         paths.extend(f"/blog/{s}" for s in blog_slugs)
         result = trigger_revalidate(paths)
-        msg = f"Wrote {len(files)} files. Cache: {result['message']}"
-        log = create_publish_log(client, user_id, "success" if result["ok"] else "failed", msg)
+        revalidate_note = result["message"]
+        if result["ok"]:
+            msg = f"Wrote {len(files)} files. Cache: {revalidate_note}"
+            status = "success"
+        elif revalidate_note == "Revalidate not configured":
+            msg = f"Wrote {len(files)} files. (Cache purge bỏ qua — chưa cấu hình REVALIDATE_SECRET)"
+            status = "success"
+        else:
+            msg = f"Wrote {len(files)} files. Cache: {revalidate_note}"
+            status = "failed"
+        log = create_publish_log(client, user_id, status, msg)
         return m.PublishResponse(
-            status="success" if result["ok"] else "failed",
+            status=status,
             message=msg,
             log_id=str(log["id"]),
             files=files,
