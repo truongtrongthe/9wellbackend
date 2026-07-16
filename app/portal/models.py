@@ -86,10 +86,10 @@ class PortalCheckinCreate(BaseModel):
 
 
 class SepayConfig(BaseModel):
-    bank: str = ""
-    account: str = ""
-    holder: str = ""
-    qrImg: str = ""
+    bank: str = "Techcombank"
+    account: str = "1933 9999"
+    holder: str = "NGUYEN DINH DUONG"
+    qrImg: str = "/assets/payment/techcombank-qr.jpg"
 
 
 class PortalConfigOut(BaseModel):

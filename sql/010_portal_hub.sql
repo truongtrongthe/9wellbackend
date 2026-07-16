@@ -75,6 +75,6 @@ insert into public.site_settings (key, value) values
     "trainerUrl": "/trainer",
     "gameUrl": "/game",
     "hubUrl": "/blog",
-    "sepay": {"bank": "MB Bank", "account": "", "holder": "", "qrImg": ""}
+    "sepay": {"bank": "Techcombank", "account": "1933 9999", "holder": "NGUYEN DINH DUONG", "qrImg": "/assets/payment/techcombank-qr.jpg"}
   }'::jsonb)
 on conflict (key) do nothing;

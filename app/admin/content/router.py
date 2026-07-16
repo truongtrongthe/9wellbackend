@@ -41,6 +41,8 @@ from app.admin.content.static_publish import (
     list_bundles,
     publish_all_static,
     seed_bundles_from_files,
+    sync_bundle_static,
+    sync_hub_articles,
     upsert_bundle,
 )
 from app.admin.content.validate_bundle import validate_bundle_payload
@@ -246,6 +248,13 @@ def blog_create(
     client: Client = Depends(get_supabase),
 ) -> m.BlogPostResponse:
     row = create_blog_post(client, body.model_dump(mode="json"))
+    try:
+        sync_hub_articles(client)
+    except Exception:
+        pass
+    slug = row.get("slug") or ""
+    if slug:
+        _revalidate_after_content_change("/", "/blog", f"/blog/{slug}")
     return _blog_resp(row)
 
 
@@ -259,6 +268,10 @@ def blog_update(
     updated = update_blog_post(client, post_id, body.model_dump(exclude_unset=True, mode="json"))
     if not updated:
         raise HTTPException(status_code=404, detail="Post not found")
+    try:
+        sync_hub_articles(client)
+    except Exception:
+        pass
     slug = updated.get("slug") or post_id
     _revalidate_after_content_change("/", "/blog", f"/blog/{slug}")
     return _blog_resp(updated)
@@ -273,6 +286,10 @@ def blog_delete(
     if not get_blog_post(client, post_id):
         raise HTTPException(status_code=404, detail="Post not found")
     delete_blog_post(client, post_id)
+    try:
+        sync_hub_articles(client)
+    except Exception:
+        pass
     return {"message": "Deleted"}
 
 
@@ -518,6 +535,10 @@ def bundles_put(
     if key not in BUNDLE_KEYS:
         raise HTTPException(status_code=404, detail=f"Unknown bundle key: {key}")
     row = upsert_bundle(client, key, body.payload)
+    try:
+        sync_bundle_static(client, key)
+    except Exception:
+        pass
     return m.BundleResponse(
         key=row["key"],
         payload=row.get("payload") or {},

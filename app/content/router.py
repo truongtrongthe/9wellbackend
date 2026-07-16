@@ -175,6 +175,8 @@ def public_blog_list(
             featured=bool(p.get("featured")),
             tags=list(p.get("tags") or []),
             reviewed=p.get("reviewed") or "",
+            author=p.get("author") or "",
+            published_at=str(p["published_at"]) if p.get("published_at") else None,
         )
         for p in posts
     ]
@@ -299,6 +301,17 @@ def public_landing(
 ) -> dict[str, Any]:
     _public_cache(response)
     row = get_bundle(client, "landing_copy")
+    return (row or {}).get("payload") or {}
+
+
+@router.get("/learn")
+def public_learn_curriculum(
+    response: Response,
+    client: Client = Depends(get_supabase),
+) -> dict[str, Any]:
+    """Learn v3 curriculum bundle — hub HTML loads this so CMS edits appear without waiting for static deploy."""
+    response.headers["Cache-Control"] = "public, s-maxage=15, stale-while-revalidate=60"
+    row = get_bundle(client, "learn_curriculum")
     return (row or {}).get("payload") or {}
 
 

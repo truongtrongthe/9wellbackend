@@ -72,6 +72,8 @@ class PublicBlogListItem(BaseModel):
     featured: bool = False
     tags: list[str] = []
     reviewed: str = ""
+    author: str = ""
+    published_at: str | None = None
 
 
 class PublicFaqItem(BaseModel):

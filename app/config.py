@@ -35,8 +35,9 @@ class Settings(BaseSettings):
     # Admin (optional): X-Admin-Key header for machine-to-machine admin calls
     admin_api_key: str | None = None
 
-    # CMS static publish → apps/web/public/v2
+    # CMS static publish → apps/web/public/v2 (and optional mirrors)
     cms_static_root: str | None = None
+    cms_static_mirror: str | None = None  # comma-separated extra roots (e.g. dist/v2)
     cms_seeds_dir: str | None = None
 
 

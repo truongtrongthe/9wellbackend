@@ -6,6 +6,30 @@ from typing import Any
 
 from supabase import Client
 
+DEFAULT_SEPAY = {
+    "bank": "Techcombank",
+    "account": "1933 9999",
+    "holder": "NGUYEN DINH DUONG",
+    "qrImg": "/assets/payment/techcombank-qr.jpg",
+}
+
+
+def _normalize_sepay(sepay: dict[str, Any] | None) -> dict[str, str]:
+    d = dict(DEFAULT_SEPAY)
+    s = sepay if isinstance(sepay, dict) else {}
+    account = str(s.get("account") or "").replace(" ", "")
+    return {
+        "bank": s.get("bank") if s.get("bank") and s.get("bank") != "MB Bank" else d["bank"],
+        "account": s.get("account")
+        if account and account not in ("0000000000", "—", "")
+        else d["account"],
+        "holder": s.get("holder")
+        if s.get("holder") and s.get("holder") not in ("NGUYEN VAN A", "—", "")
+        else d["holder"],
+        "qrImg": s.get("qrImg") or d["qrImg"],
+    }
+
+
 DEFAULT_PORTAL_CONFIG: dict[str, Any] = {
     "zaloLink": "",
     "trainerUrl": "/trainer",
@@ -15,7 +39,7 @@ DEFAULT_PORTAL_CONFIG: dict[str, Any] = {
     "accessCodes": ["9WELLHIM"],
     "introYtid": "aqz-KE-bpKQ",
     "demoVideoYtid": "aqz-KE-bpKQ",
-    "sepay": {"bank": "MB Bank", "account": "", "holder": "", "qrImg": ""},
+    "sepay": dict(DEFAULT_SEPAY),
 }
 
 
@@ -34,7 +58,8 @@ def get_portal_config(client: Client) -> dict[str, Any]:
     if isinstance(val, dict):
         out.update(val)
         if isinstance(val.get("sepay"), dict):
-            out["sepay"] = {**out["sepay"], **val["sepay"]}
+            out["sepay"] = _normalize_sepay({**out["sepay"], **val["sepay"]})
+    out["sepay"] = _normalize_sepay(out.get("sepay"))
     # merge zalo from main site settings
     settings = client.table("site_settings").select("value").eq("key", "site").maybe_single().execute()
     site_val = (settings.data or {}).get("value") if settings.data else {}

@@ -24,7 +24,7 @@ def _cors_origins() -> list[str]:
     extra = os.environ.get("CORS_ORIGINS", "")
     if extra:
         origins.extend(x.strip() for x in extra.split(",") if x.strip())
-    origins.extend(["https://admin.9well.com", "https://9well.com"])
+    origins.extend(["https://admin.9well.com", "https://9well.com", "https://www.9well.com"])
     return origins
 
 

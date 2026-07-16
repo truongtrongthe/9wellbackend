@@ -43,6 +43,25 @@ def upsert_bundle(client: Client, key: str, payload: Any) -> dict[str, Any]:
 
 
 def get_static_root() -> Path:
+    return get_static_roots()[0]
+
+
+def get_static_roots() -> list[Path]:
+    """Primary CMS_STATIC_ROOT + mirrors (sibling dist/v2, CMS_STATIC_MIRROR)."""
+    roots: list[Path] = []
+    seen: set[str] = set()
+
+    def add(p: Path) -> None:
+        try:
+            key = str(p.resolve())
+        except Exception:
+            key = str(p)
+        if key in seen:
+            return
+        seen.add(key)
+        p.mkdir(parents=True, exist_ok=True)
+        roots.append(p)
+
     env = os.environ.get("CMS_STATIC_ROOT", "").strip()
     if not env:
         try:
@@ -54,19 +73,125 @@ def get_static_root() -> Path:
         except Exception:
             pass
     if env:
-        return Path(env)
-    here = Path(__file__).resolve()
-    backend_root = here.parents[3]
-    candidates = [
-        backend_root.parent / "9wellcms" / "apps" / "web" / "public" / "v2",
-        Path.cwd() / "apps" / "web" / "public" / "v2",
-    ]
-    for c in candidates:
-        if c.exists():
-            return c
-    fallback = Path.cwd() / "public" / "v2"
-    fallback.mkdir(parents=True, exist_ok=True)
-    return fallback
+        add(Path(env))
+    else:
+        here = Path(__file__).resolve()
+        backend_root = here.parents[3]
+        candidates = [
+            backend_root.parent / "9wellcms" / "apps" / "web" / "public" / "v2",
+            Path.cwd() / "apps" / "web" / "public" / "v2",
+            Path.cwd() / "public" / "v2",
+        ]
+        for c in candidates:
+            if c.exists() or c == candidates[0]:
+                add(c)
+                break
+        if not roots:
+            fallback = Path.cwd() / "public" / "v2"
+            add(fallback)
+
+    primary = roots[0]
+    # Nginx serves dist/ — mirror public/v2 ↔ dist/v2 when sibling exists
+    if primary.name == "v2":
+        parent = primary.parent
+        if parent.name == "public":
+            add(parent.parent / "dist" / "v2")
+        elif parent.name == "dist":
+            add(parent.parent / "public" / "v2")
+
+    mirror = os.environ.get("CMS_STATIC_MIRROR", "").strip()
+    if not mirror:
+        try:
+            from app.config import get_settings
+
+            s = get_settings()
+            mirror = getattr(s, "cms_static_mirror", None) or ""
+        except Exception:
+            mirror = ""
+    for part in str(mirror).split(","):
+        part = part.strip()
+        if part:
+            add(Path(part))
+
+    return roots
+
+
+def sync_hub_articles(client: Client) -> list[str]:
+    """Rewrite articles.js on all static roots from published blog_posts."""
+    posts = []
+    try:
+        from app.admin.content.repository import list_blog_posts
+
+        posts = list_blog_posts(client, published_only=True)
+    except Exception:
+        return []
+    cats_row = get_bundle(client, "hub_categories")
+    payload = (cats_row or {}).get("payload") or {}
+    cats = payload.get("cats") if isinstance(payload, dict) else payload
+    if not isinstance(cats, dict):
+        cats = {}
+    written: list[str] = []
+    for root in get_static_roots():
+        rel = write_hub_articles(root, posts, cats)
+        written.append(f"{root}/{rel}")
+    return written
+
+
+def sync_learn_curriculum(client: Client) -> list[str]:
+    """Rewrite curriculum.js on all static roots from learn_curriculum bundle."""
+    row = get_bundle(client, "learn_curriculum")
+    payload = (row or {}).get("payload") or {}
+    if not isinstance(payload, dict):
+        return []
+    written: list[str] = []
+    for root in get_static_roots():
+        rel = write_learn(root, payload)
+        written.append(f"{root}/{rel}")
+    return written
+
+
+def sync_bundle_static(client: Client, key: str) -> list[str]:
+    """Sync one CMS bundle to static v2 files after admin save."""
+    if key == "learn_curriculum":
+        return sync_learn_curriculum(client)
+    if key in ("hub_categories",):
+        return sync_hub_articles(client)
+    if key == "hub_videos":
+        row = get_bundle(client, "hub_videos")
+        payload = (row or {}).get("payload") or {}
+        written: list[str] = []
+        for root in get_static_roots():
+            written.append(f"{root}/{write_hub_videos(root, payload)}")
+        return written
+    if key == "shop_catalog":
+        row = get_bundle(client, "shop_catalog")
+        payload = (row or {}).get("payload") or {}
+        written = []
+        for root in get_static_roots():
+            written.append(f"{root}/{write_shop(root, payload)}")
+        return written
+    if key == "portal_app":
+        row = get_bundle(client, "portal_app")
+        payload = (row or {}).get("payload") or {}
+        written = []
+        for root in get_static_roots():
+            written.append(f"{root}/{write_portal(root, payload)}")
+        return written
+    if key == "trainer":
+        row = get_bundle(client, "trainer")
+        payload = (row or {}).get("payload") or {}
+        written = []
+        for root in get_static_roots():
+            written.append(f"{root}/{write_trainer(root, payload)}")
+        return written
+    if key == "game":
+        row = get_bundle(client, "game")
+        payload = (row or {}).get("payload") or {}
+        written = []
+        for root in get_static_roots():
+            written.append(f"{root}/{write_game(root, payload)}")
+        return written
+    return []
 
 
 def get_seeds_dir() -> Path | None:
@@ -230,7 +355,7 @@ def write_game(root: Path, payload: dict) -> str:
 
 
 def publish_all_static(client: Client, blog_posts: list[dict]) -> list[str]:
-    root = get_static_root()
+    roots = get_static_roots()
     files: list[str] = []
 
     def payload(key: str) -> dict:
@@ -238,35 +363,32 @@ def publish_all_static(client: Client, blog_posts: list[dict]) -> list[str]:
         return (row or {}).get("payload") or {}
 
     learn = payload("learn_curriculum")
-    if learn:
-        files.append(write_learn(root, learn))
-
     shop = payload("shop_catalog")
-    if shop:
-        files.append(write_shop(root, shop))
-
     videos = payload("hub_videos")
-    files.append(write_hub_videos(root, videos))
-
     cats_row = payload("hub_categories")
     cats = cats_row.get("cats") if isinstance(cats_row, dict) else cats_row
-    files.append(write_hub_articles(root, blog_posts, cats or {}))
-
     portal = payload("portal_app")
-    files.append(write_portal(root, portal))
-
     trainer = payload("trainer")
-    files.append(write_trainer(root, trainer))
-
     game = payload("game")
-    files.append(write_game(root, game))
 
-    # landing/legal are API-served; still dump JSON snapshots for deploy tooling
-    for key in ("landing_copy", "legal_pages"):
-        p = payload(key)
-        snap = root / "_cms" / f"{key}.json"
-        snap.parent.mkdir(parents=True, exist_ok=True)
-        snap.write_text(json.dumps(p, ensure_ascii=False, indent=2), encoding="utf-8")
-        files.append(str(snap.relative_to(root)))
-
-    return files
+    written_rel: list[str] = []
+    for root in roots:
+        batch: list[str] = []
+        if learn:
+            batch.append(write_learn(root, learn))
+        if shop:
+            batch.append(write_shop(root, shop))
+        batch.append(write_hub_videos(root, videos))
+        batch.append(write_hub_articles(root, blog_posts, cats or {}))
+        batch.append(write_portal(root, portal))
+        batch.append(write_trainer(root, trainer))
+        batch.append(write_game(root, game))
+        for key in ("landing_copy", "legal_pages"):
+            p = payload(key)
+            snap = root / "_cms" / f"{key}.json"
+            snap.parent.mkdir(parents=True, exist_ok=True)
+            snap.write_text(json.dumps(p, ensure_ascii=False, indent=2), encoding="utf-8")
+            batch.append(str(snap.relative_to(root)))
+        if root == roots[0]:
+            written_rel = batch
+    return written_rel
