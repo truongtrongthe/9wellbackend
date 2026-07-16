@@ -113,7 +113,14 @@ GLOSSARY = [
     {"term": "NW_SUMMARY", "meaning": "Phiếu tổng kết bài 8.7"},
     {"term": "cat_key", "meaning": "Danh mục hub: co-the, luyen-tap, tam-ly, cap-doi, loi-song"},
     {"term": "bundle", "meaning": "JSON trong cms_content_bundles (key → payload)"},
-    {"term": "publish", "meaning": "Serialize DB → apps/web/public/v2/*.js"},
+    {
+        "term": "đưa lên web",
+        "meaning": "Cờ published của bài blog — nút «Lưu & đưa lên web» (khác /publish)",
+    },
+    {
+        "term": "publish",
+        "meaning": "/publish → «Xuất bản ra public/v2» — serialize DB → file tĩnh",
+    },
 ]
 
 RECIPES = [
@@ -123,16 +130,18 @@ RECIPES = [
             "Mở /learn → tab Tuần & bài",
             "Chọn Tuần 7 → chip bài 7.2",
             "Sửa Title, Body → Lưu",
-            "Mở /publish → Xuất bản",
+            "Mở /publish → Xuất bản ra public/v2",
             "Preview https://9well.com/learn",
         ],
     },
     {
         "title": "Thêm bài blog",
         "steps": [
-            "Mở /blog → tab Bài viết → + Thêm",
-            "Điền slug, title, body, cat_key → tick Xuất bản → Lưu",
-            "Mở /publish → Xuất bản",
+            "Mở /blog → tab Bài viết → + Thêm bài viết",
+            "Điền slug, title, body, cat_key",
+            "Bấm «Tạo & đưa lên web» (hoặc «Lưu & đưa lên web» nếu sửa bài cũ)",
+            "Xác nhận badge list = «Đã xuất bản» (không còn Nháp)",
+            "Mở /publish → «Xuất bản ra public/v2»",
             "Preview https://9well.com/blog/{slug}",
         ],
     },
@@ -148,6 +157,7 @@ RECIPES = [
 RULES = [
     "Không sửa trực tiếp apps/web/public/v2/ — luôn Lưu + Xuất bản",
     "Luôn Lưu trước khi Xuất bản",
+    "Blog: muốn hiện trên web phải bấm «Lưu & đưa lên web» (hoặc tick «Đưa lên web») — khác nút /publish",
     "Tab JSON nâng cao chỉ khi cần sửa hàng loạt",
 ]
 
