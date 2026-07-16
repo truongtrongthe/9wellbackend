@@ -37,6 +37,7 @@ from app.admin.content.repository import (
 from app.admin.content.media import router as media_router
 from app.admin.deps import AdminContext, require_admin
 from app.content.revalidate import trigger_revalidate
+from app.portal.repository import get_portal_config, list_all_checkins, upsert_portal_config
 from app.db.supabase_client import get_supabase
 
 router = APIRouter(prefix="/content", tags=["admin-content"])
@@ -104,6 +105,11 @@ def _blog_resp(row: dict) -> m.BlogPostResponse:
         published=bool(row.get("published", True)),
         published_at=str(row["published_at"]) if row.get("published_at") else None,
         sort_order=int(row.get("sort_order") or 0),
+        cat_key=row.get("cat_key"),
+        read_min=int(row["read_min"]) if row.get("read_min") is not None else None,
+        featured=bool(row.get("featured")),
+        tags=list(row.get("tags") or []),
+        reviewed=row.get("reviewed") or "",
         created_at=str(row["created_at"]),
         updated_at=str(row["updated_at"]) if row.get("updated_at") else None,
     )
@@ -396,6 +402,47 @@ def settings_put(
         messenger_link=merged.get("messenger_link", ""),
         cache_version=merged.get("cache_version", ""),
     )
+
+
+@router.get("/portal-config", response_model=m.PortalConfigAdminResponse)
+def portal_config_get(
+    _admin: AdminContext = Depends(require_admin),
+    client: Client = Depends(get_supabase),
+) -> m.PortalConfigAdminResponse:
+    cfg = get_portal_config(client)
+    return m.PortalConfigAdminResponse(**cfg)
+
+
+@router.patch("/portal-config", response_model=m.PortalConfigAdminResponse)
+def portal_config_patch(
+    body: m.PortalConfigAdminUpdate,
+    _admin: AdminContext = Depends(require_admin),
+    client: Client = Depends(get_supabase),
+) -> m.PortalConfigAdminResponse:
+    patch = body.model_dump(exclude_unset=True)
+    cfg = upsert_portal_config(client, patch)
+    return m.PortalConfigAdminResponse(**cfg)
+
+
+@router.get("/portal-checkins", response_model=list[m.PortalCheckinAdminItem])
+def portal_checkins_list(
+    _admin: AdminContext = Depends(require_admin),
+    client: Client = Depends(get_supabase),
+) -> list[m.PortalCheckinAdminItem]:
+    rows = list_all_checkins(client)
+    return [
+        m.PortalCheckinAdminItem(
+            id=str(r["id"]),
+            user_id=str(r["user_id"]),
+            week_number=int(r["week_number"]),
+            mood=r.get("mood"),
+            freq=r.get("freq"),
+            control=r.get("control"),
+            notes=r.get("notes"),
+            created_at=str(r["created_at"]),
+        )
+        for r in rows
+    ]
 
 
 @router.post("/publish", response_model=m.PublishResponse)

@@ -12,6 +12,8 @@ from app.auth.security import verify_token
 from app.config import get_settings
 from app.db.supabase_client import get_supabase
 from app.membership.repository import get_current_subscription_for_user
+from app.portal.logic import user_can_access_lesson
+from app.portal.repository import get_profile
 
 optional_bearer = HTTPBearer(auto_error=False)
 
@@ -33,6 +35,28 @@ def get_optional_user(
         return get_user_by_id(client, str(user_id))
     except HTTPException:
         return None
+
+
+def user_portal_plan_code(client: Client, user: dict[str, Any] | None) -> str:
+    if not user:
+        return "none"
+    profile = get_profile(client, str(user["id"]))
+    if not profile:
+        return "none"
+    return str(profile.get("plan_code") or "none")
+
+
+def user_can_access_lesson_row(
+    client: Client,
+    user: dict[str, Any] | None,
+    lesson: dict[str, Any],
+) -> bool:
+    if bool(lesson.get("free_trial")):
+        return True
+    if user_has_active_subscription(client, user):
+        return True
+    plan = user_portal_plan_code(client, user)
+    return user_can_access_lesson(plan, str(lesson.get("id") or ""), free_trial=False)
 
 
 def user_has_active_subscription(client: Client, user: dict[str, Any] | None) -> bool:

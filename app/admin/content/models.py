@@ -121,6 +121,11 @@ class BlogPostCreate(BaseModel):
     published: bool = True
     published_at: datetime | None = None
     sort_order: int = 0
+    cat_key: str | None = None
+    read_min: int | None = None
+    featured: bool = False
+    tags: list[str] = Field(default_factory=list)
+    reviewed: str = ""
 
 
 class BlogPostUpdate(BaseModel):
@@ -148,6 +153,11 @@ class BlogPostUpdate(BaseModel):
     published: bool | None = None
     published_at: datetime | None = None
     sort_order: int | None = None
+    cat_key: str | None = None
+    read_min: int | None = None
+    featured: bool | None = None
+    tags: list[str] | None = None
+    reviewed: str | None = None
 
 
 class BlogPostResponse(BaseModel):
@@ -176,6 +186,11 @@ class BlogPostResponse(BaseModel):
     published: bool
     published_at: str | None = None
     sort_order: int
+    cat_key: str | None = None
+    read_min: int | None = None
+    featured: bool = False
+    tags: list[str] = Field(default_factory=list)
+    reviewed: str = ""
     created_at: str
     updated_at: str | None = None
 
@@ -285,6 +300,41 @@ class SiteSettingsResponse(BaseModel):
     zalo_link: str
     messenger_link: str
     cache_version: str
+
+
+class PortalConfigAdminResponse(BaseModel):
+    zaloLink: str = ""
+    trainerUrl: str = "/trainer"
+    gameUrl: str = "/game"
+    hubUrl: str = "/blog"
+    courseUrl: str = "/learn"
+    accessCodes: list[str] = Field(default_factory=list)
+    introYtid: str = ""
+    demoVideoYtid: str = ""
+    sepay: dict[str, str] = Field(default_factory=dict)
+
+
+class PortalConfigAdminUpdate(BaseModel):
+    zaloLink: str | None = None
+    trainerUrl: str | None = None
+    gameUrl: str | None = None
+    hubUrl: str | None = None
+    courseUrl: str | None = None
+    accessCodes: list[str] | None = None
+    introYtid: str | None = None
+    demoVideoYtid: str | None = None
+    sepay: dict[str, str] | None = None
+
+
+class PortalCheckinAdminItem(BaseModel):
+    id: str
+    user_id: str
+    week_number: int
+    mood: str | None = None
+    freq: str | None = None
+    control: str | None = None
+    notes: str | None = None
+    created_at: str
 
 
 class PublishResponse(BaseModel):

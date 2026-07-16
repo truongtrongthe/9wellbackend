@@ -67,6 +67,11 @@ class PublicBlogListItem(BaseModel):
     excerpt: str
     read_time: str
     sort_order: int
+    cat_key: str | None = None
+    read_min: int | None = None
+    featured: bool = False
+    tags: list[str] = []
+    reviewed: str = ""
 
 
 class PublicFaqItem(BaseModel):
@@ -108,6 +113,11 @@ class PublicBlogPost(BaseModel):
     show_sticky_cta: bool = True
     published_at: str | None = None
     updated_at: str | None = None
+    cat_key: str | None = None
+    read_min: int | None = None
+    featured: bool = False
+    tags: list[str] = []
+    reviewed: str = ""
 
 
 class PublicPricingPlan(BaseModel):

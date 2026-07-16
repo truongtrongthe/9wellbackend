@@ -17,7 +17,7 @@ from app.admin.content.repository import (
     list_timeline,
     list_weeks,
 )
-from app.content.deps import get_optional_user, user_has_active_subscription
+from app.content.deps import get_optional_user, user_can_access_lesson_row
 from app.content.models import (
     TYPE_META,
     PublicBlogListItem,
@@ -38,6 +38,8 @@ from app.content.models import (
 )
 from app.content.revalidate import trigger_revalidate
 from app.db.supabase_client import get_supabase
+from app.portal.models import PortalConfigOut
+from app.portal.repository import get_portal_config
 
 router = APIRouter()
 
@@ -67,6 +69,7 @@ def _get_blog_by_slug(client: Client, slug: str) -> dict[str, Any] | None:
 def public_course(
     response: Response,
     client: Client = Depends(get_supabase),
+    user: dict | None = Depends(get_optional_user),
 ) -> PublicCourseResponse:
     _public_cache(response)
     weeks = list_weeks(client)
@@ -91,7 +94,7 @@ def public_course(
                         type=l["lesson_type"],
                         duration=l.get("duration") or "",
                         free_trial=bool(l.get("free_trial")),
-                        locked=not bool(l.get("free_trial")),
+                        locked=not user_can_access_lesson_row(client, user, l),
                     )
                     for l in week_lessons
                 ],
@@ -114,9 +117,9 @@ def public_lesson(
     weeks = {w["week_number"]: w for w in list_weeks(client)}
     week = weeks.get(row["week_number"], {})
     free = bool(row.get("free_trial"))
-    has_sub = user_has_active_subscription(client, user)
+    has_access = user_can_access_lesson_row(client, user, row)
 
-    if not free and not has_sub:
+    if not has_access:
         _private_no_store(response)
         payload = PublicLessonLocked(
             id=row["id"],
@@ -166,6 +169,11 @@ def public_blog_list(
             excerpt=p.get("excerpt") or "",
             read_time=p.get("read_time") or "",
             sort_order=int(p.get("sort_order") or 0),
+            cat_key=p.get("cat_key"),
+            read_min=int(p["read_min"]) if p.get("read_min") is not None else None,
+            featured=bool(p.get("featured")),
+            tags=list(p.get("tags") or []),
+            reviewed=p.get("reviewed") or "",
         )
         for p in posts
     ]
@@ -211,6 +219,11 @@ def public_blog_detail(
         show_sticky_cta=bool(row.get("show_sticky_cta", True)),
         published_at=str(row["published_at"]) if row.get("published_at") else None,
         updated_at=str(row["updated_at"]) if row.get("updated_at") else None,
+        cat_key=row.get("cat_key"),
+        read_min=int(row["read_min"]) if row.get("read_min") is not None else None,
+        featured=bool(row.get("featured")),
+        tags=list(row.get("tags") or []),
+        reviewed=row.get("reviewed") or "",
     )
 
 
@@ -253,6 +266,16 @@ def public_pricing(
             messenger_link=settings.get("messenger_link", ""),
         ),
     )
+
+
+@router.get("/portal-config", response_model=PortalConfigOut)
+def public_portal_config(
+    response: Response,
+    client: Client = Depends(get_supabase),
+) -> PortalConfigOut:
+    _public_cache(response)
+    cfg = get_portal_config(client)
+    return PortalConfigOut(**cfg)
 
 
 @router.get("/settings", response_model=PublicSettings)
