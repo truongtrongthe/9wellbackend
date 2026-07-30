@@ -17,16 +17,16 @@ MODULES: list[dict[str, Any]] = [
         "live": "/learn",
         "bundle": "learn_curriculum",
         "publish_files": ["9well-learn/curriculum.js"],
-        "description": "Curriculum 8 tuần — live qua API sau Lưu; /publish chỉ sync curriculum.js",
+        "description": "Curriculum 8 tuần — Lưu live qua API; mỗi bài VIDEO dán YouTube (ytid); free=true = học thử full trên overview; intro/demo video ở Portal → Video Learn (portal-config)",
     },
     {
         "id": "blog",
         "label": "Thư viện",
         "admin": "/blog",
         "live": "/blog",
-        "bundle": None,
-        "publish_files": ["9well-hub/articles.js"],
-        "description": "Bài viết blog_posts — live qua API sau «Lưu & đưa lên web»; /publish chỉ sync articles.js",
+        "bundle": "hub_videos + blog_posts",
+        "publish_files": ["9well-hub/articles.js", "9well-hub/videos.js"],
+        "description": "Bài viết live qua API; Video YouTube/Short: tab Video → Lưu (API /content/hub-videos + videos.js)",
     },
     {
         "id": "shop",
@@ -44,7 +44,7 @@ MODULES: list[dict[str, Any]] = [
         "live": "/app",
         "bundle": "portal_app",
         "publish_files": ["9well-app/portal-data.js"],
-        "description": "Plans, quiz, weeks overview; payment/Zalo trong portal-config",
+        "description": "Plans, quiz, weeks; payment/Zalo + introYtid/demoVideoYtid Learn trong portal-config (tab Video Learn)",
     },
     {
         "id": "trainer",
@@ -124,6 +124,8 @@ CHECKLIST = [
 ]
 
 GLOSSARY = [
+    {"term": "ytid", "meaning": "YouTube video ID trên lesson Learn hoặc hub video"},
+    {"term": "free", "meaning": "Lesson Learn: học thử — overview khách xem full body"},
     {"term": "fmt", "meaning": "Loại bài: VIDEO, AUDIO, DOC, FORM, RESULT"},
     {"term": "write[]", "meaning": "Prompt nhật ký trong lesson: {k, q, ph}"},
     {"term": "NW_CHECKINS", "meaning": "Check-in tuần 1–8: intro, extra[], outro"},
@@ -160,6 +162,24 @@ RECIPES = [
             "Xác nhận badge = «Đã xuất bản»",
             "Preview https://9well.com/blog/{slug}",
             "Không vào /publish trừ khi nhiệm vụ yêu cầu sync articles.js",
+        ],
+    },
+    {
+        "title": "Thêm video YouTube Short (Blog)",
+        "steps": [
+            "Mở /blog → tab Video → + Thêm video",
+            "Dán link YouTube/Shorts → kiểm tra ID + tiêu đề + danh mục",
+            "Thêm vào danh sách → Lưu video lên web",
+            "Preview https://9well.com/blog (tab Video trên hub)",
+        ],
+    },
+    {
+        "title": "Gắn YouTube cho bài học",
+        "steps": [
+            "Mở /learn → Tuần & bài → chọn bài VIDEO",
+            "Dán URL YouTube vào field YouTube → Lưu",
+            "Intro/demo fallback: /portal → tab Video Learn",
+            "Preview https://9well.com/learn — click bài trên overview để xem chi tiết",
         ],
     },
     {

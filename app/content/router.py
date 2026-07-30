@@ -315,6 +315,21 @@ def public_learn_curriculum(
     return (row or {}).get("payload") or {}
 
 
+@router.get("/hub-videos")
+def public_hub_videos(
+    response: Response,
+    client: Client = Depends(get_supabase),
+) -> dict[str, Any]:
+    """Hub Blog videos — live after CMS save of hub_videos bundle."""
+    response.headers["Cache-Control"] = "public, s-maxage=15, stale-while-revalidate=60"
+    row = get_bundle(client, "hub_videos")
+    payload = (row or {}).get("payload") or {}
+    videos = payload.get("videos") if isinstance(payload, dict) else payload
+    if not isinstance(videos, list):
+        videos = []
+    return {"videos": videos}
+
+
 @router.get("/legal")
 def public_legal(
     response: Response,
