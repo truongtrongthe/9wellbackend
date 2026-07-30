@@ -23,7 +23,7 @@ class Settings(BaseSettings):
     # JWT
     jwt_access_secret: str
     jwt_refresh_secret: str
-    jwt_access_ttl_seconds: int = 60 * 60  # 1 hour
+    jwt_access_ttl_seconds: int = 24 * 60 * 60  # 24 hours (CMS admin sessions)
     jwt_refresh_ttl_seconds: int = 7 * 24 * 60 * 60  # 7 days
 
     # MoMo
