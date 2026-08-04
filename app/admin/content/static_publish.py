@@ -303,6 +303,7 @@ def write_hub_articles(root: Path, posts: list[dict], cats: dict) -> str:
                 "author": p.get("author") or "",
                 "reviewed": p.get("reviewed") or "",
                 "date": (str(p.get("published_at") or "")[:10] or ""),
+                "created_at": str(p.get("created_at") or p.get("published_at") or ""),
                 "readMin": int(p.get("read_min") or 5),
                 "featured": bool(p.get("featured")),
                 "tags": p.get("tags") if isinstance(p.get("tags"), list) else [],

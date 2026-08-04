@@ -177,6 +177,7 @@ def public_blog_list(
             reviewed=p.get("reviewed") or "",
             author=p.get("author") or "",
             published_at=str(p["published_at"]) if p.get("published_at") else None,
+            created_at=str(p["created_at"]) if p.get("created_at") else None,
         )
         for p in posts
     ]

@@ -74,6 +74,7 @@ class PublicBlogListItem(BaseModel):
     reviewed: str = ""
     author: str = ""
     published_at: str | None = None
+    created_at: str | None = None
 
 
 class PublicFaqItem(BaseModel):

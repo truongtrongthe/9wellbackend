@@ -53,7 +53,8 @@ def delete_lesson(client: Client, lesson_id: str) -> None:
 
 
 def list_blog_posts(client: Client, published_only: bool = False) -> list[dict[str, Any]]:
-    q = client.table("blog_posts").select("*").order("sort_order")
+    # Thư viện: bài mới tạo lên trên
+    q = client.table("blog_posts").select("*").order("created_at", desc=True)
     if published_only:
         q = q.eq("published", True)
     res = q.execute()
