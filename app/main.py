@@ -7,6 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.auth.router import router as auth_router
 from app.membership.router import router as membership_router
+from app.payments.bank.router import router as bank_router
 from app.payments.momo.router import router as momo_router
 from app.roadmap.router import router as roadmap_router
 from app.admin.router import router as admin_router
@@ -42,6 +43,7 @@ def create_app() -> FastAPI:
     app.include_router(auth_router, prefix="/auth", tags=["auth"])
     app.include_router(membership_router, prefix="/membership", tags=["membership"])
     app.include_router(momo_router, tags=["payments"])
+    app.include_router(bank_router, tags=["payments"])
     app.include_router(roadmap_router, prefix="/roadmap", tags=["roadmap"])
     app.include_router(admin_router, prefix="/admin", tags=["admin"])
     app.include_router(public_content_router, prefix="/content", tags=["content"])

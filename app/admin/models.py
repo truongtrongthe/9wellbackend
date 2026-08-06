@@ -14,12 +14,30 @@ class AdminActivateSubscriptionRequest(BaseModel):
     model_config = {"populate_by_name": True}
 
 
+class AdminUserSubscription(BaseModel):
+    status: str
+    package_code: str | None = None
+    package_name: str | None = None
+    current_period_end: str | None = None
+
+
+class AdminUserOrder(BaseModel):
+    id: str
+    status: str
+    amount_vnd: int
+    package_code: str | None = None
+    package_name: str | None = None
+    created_at: str
+
+
 class AdminUserResponse(BaseModel):
     id: str
     email: str
     name: str | None = None
     role: str
     created_at: str
+    subscription: AdminUserSubscription | None = None
+    latest_order: AdminUserOrder | None = None
 
 
 class AdminSubscriptionResponse(BaseModel):

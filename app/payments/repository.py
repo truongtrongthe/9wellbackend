@@ -72,3 +72,103 @@ def create_payment(
         raise RuntimeError("Failed to create payment")
     return resp.data[0]
 
+
+def get_latest_order_for_user(client: Client, user_id: str) -> dict[str, Any] | None:
+    resp = (
+        client.table("orders")
+        .select("*, membership_packages(code, name)")
+        .eq("user_id", user_id)
+        .order("created_at", desc=True)
+        .limit(1)
+        .execute()
+    )
+    return resp.data[0] if resp.data else None
+
+
+def get_pending_order_for_user_package(
+    client: Client, user_id: str, package_id: str
+) -> dict[str, Any] | None:
+    resp = (
+        client.table("orders")
+        .select("*")
+        .eq("user_id", user_id)
+        .eq("package_id", package_id)
+        .eq("status", "pending")
+        .order("created_at", desc=True)
+        .limit(1)
+        .execute()
+    )
+    return resp.data[0] if resp.data else None
+
+
+def mark_order_paid(client: Client, order_id: str) -> dict[str, Any] | None:
+    now = datetime.now(UTC).isoformat()
+    resp = (
+        client.table("orders")
+        .update({"status": "paid", "updated_at": now})
+        .eq("id", order_id)
+        .execute()
+    )
+    if resp.data:
+        client.table("payments").update(
+            {"status": "succeeded", "updated_at": now}
+        ).eq("order_id", order_id).eq("status", "processing").execute()
+        return resp.data[0]
+    return None
+
+
+def mark_latest_pending_order_paid(client: Client, user_id: str) -> dict[str, Any] | None:
+    resp = (
+        client.table("orders")
+        .select("*")
+        .eq("user_id", user_id)
+        .eq("status", "pending")
+        .order("created_at", desc=True)
+        .limit(1)
+        .execute()
+    )
+    if not resp.data:
+        return None
+    return mark_order_paid(client, str(resp.data[0]["id"]))
+
+
+def list_latest_orders_for_users(
+    client: Client, user_ids: list[str]
+) -> dict[str, dict[str, Any]]:
+    if not user_ids:
+        return {}
+    resp = (
+        client.table("orders")
+        .select("*, membership_packages(code, name)")
+        .in_("user_id", user_ids)
+        .order("created_at", desc=True)
+        .execute()
+    )
+    out: dict[str, dict[str, Any]] = {}
+    for row in resp.data or []:
+        uid = str(row["user_id"])
+        if uid not in out:
+            out[uid] = row
+    return out
+
+
+def list_subscriptions_for_users(
+    client: Client, user_ids: list[str]
+) -> dict[str, dict[str, Any]]:
+    if not user_ids:
+        return {}
+    resp = (
+        client.table("subscriptions")
+        .select("*, membership_packages(code, name)")
+        .in_("user_id", user_ids)
+        .order("created_at", desc=True)
+        .execute()
+    )
+    out: dict[str, dict[str, Any]] = {}
+    for row in resp.data or []:
+        uid = str(row["user_id"])
+        if uid not in out:
+            out[uid] = row
+    return out
+
+
