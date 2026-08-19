@@ -12,6 +12,7 @@ from app.payments.momo.router import router as momo_router
 from app.roadmap.router import router as roadmap_router
 from app.admin.router import router as admin_router
 from app.content.router import router as public_content_router
+from app.content.geo_router import router as geo_router
 from app.portal.router import router as portal_router
 
 
@@ -47,6 +48,8 @@ def create_app() -> FastAPI:
     app.include_router(roadmap_router, prefix="/roadmap", tags=["roadmap"])
     app.include_router(admin_router, prefix="/admin", tags=["admin"])
     app.include_router(public_content_router, prefix="/content", tags=["content"])
+    # Dynamic GEO at site root paths (nginx on 9well.com proxies these)
+    app.include_router(geo_router)
     app.include_router(portal_router)
 
     @app.get("/health")

@@ -134,6 +134,116 @@ def sync_hub_articles(client: Client) -> list[str]:
     for root in get_static_roots():
         rel = write_hub_articles(root, posts, cats)
         written.append(f"{root}/{rel}")
+    try:
+        written.extend(sync_geo_files(client, posts=posts))
+    except Exception:
+        pass
+    return written
+
+
+def get_web_dist_roots() -> list[Path]:
+    """apps/web/dist (+ mirrors) for GEO fallback files served by nginx."""
+    roots: list[Path] = []
+    seen: set[str] = set()
+
+    def add(p: Path) -> None:
+        try:
+            key = str(p.resolve())
+        except Exception:
+            key = str(p)
+        if key in seen:
+            return
+        seen.add(key)
+        p.mkdir(parents=True, exist_ok=True)
+        roots.append(p)
+
+    env = os.environ.get("CMS_WEB_DIST", "").strip()
+    if not env:
+        try:
+            from app.config import get_settings
+
+            s = get_settings()
+            env = getattr(s, "cms_web_dist", None) or ""
+        except Exception:
+            env = ""
+    if env:
+        for part in str(env).split(","):
+            part = part.strip()
+            if part:
+                add(Path(part))
+    else:
+        here = Path(__file__).resolve()
+        backend_root = here.parents[3]
+        candidates = [
+            backend_root.parent / "9wellcms" / "apps" / "web" / "dist",
+            Path.cwd().parent / "9wellcms" / "apps" / "web" / "dist",
+            Path.cwd() / "apps" / "web" / "dist",
+        ]
+        for c in candidates:
+            if c.exists() or c == candidates[0]:
+                add(c)
+                break
+        if not roots:
+            add(candidates[0])
+    return roots
+
+
+def _site_url() -> str:
+    env = os.environ.get("SITE_URL", "").strip()
+    if env:
+        return env.rstrip("/")
+    try:
+        from app.config import get_settings
+
+        return str(getattr(get_settings(), "site_url", None) or "https://9well.com").rstrip("/")
+    except Exception:
+        return "https://9well.com"
+
+
+def sync_geo_files(client: Client, posts: list[dict] | None = None) -> list[str]:
+    """Write dynamic GEO snapshots into web dist (fallback when API proxy is down)."""
+    from app.content.geo import (
+        build_blog_markdown,
+        build_llms_full_txt,
+        build_llms_txt,
+        build_sitemap_xml,
+    )
+
+    if posts is None:
+        try:
+            from app.admin.content.repository import list_blog_posts
+
+            posts = list_blog_posts(client, published_only=True)
+        except Exception:
+            posts = []
+    site = _site_url()
+    written: list[str] = []
+    for root in get_web_dist_roots():
+        blog_dir = root / "blog"
+        blog_dir.mkdir(parents=True, exist_ok=True)
+        # Remove stale markdown from previous publish
+        for old in blog_dir.glob("*.md"):
+            try:
+                old.unlink()
+            except OSError:
+                pass
+        (root / "llms.txt").write_text(build_llms_txt(site, posts), encoding="utf-8")
+        (root / "llms-full.txt").write_text(build_llms_full_txt(site, posts), encoding="utf-8")
+        (root / "sitemap.xml").write_text(build_sitemap_xml(site, posts), encoding="utf-8")
+        written.extend(
+            [
+                str(root / "llms.txt"),
+                str(root / "llms-full.txt"),
+                str(root / "sitemap.xml"),
+            ]
+        )
+        for post in posts:
+            slug = post.get("slug") or ""
+            if not slug:
+                continue
+            md_path = blog_dir / f"{slug}.md"
+            md_path.write_text(build_blog_markdown(post, site), encoding="utf-8")
+            written.append(str(md_path))
     return written
 
 

@@ -35,10 +35,15 @@ class Settings(BaseSettings):
     # Admin (optional): X-Admin-Key header for machine-to-machine admin calls
     admin_api_key: str | None = None
 
+    # Public site URL (GEO: sitemap / llms.txt)
+    site_url: str = "https://9well.com"
+
     # CMS static publish → apps/web/public/v2 (and optional mirrors)
     cms_static_root: str | None = None
     cms_static_mirror: str | None = None  # comma-separated extra roots (e.g. dist/v2)
     cms_seeds_dir: str | None = None
+    # Web dist root for GEO fallback files (llms.txt / sitemap.xml / blog/*.md)
+    cms_web_dist: str | None = None
 
 
 @lru_cache(maxsize=1)
