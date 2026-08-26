@@ -341,6 +341,17 @@ def public_legal(
     return (row or {}).get("payload") or {}
 
 
+@router.get("/shop")
+def public_shop(
+    response: Response,
+    client: Client = Depends(get_supabase),
+) -> dict[str, Any]:
+    """Shop catalog — live after CMS save of shop_catalog (no static deploy wait)."""
+    response.headers["Cache-Control"] = "public, s-maxage=15, stale-while-revalidate=60"
+    row = get_bundle(client, "shop_catalog")
+    return (row or {}).get("payload") or {}
+
+
 @router.post("/revalidate", response_model=RevalidateResponse)
 def public_revalidate(
     body: RevalidateRequest,

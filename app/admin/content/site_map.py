@@ -35,7 +35,8 @@ MODULES: list[dict[str, Any]] = [
         "live": "/shop",
         "bundle": "shop_catalog",
         "publish_files": ["9well-shop/products.js"],
-        "description": "Sản phẩm TPCN và combo",
+        "description": "Sản phẩm TPCN — live qua GET /content/shop; form Admin có toggle Hiển thị",
+        "steps": "Sửa SP trên form → Lưu — /shop đọc API ngay",
     },
     {
         "id": "portal",
