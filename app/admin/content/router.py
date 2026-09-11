@@ -48,6 +48,7 @@ from app.admin.content.static_publish import (
 from app.admin.content.validate_bundle import validate_bundle_payload
 from app.admin.content.media import router as media_router
 from app.admin.deps import AdminContext, require_admin
+from app.content.prerender_trigger import schedule_web_prerender
 from app.content.revalidate import trigger_revalidate
 from app.portal.repository import get_portal_config, list_all_checkins, upsert_portal_config
 from app.db.supabase_client import get_supabase
@@ -60,6 +61,14 @@ def _revalidate_after_content_change(*paths: str) -> None:
     """Fire-and-forget cache purge; failures are logged only."""
     try:
         trigger_revalidate(list(paths))
+    except Exception:
+        pass
+
+
+def _prerender_after_blog_change(reason: str) -> None:
+    """Rebuild dist/blog/*/index.html + sitemap in background (nginx SEO)."""
+    try:
+        schedule_web_prerender(reason=reason)
     except Exception:
         pass
 
@@ -255,6 +264,8 @@ def blog_create(
     slug = row.get("slug") or ""
     if slug:
         _revalidate_after_content_change("/", "/blog", f"/blog/{slug}")
+    if row.get("published"):
+        _prerender_after_blog_change(f"blog-create:{slug or row.get('id')}")
     return _blog_resp(row)
 
 
@@ -274,6 +285,9 @@ def blog_update(
         pass
     slug = updated.get("slug") or post_id
     _revalidate_after_content_change("/", "/blog", f"/blog/{slug}")
+    # Published posts + unpublish/delete-from-index need a fresh SEO snapshot
+    if updated.get("published") or body.published is False:
+        _prerender_after_blog_change(f"blog-update:{slug}")
     return _blog_resp(updated)
 
 
@@ -290,6 +304,7 @@ def blog_delete(
         sync_hub_articles(client)
     except Exception:
         pass
+    _prerender_after_blog_change(f"blog-delete:{post_id}")
     return {"message": "Deleted"}
 
 
@@ -558,6 +573,24 @@ def bundles_seed(
         raise HTTPException(status_code=500, detail=str(e)) from e
 
 
+@router.get("/prerender-status")
+def prerender_status_get(
+    _admin: AdminContext = Depends(require_admin),
+) -> dict:
+    """Debug: SEO prerender worker state after blog publish."""
+    from app.content.prerender_trigger import prerender_status
+
+    return prerender_status()
+
+
+@router.post("/prerender")
+def prerender_run_now(
+    _admin: AdminContext = Depends(require_admin),
+) -> dict:
+    """Manually kick SEO prerender (same as after Lưu & đưa lên web)."""
+    return schedule_web_prerender(reason="admin-manual")
+
+
 @router.post("/publish", response_model=m.PublishResponse)
 def content_publish(
     admin: AdminContext = Depends(require_admin),
@@ -571,15 +604,20 @@ def content_publish(
         paths = ["/", "/blog", "/learn", "/shop", "/app", "/trainer", "/game", "/legal", "/lieu-trinh", "/khoa-hoc"]
         paths.extend(f"/blog/{s}" for s in blog_slugs)
         result = trigger_revalidate(paths)
+        prerender = schedule_web_prerender(reason="content-publish")
         revalidate_note = result["message"]
+        prerender_note = prerender.get("message") or ""
         if result["ok"]:
-            msg = f"Wrote {len(files)} files. Cache: {revalidate_note}"
+            msg = f"Wrote {len(files)} files. Cache: {revalidate_note}. SEO: {prerender_note}"
             status = "success"
         elif revalidate_note == "Revalidate not configured":
-            msg = f"Wrote {len(files)} files. (Cache purge bỏ qua — chưa cấu hình REVALIDATE_SECRET)"
+            msg = (
+                f"Wrote {len(files)} files. (Cache purge bỏ qua — chưa cấu hình REVALIDATE_SECRET). "
+                f"SEO: {prerender_note}"
+            )
             status = "success"
         else:
-            msg = f"Wrote {len(files)} files. Cache: {revalidate_note}"
+            msg = f"Wrote {len(files)} files. Cache: {revalidate_note}. SEO: {prerender_note}"
             status = "failed"
         log = create_publish_log(client, user_id, status, msg)
         return m.PublishResponse(

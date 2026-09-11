@@ -29,6 +29,20 @@ def validate_bundle_payload(key: str, payload: Any) -> list[str]:
         for field in ("medical", "privacy", "terms"):
             if field in payload and payload[field] is not None and not isinstance(payload[field], str):
                 errors.append(f"legal_pages.{field} must be a string")
+        policies = payload.get("policies")
+        if policies is not None:
+            if not isinstance(policies, list):
+                errors.append("legal_pages.policies must be an array")
+            else:
+                for i, p in enumerate(policies):
+                    if not isinstance(p, dict):
+                        errors.append(f"legal_pages.policies[{i}] must be an object")
+                        continue
+                    if not p.get("slug"):
+                        errors.append(f"legal_pages.policies[{i}].slug is required")
+                    body = p.get("bodyHtml")
+                    if body is not None and not isinstance(body, str):
+                        errors.append(f"legal_pages.policies[{i}].bodyHtml must be a string")
     elif key == "hub_videos":
         vids = payload.get("videos") if isinstance(payload, dict) else payload
         if vids is not None and not isinstance(vids, list):

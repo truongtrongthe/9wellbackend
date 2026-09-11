@@ -44,6 +44,11 @@ class Settings(BaseSettings):
     cms_seeds_dir: str | None = None
     # Web dist root for GEO fallback files (llms.txt / sitemap.xml / blog/*.md)
     cms_web_dist: str | None = None
+    # apps/web root (contains scripts/prerender.mjs) — SEO HTML on blog publish
+    cms_web_root: str | None = None
+    # When true (or env not local), CMS blog save/publish schedules node prerender
+    prerender_on_publish: bool | None = None
+    vite_api_base_url: str | None = None
 
 
 @lru_cache(maxsize=1)
