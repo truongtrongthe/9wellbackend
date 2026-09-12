@@ -142,24 +142,55 @@ def delete_timeline(client: Client, block_id: str) -> None:
 
 
 def get_settings(client: Client) -> dict[str, Any]:
-    res = client.table("site_settings").select("*").execute()
     out: dict[str, Any] = {
         "zalo_link": "https://zalo.me/0900000000",
         "messenger_link": "https://m.me/9wellvn",
         "cache_version": datetime.now(timezone.utc).strftime("%Y%m%d"),
     }
-    for row in res.data or []:
-        val = row.get("value") or {}
-        if isinstance(val, dict):
-            out.update(val)
+    # Only merge key=site — do not pollute with portal_config / other rows
+    site = client.table("site_settings").select("value").eq("key", "site").maybe_single().execute()
+    site_val = (site.data or {}).get("value") if site.data else None
+    if isinstance(site_val, dict):
+        out.update(site_val)
+    # Prefer Portal CMS Zalo when set (Payment & Zalo)
+    portal = (
+        client.table("site_settings").select("value").eq("key", "portal_config").maybe_single().execute()
+    )
+    portal_val = (portal.data or {}).get("value") if portal.data else None
+    if isinstance(portal_val, dict):
+        zl = str(portal_val.get("zaloLink") or "").strip()
+        if zl:
+            out["zalo_link"] = zl
     return out
 
 
 def upsert_settings(client: Client, values: dict[str, Any]) -> dict[str, Any]:
-    for key in ("site", "links", "cache"):
-        payload = {"key": "site", "value": values, "updated_at": _now_iso()}
-        client.table("site_settings").upsert(payload, on_conflict="key").execute()
-        break
+    # Keep only public site fields on key=site (avoid writing portal blobs back)
+    site_keys = ("zalo_link", "messenger_link", "cache_version")
+    current = get_settings(client)
+    site_value = {k: current.get(k) for k in site_keys if current.get(k) is not None}
+    for k in site_keys:
+        if k in values and values[k] is not None:
+            site_value[k] = values[k]
+    client.table("site_settings").upsert(
+        {"key": "site", "value": site_value, "updated_at": _now_iso()},
+        on_conflict="key",
+    ).execute()
+    # Keep portal_config.zaloLink in sync when site Zalo changes
+    if "zalo_link" in values and values["zalo_link"] is not None:
+        portal = (
+            client.table("site_settings").select("value").eq("key", "portal_config").maybe_single().execute()
+        )
+        portal_val = (portal.data or {}).get("value") if portal.data else {}
+        if not isinstance(portal_val, dict):
+            portal_val = {}
+        else:
+            portal_val = dict(portal_val)
+        portal_val["zaloLink"] = str(values["zalo_link"]).strip()
+        client.table("site_settings").upsert(
+            {"key": "portal_config", "value": portal_val, "updated_at": _now_iso()},
+            on_conflict="key",
+        ).execute()
     return get_settings(client)
 
 

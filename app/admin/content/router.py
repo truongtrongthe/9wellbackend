@@ -65,10 +65,10 @@ def _revalidate_after_content_change(*paths: str) -> None:
         pass
 
 
-def _prerender_after_blog_change(reason: str) -> None:
+def _prerender_after_blog_change(reason: str, slug: str | None = None) -> None:
     """Rebuild dist/blog/*/index.html + sitemap in background (nginx SEO)."""
     try:
-        schedule_web_prerender(reason=reason)
+        schedule_web_prerender(reason=reason, touch_slugs=[slug] if slug else None)
     except Exception:
         pass
 
@@ -265,7 +265,7 @@ def blog_create(
     if slug:
         _revalidate_after_content_change("/", "/blog", f"/blog/{slug}")
     if row.get("published"):
-        _prerender_after_blog_change(f"blog-create:{slug or row.get('id')}")
+        _prerender_after_blog_change(f"blog-create:{slug or row.get('id')}", slug=slug or None)
     return _blog_resp(row)
 
 
@@ -287,7 +287,7 @@ def blog_update(
     _revalidate_after_content_change("/", "/blog", f"/blog/{slug}")
     # Published posts + unpublish/delete-from-index need a fresh SEO snapshot
     if updated.get("published") or body.published is False:
-        _prerender_after_blog_change(f"blog-update:{slug}")
+        _prerender_after_blog_change(f"blog-update:{slug}", slug=slug if updated.get("published") else None)
     return _blog_resp(updated)
 
 
@@ -297,14 +297,17 @@ def blog_delete(
     _admin: AdminContext = Depends(require_admin),
     client: Client = Depends(get_supabase),
 ) -> dict[str, str]:
-    if not get_blog_post(client, post_id):
+    existing = get_blog_post(client, post_id)
+    if not existing:
         raise HTTPException(status_code=404, detail="Post not found")
+    slug = existing.get("slug") or post_id
     delete_blog_post(client, post_id)
     try:
         sync_hub_articles(client)
     except Exception:
         pass
-    _prerender_after_blog_change(f"blog-delete:{post_id}")
+    # Full rebuild so deleted slug HTML is removed from dist
+    _prerender_after_blog_change(f"blog-delete:{slug}", slug=None)
     return {"message": "Deleted"}
 
 

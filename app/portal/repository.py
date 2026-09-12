@@ -77,6 +77,21 @@ def upsert_portal_config(client: Client, patch: dict[str, Any]) -> dict[str, Any
         {"key": "portal_config", "value": current, "updated_at": _now_iso()},
         on_conflict="key",
     ).execute()
+    # Sync Zalo → site settings so landing / blog FAB match Portal CMS
+    if "zaloLink" in patch and patch["zaloLink"] is not None:
+        site_res = (
+            client.table("site_settings").select("value").eq("key", "site").maybe_single().execute()
+        )
+        site_val = (site_res.data or {}).get("value") if site_res.data else {}
+        if not isinstance(site_val, dict):
+            site_val = {}
+        else:
+            site_val = dict(site_val)
+        site_val["zalo_link"] = str(patch["zaloLink"]).strip()
+        client.table("site_settings").upsert(
+            {"key": "site", "value": site_val, "updated_at": _now_iso()},
+            on_conflict="key",
+        ).execute()
     return get_portal_config(client)
 
 
