@@ -193,6 +193,7 @@ class BlogPostResponse(BaseModel):
     reviewed: str = ""
     created_at: str
     updated_at: str | None = None
+    seo_prerender: dict | None = None
 
 
 class PricingPlanCreate(BaseModel):

@@ -49,6 +49,8 @@ class Settings(BaseSettings):
     # When true (or env not local), CMS blog save/publish schedules node prerender
     prerender_on_publish: bool | None = None
     vite_api_base_url: str | None = None
+    # Override API base used by node prerender (else localhost or vite_api_base_url)
+    prerender_api_base_url: str | None = None
 
 
 @lru_cache(maxsize=1)

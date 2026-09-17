@@ -48,7 +48,7 @@ from app.admin.content.static_publish import (
 from app.admin.content.validate_bundle import validate_bundle_payload
 from app.admin.content.media import router as media_router
 from app.admin.deps import AdminContext, require_admin
-from app.content.prerender_trigger import schedule_web_prerender
+from app.content.prerender_trigger import remove_prerendered_slug, schedule_web_prerender
 from app.content.revalidate import trigger_revalidate
 from app.portal.repository import get_portal_config, list_all_checkins, upsert_portal_config
 from app.db.supabase_client import get_supabase
@@ -65,12 +65,12 @@ def _revalidate_after_content_change(*paths: str) -> None:
         pass
 
 
-def _prerender_after_blog_change(reason: str, slug: str | None = None) -> None:
+def _prerender_after_blog_change(reason: str, slug: str | None = None) -> dict:
     """Rebuild dist/blog/*/index.html + sitemap in background (nginx SEO)."""
     try:
-        schedule_web_prerender(reason=reason, touch_slugs=[slug] if slug else None)
-    except Exception:
-        pass
+        return schedule_web_prerender(reason=reason, touch_slugs=[slug] if slug else None)
+    except Exception as e:
+        return {"ok": False, "started": False, "message": f"prerender schedule error: {e}"}
 
 
 def _lesson_resp(row: dict) -> m.LessonResponse:
@@ -93,7 +93,7 @@ def _lesson_resp(row: dict) -> m.LessonResponse:
     )
 
 
-def _blog_resp(row: dict) -> m.BlogPostResponse:
+def _blog_resp(row: dict, seo_prerender: dict | None = None) -> m.BlogPostResponse:
     action_raw = row.get("action_box") or {}
     if not isinstance(action_raw, dict):
         action_raw = {}
@@ -133,6 +133,7 @@ def _blog_resp(row: dict) -> m.BlogPostResponse:
         reviewed=row.get("reviewed") or "",
         created_at=str(row["created_at"]),
         updated_at=str(row["updated_at"]) if row.get("updated_at") else None,
+        seo_prerender=seo_prerender,
     )
 
 
@@ -264,9 +265,10 @@ def blog_create(
     slug = row.get("slug") or ""
     if slug:
         _revalidate_after_content_change("/", "/blog", f"/blog/{slug}")
+    seo = None
     if row.get("published"):
-        _prerender_after_blog_change(f"blog-create:{slug or row.get('id')}", slug=slug or None)
-    return _blog_resp(row)
+        seo = _prerender_after_blog_change(f"blog-create:{slug or row.get('id')}", slug=slug or None)
+    return _blog_resp(row, seo_prerender=seo)
 
 
 @router.patch("/blog/{post_id}", response_model=m.BlogPostResponse)
@@ -285,10 +287,14 @@ def blog_update(
         pass
     slug = updated.get("slug") or post_id
     _revalidate_after_content_change("/", "/blog", f"/blog/{slug}")
+    seo = None
     # Published posts + unpublish/delete-from-index need a fresh SEO snapshot
-    if updated.get("published") or body.published is False:
-        _prerender_after_blog_change(f"blog-update:{slug}", slug=slug if updated.get("published") else None)
-    return _blog_resp(updated)
+    if updated.get("published"):
+        seo = _prerender_after_blog_change(f"blog-update:{slug}", slug=slug)
+    elif body.published is False:
+        remove_prerendered_slug(slug)
+        seo = _prerender_after_blog_change(f"blog-unpublish:{slug}", slug=None)
+    return _blog_resp(updated, seo_prerender=seo)
 
 
 @router.delete("/blog/{post_id}")
@@ -306,9 +312,10 @@ def blog_delete(
         sync_hub_articles(client)
     except Exception:
         pass
-    # Full rebuild so deleted slug HTML is removed from dist
-    _prerender_after_blog_change(f"blog-delete:{slug}", slug=None)
-    return {"message": "Deleted"}
+    # Drop HTML immediately, then rebuild sitemap / hub snapshot
+    remove_prerendered_slug(slug)
+    seo = _prerender_after_blog_change(f"blog-delete:{slug}", slug=None)
+    return {"message": "Deleted", "seo_prerender": seo}
 
 
 @router.get("/pricing", response_model=list[m.PricingPlanResponse])
